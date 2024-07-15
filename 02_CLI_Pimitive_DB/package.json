@@ -1,0 +1,11 @@
+{
+  "name": "tusk_2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "worflersst",
+  "license": "MIT",
+  "dependencies": {
+    "@inquirer/prompts": "^5.1.2"
+  },
+  "type": "module"
+}
