@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "05_CLI_Telegram_Weather_Forecast": {
+      "start": "cd 05_CLI_Telegram_Weather_Forecast; yarn start",
+      "build": "cd 05_CLI_Telegram_Weather_Forecast; yarn install"
+    }
+  }
+}
