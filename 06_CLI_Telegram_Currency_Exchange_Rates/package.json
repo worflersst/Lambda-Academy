@@ -1,0 +1,10 @@
+{
+  "name": "tusk06",
+  "version": "0.0.1",
+  "main": "app.js",
+  "author": "worflersst",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.66.0"
+  }
+}
