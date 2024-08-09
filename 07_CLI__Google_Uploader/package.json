@@ -1,0 +1,14 @@
+{
+  "name": "tusk_07",
+  "version": "1.0.0",
+  "main": "apps.js",
+  "author": "Korchemnyi Nikita",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@inquirer/prompts": "^5.3.8",
+    "dotenv": "^16.4.5",
+    "google-auth-library": "^9.13.0",
+    "googleapis": "^140.0.1"
+  }
+}
