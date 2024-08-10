@@ -33,14 +33,12 @@ const uploadBase = async (path, name, papkaID) => {
 			requestBody,
 			media: media,
 		});
-		console.log('File Id:', file.data.id);
 
 		const fileLink = await service.files.get({
 			fileId: file.data.id,
 			fields: 'webViewLink, webContentLink',
 		});
 
-		console.log('File Link:', fileLink.data.webViewLink);
 		return fileLink.data.webViewLink;
 	} catch (err) {
 		throw err;
