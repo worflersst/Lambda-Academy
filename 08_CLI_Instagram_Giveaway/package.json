@@ -1,0 +1,8 @@
+{
+  "name": "tusk08",
+  "version": "1.0.0",
+  "main": "apps.js",
+  "type": "commonjs",
+  "author": "Korchemnyi Nikita",
+  "license": "MIT"
+}
