@@ -1,8 +1,9 @@
 const TelegramBot = require('node-telegram-bot-api')
 const { getWeatherData, city } = require('./weather');
+require('dotenv').config();
 
 
-const token = '7456352495:AAF68oAaAJS_M_vPhkNegJt8GVXZULdMWEE'
+const token = process.env.TELEGRAM_BOT_TOKEN;
 const bot = new TelegramBot(token, { polling: true });
 
 bot.onText(/\/start/, async (msg) => {

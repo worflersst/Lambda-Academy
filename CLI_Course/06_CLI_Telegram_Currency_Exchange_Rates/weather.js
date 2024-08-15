@@ -1,6 +1,7 @@
+require('dotenv').config();
 
 
-const apiKey = '077e676529e73c2072be4463a0fea680';
+const apiKey = process.env.OPENWEATHER_API_KEY;
 const city = 'Odessa'
 const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&lang=ru&cnt=40`;
 

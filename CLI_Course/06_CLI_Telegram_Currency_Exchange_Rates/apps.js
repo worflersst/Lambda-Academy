@@ -1,13 +1,14 @@
 const TelegramBot = require('node-telegram-bot-api');
 const { getWeatherData, city } = require('./weather');
 const { getCurrencyRates } = require('./currency');
+require('dotenv').config();
 
 const currensySend = (obj) => {
 	const { ccy: name, base_ccy: value, buy, sale } = obj;
 	return `The currency ${name} can be bought for ${buy} ${value} and sold for ${sale} ${value}.`;
 };
 
-const token = '7456352495:AAF68oAaAJS_M_vPhkNegJt8GVXZULdMWEE';
+const token = process.env.TELEGRAM_BOT_TOKEN;
 const bot = new TelegramBot(token, { polling: true });
 
 const mainMenu = {

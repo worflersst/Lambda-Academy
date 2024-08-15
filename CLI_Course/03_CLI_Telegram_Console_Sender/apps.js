@@ -1,8 +1,7 @@
 const { Command } = require('commander');
 const TelegramApi = require('node-telegram-bot-api');
-const fs = require('fs')
 
-const token = '7456352495:AAF68oAaAJS_M_vPhkNegJt8GVXZULdMWEE';
+const token = '7305352391:AAGNzgukZzZt6pnlQrlbNhrz-VXBqpw7-bk';
 const myId = 1218844319;
 
 
