@@ -1,7 +1,7 @@
 {
   "name": "tusk05",
   "version": "0.0.1",
-  "main": "app.js",
+  "main": "apps.js",
   "author": "worflersst",
   "scripts": {
     "start": "node apps.js"
