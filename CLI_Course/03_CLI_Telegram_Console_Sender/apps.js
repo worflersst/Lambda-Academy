@@ -5,19 +5,21 @@ const token = '7305352391:AAGNzgukZzZt6pnlQrlbNhrz-VXBqpw7-bk';
 const myId = 1218844319;
 
 
-const bot = new TelegramApi(token, { polling: true });
+const bot = new TelegramApi(token, { polling: false });
 const program = new Command();
 
 program
 	.version('0.0.1')
 	.description('Мой тг бот для стажировки');
 
-const sendMessage = (msg) => {
-	bot.sendMessage(myId, msg);
+const sendMessage = async (msg) => {
+	await bot.sendMessage(myId, msg);
+	process.exit(0);
 };
 
-const sendPhoto = (filePath) => {
-	bot.sendPhoto(myId, filePath)
+const sendPhoto = async (filePath) => {
+	await bot.sendPhoto(myId, filePath)
+	process.exit(0);
 };
 
 program
