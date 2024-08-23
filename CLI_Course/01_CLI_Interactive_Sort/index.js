@@ -33,6 +33,7 @@ rl.on('line', (line) => {
 	switch (step) {
 
 		case 0:
+			sortedMassive.length = 0
 			let moment = line.trim().split(' ')
 
 			if (moment.length !== accesValue) {
@@ -95,10 +96,15 @@ rl.on('line', (line) => {
 				}
 				case 'f': {
 					// logick Show only the unique values from the entire set of words and numbers entered by the user.
-					let variantF = [...new Set(sortedMassive)]
-					console.log(`Ты выбрал вариант ${variantSort.f} \n Вот твой массив : ${variantF} \n`)
-					accesValuefn()
-					step--
+					let countMap = {};
+					sortedMassive.forEach(el => {
+						countMap[el] = (countMap[el] || 0) + 1;
+					});
+					let uniqueValues = sortedMassive.filter(el => countMap[el] === 1);
+
+					console.log(`Ты выбрал вариант ${variantSort.f} \n Вот твой массив : ${uniqueValues} \n`);
+					accesValuefn();
+					step--;
 					break;
 				}
 				case 'Exit': {
