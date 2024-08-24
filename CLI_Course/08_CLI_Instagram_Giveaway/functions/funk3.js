@@ -1,18 +1,16 @@
-const funk3 = (array) => {
-	const uniqueFlatArray = [...new Set(array)];
-	const victory = uniqueFlatArray.reduce((acc, thisArray, index) => {
-		acc[thisArray] = index + 1;
-		return acc;
-	}, {});
-
-	const filteredVictory = Object.entries(victory)
-		.filter(([key, value]) => value < 10)
-		.reduce((acc, [key, value]) => {
-			acc[key] = value;
-			return acc;
-		}, {});
-
-	return Object.keys(filteredVictory).length;
+const funk3 = (filesArray) => {
+	const nameFileCount = {};
+	filesArray.forEach(fileArray => {
+		const uniqueNames = new Set(fileArray);
+		uniqueNames.forEach(name => {
+			if (!nameFileCount[name]) {
+				nameFileCount[name] = 0;
+			}
+			nameFileCount[name] += 1;
+		});
+	});
+	const userNamesInAtLeast10Files = Object.keys(nameFileCount).filter(name => nameFileCount[name] >= 10);
+	return userNamesInAtLeast10Files.length;
 };
 
 module.exports = {
