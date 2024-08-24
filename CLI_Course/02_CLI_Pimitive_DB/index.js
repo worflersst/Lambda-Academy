@@ -39,7 +39,7 @@ const createUser = async () => {
 		const searchUser = await confirm({ message: 'Хочешь найти пользователя по Нику ?' })
 		if (searchUser) {
 			const searchUserName = await input({ message: 'Enter the name of the user you want to find' });
-			const user = db.find((app) => app.name === searchUserName);
+			const user = db.filter((app) => app.name === searchUserName);
 			if (user) {
 				console.log(`${searchUserName} is found:`, user);
 			} else {
