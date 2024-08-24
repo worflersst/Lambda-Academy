@@ -55,13 +55,17 @@ rl.on('line', (line) => {
 		case 1:
 			switch (line) {
 				case 'a': {
-					// logick Sort the words alphabetically.
-					let variantA = sortedMassive.filter((item) => typeof item === 'string').sort()
-					console.log(`Ты выбрал вариант ${variantSort.a} \n Вот твой массив : ${variantA} \n`);
-					accesValuefn()
-					step--
+					// Sort the words alphabetically ignoring case
+					let variantA = sortedMassive
+						.filter((item) => typeof item === 'string')
+						.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+
+					console.log(`Ты выбрал вариант ${variantSort.a} \n Вот твой массив : ${variantA.join(',')} \n`);
+					accesValuefn();
+					step--;
 					break;
 				}
+
 				case 'b': {
 					// logick Display the numbers in ascending order.
 					let variantB = sortedMassive.filter((item) => typeof item === 'number').sort((a, b) => a - b)
