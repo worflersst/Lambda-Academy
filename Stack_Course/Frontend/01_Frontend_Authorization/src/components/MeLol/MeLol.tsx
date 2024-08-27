@@ -20,7 +20,7 @@ const MeLol = () => {
     verifyAuth();
   }, [store, navigate]);
 
-  return <div>MeLol</div>;
+  return <div>Account--Page</div>;
 };
 
 export default MeLol;
