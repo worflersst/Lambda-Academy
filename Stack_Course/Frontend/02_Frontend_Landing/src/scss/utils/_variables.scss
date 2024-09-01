@@ -1,0 +1,102 @@
+:root {
+	--color-text-primary: #ff474d;
+	--color-text-main: #212121;
+	--color-text-white: #ffffff;
+	--color-text-second: #5c5c5c;
+	--color-text-placeholder: #bdbdbd;
+
+	--color-input: #f3f4f5;
+
+	--color-background-white: #ffffff;
+	--color-background-grey: #f6f6f6;
+	--color-background-black: #363636;
+
+	--color-gradient-radial-15: radial-gradient(circle, #dadada 15%, #fafafa 15%);
+	--color-gradient-radial-20: radial-gradient(circle, #ffffff 20%, #fafafa 20%);
+	--color-gradient-radial-50: radial-gradient(circle, #f6f5f5 50%, #fafafa 50%);
+	--color-gradient-radial-60: radial-gradient(circle, #ffffff 60%, #fafafa 60%);
+	--color-gradient-diamond: radial-gradient(circle, #6d6d6d2e 18%, #fafafa 0%);
+
+	--color-background-elements-diamond: #fb242b;
+	--color-background-elements-diamond-60: #fb242b99;
+
+	--color-button-primary: #ff474d;
+	--color-button-second: #ffffff;
+	--color-button-black: #212121;
+
+	--color-shadow-10: #2121211a;
+
+	/* Типография под Gilroy */
+	--title-height-1: 59px;
+
+	--title-weight-all: 600;
+
+	--title-height-2: 54px;
+
+	--title-height-3: 44px;
+
+	--title-height-4: 39px;
+
+	--title-height-4: 34px;
+
+	--subtitle-size-1: 24px;
+	--subtitle-height-1: 29px;
+
+	--subtitle-size-2: 20px;
+	--subtitle-height-2: 29px;
+
+	--subtitle-weight-all: 600;
+
+	--description-size: 14px;
+	--description-height: 24px;
+	--description-weight: 500;
+
+	--button-main-size: 16px;
+	--button-main-height: 20px;
+	--button-main-weight: 700;
+
+	--button-header-tabs-size: 16px;
+	--button-header-tabs-height: 19px;
+	--button-header-tabs-weight: 500;
+
+	--button-header-button-size: 14px;
+	--button-header-button-height: 17px;
+	--button-header-button-weight: 500;
+
+	/* Типография под Inter */
+	--text-body-size-1: 18px;
+	--text-body-height-1: 14px;
+	--text-body-weight-1: 400;
+
+	--text-body-size-2: 16px;
+	--text-body-height-2: 23px;
+	--text-body-weight-2: 400;
+
+	--text-placeholder-size: 14px;
+	--text-placeholder-height: 17px;
+	--text-placeholder-weight: 400;
+
+	--text-tabs-size: 14px;
+	--text-tabs-height: 17px;
+	--text-tabs-weight: 400;
+
+	--text-error-size: 12px;
+	--text-error-height: 15px;
+	--text-error-weight: 400;
+
+	// chetatam))
+	--border: 1px solid var(--color-text-main);
+	--border-radius: 16px;
+	--border-radius-small: 8px;
+	--border-radius-large: 32px;
+
+	--font-family-base: 'Gilroy', sans-serif;
+
+	--input-height: 40px;
+	--input-height-large: 48px;
+
+	--button-height: 48px;
+	--button-height-large: 56px;
+
+	--o-transition-duration: 0.2s;
+}
