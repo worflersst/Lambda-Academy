@@ -1,21 +1,12 @@
-//TO-DO решить проблему с импортом миксина мобайл
+@use 'mixins.scss' as mixin;
+@use 'media.scss' as media-mixin;
 
-@use 'media.scss' as mixin;
 .visually-hidden {
-	position: absolute !important;
-	width: 1px !important;
-	height: 1px !important;
-	margin: -1px !important;
-	border: 0 !important;
-	padding: 0 !important;
-	white-space: nowrap !important;
-	clip-path: inset(100%) !important;
-	clip: rect(0 0 0 0) !important;
-	overflow: hidden !important;
+	@include mixin.visually-hidden;
 }
 
 .hidden-mobile {
-	@include mixin.mobile {
+	@include media-mixin.mobile {
 		display: none !important;
 	}
 }

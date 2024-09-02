@@ -1,8 +1,29 @@
+@forward 'variables';
+@use 'mixins' as mixin;
 body {
+	@include mixin.fluid-text(20, 14);
+
 	font-family: var(--font-family-base);
 	font-weight: 600;
-	font-size: 32px;
 	line-height: 1.28;
 	color: var(--color-text-main);
 	background-color: var(--color-background-white);
+}
+
+a,
+input,
+button,
+textarea,
+svg * {
+	transition-duration: var(--o-transition-duration);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1 {
+	@include mixin.fluid-text(48, 28);
+	font-weight: 600;
 }
