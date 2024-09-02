@@ -1,6 +1,6 @@
 //TO-DO решить проблему с импортом миксина мобайл
 
-@use 'mixins' as mixin;
+@use 'media.scss' as mixin;
 .visually-hidden {
 	position: absolute !important;
 	width: 1px !important;
@@ -15,7 +15,7 @@
 }
 
 .hidden-mobile {
-	@include mobile {
+	@include mixin.mobile {
 		display: none !important;
 	}
 }
