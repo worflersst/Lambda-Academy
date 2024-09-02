@@ -10,6 +10,8 @@ function App() {
 		<>
 			<div>
 				<button>Click</button>
+				<h1>Aboba</h1>
+				<p>Aboba work?</p>
 				<a href='https://vitejs.dev' target='_blank'>
 					<img src={viteLogo} className='logo' alt='Vite logo' />
 				</a>

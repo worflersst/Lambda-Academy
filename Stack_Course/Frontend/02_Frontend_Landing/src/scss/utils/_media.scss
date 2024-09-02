@@ -1,8 +1,8 @@
 $desktop-large: 1920px;
 $desktop-medium: 1440px;
-$desktop-small: 1280px;
+$laptop: 1280px;
 $tablet: 1024px;
-$mobile: 768px;
+$mobile-large: 768px;
 $mobile-small: 375px;
 
 @mixin desktop-large {
@@ -17,8 +17,8 @@ $mobile-small: 375px;
 	}
 }
 
-@mixin desktop-small {
-	@media (max-width: $desktop-small) {
+@mixin laptop {
+	@media (max-width: $laptop) {
 		@content;
 	}
 }
@@ -29,8 +29,8 @@ $mobile-small: 375px;
 	}
 }
 
-@mixin mobile {
-	@media (max-width: $mobile) {
+@mixin mobile-large {
+	@media (max-width: $mobile-large) {
 		@content;
 	}
 }

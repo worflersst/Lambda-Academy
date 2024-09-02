@@ -6,7 +6,7 @@
 }
 
 .hidden-mobile {
-	@include media-mixin.mobile {
+	@include media-mixin.mobile-large {
 		display: none !important;
 	}
 }
