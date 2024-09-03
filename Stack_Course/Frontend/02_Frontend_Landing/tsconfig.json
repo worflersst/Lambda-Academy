@@ -1,7 +1,9 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+	"extends": "./tsconfig.app.json",
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"jsx": "react-jsx"
+	},
+	"include": ["src"]
 }
