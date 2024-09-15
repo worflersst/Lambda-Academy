@@ -1,0 +1,51 @@
+.switchWrapper {
+	margin-top: 8px;
+}
+
+.clickArea {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.arrow {
+	margin-left: 4px;
+}
+
+.dropdown {
+	padding: 5px 0px;
+	position: absolute;
+	width: 48px;
+	height: 138px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: rgba(33, 33, 33, 0.1) 4px 4px 16.4664px 0px;
+}
+
+.flagWrapper {
+	width: 48px;
+	height: 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.flagWrapper:not(:last-child) .grayLine {
+	border-bottom: 1px solid rgba(243, 244, 245, 1);
+}
+
+.flagWrapper:last-child .grayLine {
+	border-bottom: none;
+}
+
+.grayLine {
+	margin-top: 5px;
+	width: 24px;
+	height: 24px;
+}
+
+.flag {
+}

@@ -1,0 +1,41 @@
+.header {
+	width: 100%;
+	height: auto;
+	position: fixed;
+	padding: 24px 0px;
+	background-color: rgba(255, 255, 255, 0);
+	z-index: 999;
+	&.scroll {
+		background-color: rgba(255, 255, 255, 0.9);
+		backdrop-filter: blur(10px);
+	}
+}
+
+.rootDiv {
+	width: 1312px;
+	height: 48px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.leftSection {
+	display: flex;
+	align-items: center;
+}
+
+.logoWrapper {
+	display: flex;
+	align-items: center;
+}
+
+.logoText {
+	margin-left: 10px;
+	width: 60px;
+}
+
+.switcher {
+	margin-left: 16px;
+	margin-bottom: 2px;
+}

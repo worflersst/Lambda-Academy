@@ -7,7 +7,7 @@ body {
 	font-weight: 600;
 	line-height: 1.28;
 	color: var(--color-text-main);
-	background-color: var(--color-background-white);
+	background-color: var(--color-bg-white);
 }
 
 a,
@@ -26,4 +26,9 @@ a {
 h1 {
 	@include mixin.fluid-text(48, 28);
 	font-weight: 600;
+}
+
+//For test
+main {
+	height: 100vh;
 }
