@@ -1,6 +1,7 @@
 import Logo from '@/shared/assets/Logo.svg';
 import Tinvio from '@/shared/assets/Tinvio.svg';
 
+import { Button } from '@/shared/ui/Button/ui';
 import { LanguageSwitcher } from '@/shared/ui/LanguageSwitcher';
 import { NavLinkMenu } from '@/shared/ui/NavLink';
 import { useEffect, useState } from 'react';
@@ -44,11 +45,16 @@ export const Header = () => {
 				<div>
 					<NavLinkMenu />
 				</div>
-				{/* Заглушка под компонент */}
+
 				<div>
-					<button>Get Started</button>
+					<Button
+						size='small'
+						type='button'
+						version={scrolled ? 'primary' : 'second'}
+					>
+						Get Started
+					</Button>
 				</div>
-				{/* Заглушка под компонент */}
 			</div>
 		</header>
 	);

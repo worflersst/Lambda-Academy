@@ -1,0 +1,33 @@
+.button {
+	font-weight: var(--button-main-weight);
+	border-radius: 19px;
+}
+
+.second {
+	background-color: var(--color-button-second);
+	color: var(--color-text-main);
+}
+
+.primary {
+	background-color: var(--color-button-primary);
+	color: var(--color-text-white);
+}
+
+.small {
+	width: 156px;
+	height: 48px;
+}
+
+.medium {
+	width: 210px;
+	height: 56px;
+}
+.medium_large {
+	width: 220px;
+	height: 56px;
+}
+
+.large {
+	width: 286px;
+	height: 47px;
+}
