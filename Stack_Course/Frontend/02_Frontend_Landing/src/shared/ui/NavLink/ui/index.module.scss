@@ -1,15 +1,19 @@
 .linkMenu {
-	width: 325px;
-	height: 19px;
+	width: 347px;
+	height: 22px;
 }
 .linkMenuList {
 	text-decoration: none;
 	display: flex;
-	justify-content: space-between;
-}
-.link {
+	gap: 72px;
 }
 
 .activeLink {
 	color: var(--color-text-primary);
+}
+
+.link {
+	font-size: 18px;
+	line-height: 22px;
+	font-weight: 400;
 }

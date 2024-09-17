@@ -45,7 +45,7 @@ export const LanguageSwitcher = () => {
 				<span>{selectVariant.label}</span>
 				<div>
 					<img
-						src={isActive ? SwitcherArrowDown : SwitcherArrowUp}
+						src={isActive ? SwitcherArrowUp : SwitcherArrowDown}
 						alt='dropdown switcher button'
 						className={styles.arrow}
 					/>

@@ -26,7 +26,7 @@ export const NavLinkMenu = () => {
 								: `${styles.link}`
 						}
 					>
-						Feature
+						Features
 					</NavLink>
 				</li>
 				<li className={styles.linkMenuItem}>
