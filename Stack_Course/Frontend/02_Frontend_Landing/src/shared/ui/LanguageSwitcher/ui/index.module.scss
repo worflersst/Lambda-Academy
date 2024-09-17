@@ -1,4 +1,5 @@
 .switchWrapper {
+	position: relative;
 	margin-top: 8px;
 }
 
@@ -14,9 +15,8 @@
 }
 
 .dropdown {
-	right: 1424px;
-	bottom: 0px;
-	top: 68px;
+	top: 110%;
+	left: -3px;
 	padding: 5px 0px;
 	position: absolute;
 	width: 48px;
