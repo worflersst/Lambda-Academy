@@ -29,7 +29,7 @@ export const Header = () => {
 			<div className={styles.rootDiv}>
 				<div className={styles.leftSection}>
 					<div className={styles.logoWrapper}>
-						<Link to='/'>
+						<Link to='/' className={styles.logoMain}>
 							<img src={Logo} alt='logo' loading='lazy' />
 						</Link>
 						<Link to='/' className={styles.logoText}>
@@ -46,7 +46,7 @@ export const Header = () => {
 					<NavLinkMenu />
 				</div>
 
-				<div>
+				<div className={styles.button}>
 					<Button
 						size='small'
 						type='button'

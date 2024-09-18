@@ -17,3 +17,16 @@
 	line-height: 22px;
 	font-weight: 400;
 }
+
+@media (max-width: 1440px) {
+	.linkMenu {
+		width: 325px;
+		height: 19px;
+	}
+
+	.link {
+		font-size: 16px;
+		line-height: 19px;
+		font-weight: 400;
+	}
+}

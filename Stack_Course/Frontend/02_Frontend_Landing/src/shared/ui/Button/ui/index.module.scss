@@ -34,3 +34,16 @@
 	width: 286px;
 	height: 47px;
 }
+
+@media (max-width: 1440px) {
+	.button {
+		border-radius: 16px;
+		font-size: 14px;
+		line-height: 17px;
+	}
+
+	.small {
+		width: 129px;
+		height: 40px;
+	}
+}

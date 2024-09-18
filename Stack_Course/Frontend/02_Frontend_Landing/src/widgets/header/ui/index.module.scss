@@ -42,3 +42,34 @@
 .nawLinkMenu {
 	margin-right: 27px;
 }
+
+@media (max-width: 1440px) {
+	.rootDiv {
+		width: 1192px;
+		height: 40px;
+	}
+
+	.logoMain {
+		width: 44px;
+		height: 38px;
+	}
+
+	.logoText {
+		margin-left: 9px;
+		width: 60px;
+		height: 19px;
+	}
+
+	.switcher {
+		margin-left: 27px;
+		margin-bottom: 2px;
+	}
+
+	.nawLinkMenu {
+		margin-right: 38px;
+	}
+
+	.button {
+		margin-right: 2px;
+	}
+}
