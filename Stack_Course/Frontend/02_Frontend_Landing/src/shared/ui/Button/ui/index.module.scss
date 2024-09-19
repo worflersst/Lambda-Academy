@@ -35,7 +35,7 @@
 	height: 47px;
 }
 
-@media (max-width: 1440px) {
+@include media-mixin.desktop-medium {
 	.button {
 		border-radius: 16px;
 		font-size: 14px;

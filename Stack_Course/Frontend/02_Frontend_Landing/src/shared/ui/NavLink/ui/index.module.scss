@@ -15,10 +15,10 @@
 .link {
 	font-size: 18px;
 	line-height: 22px;
-	font-weight: 400;
+	font-weight: 500;
 }
 
-@media (max-width: 1440px) {
+@include media-mixin.desktop-medium {
 	.linkMenu {
 		width: 325px;
 		height: 19px;
@@ -27,6 +27,5 @@
 	.link {
 		font-size: 16px;
 		line-height: 19px;
-		font-weight: 400;
 	}
 }

@@ -9,6 +9,10 @@ export default defineConfig({
 		preprocessorOptions: {
 			scss: {
 				implementation: sass,
+				additionalData: `
+				@use "@/app/scss/utils/media" as media-mixin;
+				@use "@/app/scss/utils/mixins" as mixin;
+				`,
 			},
 		},
 	},

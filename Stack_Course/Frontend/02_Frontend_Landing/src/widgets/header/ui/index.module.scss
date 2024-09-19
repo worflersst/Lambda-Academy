@@ -43,7 +43,7 @@
 	margin-right: 27px;
 }
 
-@media (max-width: 1440px) {
+@include media-mixin.desktop-medium {
 	.rootDiv {
 		width: 1192px;
 		height: 40px;
@@ -73,3 +73,5 @@
 		margin-right: 2px;
 	}
 }
+
+// Поиграй с ползунками пиксельпёрфекс, измени размер лого, проверь жирность текста подходит ли пятисотка.
