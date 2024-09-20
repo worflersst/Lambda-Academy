@@ -14,8 +14,13 @@
 
 .link {
 	font-size: 18px;
-	line-height: 22px;
+	line-height: 27px;
 	font-weight: 500;
+	transition-duration: var(--o-transition-duration);
+}
+
+.link:hover {
+	color: var(--color-text-primary);
 }
 
 @include media-mixin.desktop-medium {

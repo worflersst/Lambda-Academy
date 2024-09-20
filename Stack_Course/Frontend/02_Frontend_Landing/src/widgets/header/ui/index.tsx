@@ -29,11 +29,21 @@ export const Header = () => {
 			<div className={styles.rootDiv}>
 				<div className={styles.leftSection}>
 					<div className={styles.logoWrapper}>
-						<Link to='/' className={styles.logoMain}>
-							<img src={Logo} alt='logo' loading='lazy' />
+						<Link to='/' className={styles.logoMainWrapper}>
+							<img
+								src={Logo}
+								alt='logo'
+								loading='lazy'
+								className={styles.logoMain}
+							/>
 						</Link>
-						<Link to='/' className={styles.logoText}>
-							<img src={Tinvio} alt='logo' loading='lazy' />
+						<Link to='/' className={styles.logoTextWrapper}>
+							<img
+								src={Tinvio}
+								alt='logo'
+								loading='lazy'
+								className={styles.logoText}
+							/>
 						</Link>
 					</div>
 					<div className={styles.switcher}>

@@ -4,6 +4,7 @@
 	border: none;
 	font-weight: 700;
 	font-size: 17px;
+	transition-duration: var(--o-transition-duration);
 }
 
 .second {
@@ -11,9 +12,25 @@
 	color: var(--color-text-main);
 }
 
+.second:hover {
+	background-color: var(--color-button-hovered1);
+}
+
+.second:active {
+	background-color: var(--color-button-hovered1);
+}
+
 .primary {
 	background-color: var(--color-button-primary);
 	color: var(--color-text-white);
+}
+
+.primary:hover {
+	background-color: var(--color-button-hovered2);
+}
+
+.primary:active {
+	background-color: var(--color-button-hovered2);
 }
 
 .small {

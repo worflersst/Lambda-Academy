@@ -7,7 +7,12 @@
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+}
+
+.label {
 	font-weight: 500;
+	font-size: 18px;
+	line-height: 27px;
 }
 
 .arrow {
@@ -49,4 +54,10 @@
 	margin-top: 5px;
 	width: 24px;
 	height: 24px;
+}
+
+@include media-mixin.desktop-medium {
+	.label {
+		font-size: 16px;
+	}
 }

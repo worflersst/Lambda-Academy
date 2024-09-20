@@ -30,8 +30,25 @@
 	align-items: center;
 }
 
+.logoMainWrapper {
+	width: 55px;
+	height: 48px;
+}
+
+.logoMain {
+	width: 100%;
+	height: 100%;
+}
+
+.logoTextWrapper {
+	margin-left: 8px;
+	width: 70px;
+	height: 22px;
+}
+
 .logoText {
-	margin-left: 10px;
+	width: 100%;
+	height: 100%;
 }
 
 .switcher {
@@ -49,29 +66,26 @@
 		height: 40px;
 	}
 
-	.logoMain {
+	.logoMainWrapper {
 		width: 44px;
-		height: 38px;
+		height: 40px;
 	}
 
-	.logoText {
-		margin-left: 9px;
-		width: 60px;
-		height: 19px;
+	.logoTextWrapper {
+		margin-left: 4px;
+		width: 70px;
+		height: 20px;
 	}
 
 	.switcher {
-		margin-left: 27px;
-		margin-bottom: 2px;
+		margin-left: 22px;
 	}
 
 	.nawLinkMenu {
-		margin-right: 38px;
+		margin-right: 39px;
 	}
 
 	.button {
 		margin-right: 2px;
 	}
 }
-
-// Поиграй с ползунками пиксельпёрфекс, измени размер лого, проверь жирность текста подходит ли пятисотка.
