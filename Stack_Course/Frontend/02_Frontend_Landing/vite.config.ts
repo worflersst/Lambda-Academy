@@ -12,6 +12,7 @@ export default defineConfig({
 				additionalData: `
 				@use "@/app/scss/utils/media" as media-mixin;
 				@use "@/app/scss/utils/mixins" as mixin;
+				@use "@/app/scss/utils/utils" as *;
 				`,
 			},
 		},

@@ -1,17 +1,17 @@
 @use 'mixins.scss' as mixin;
 @use 'media.scss' as media-mixin;
 
-.visually-hidden {
+.visuallyHidden {
 	@include mixin.visually-hidden;
 }
 
-.hidden-mobile {
+.hiddenMobile {
 	@include media-mixin.mobile-large {
 		display: none !important;
 	}
 }
 
-.visible-mobile {
+.visibleMobile {
 	@include media-mixin.mobile-large-above {
 		display: none !important;
 	}
