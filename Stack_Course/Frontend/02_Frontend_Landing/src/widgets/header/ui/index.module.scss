@@ -67,18 +67,18 @@
 	}
 
 	.logoMainWrapper {
-		width: 44px;
+		width: 45px;
 		height: 40px;
 	}
 
 	.logoTextWrapper {
-		margin-left: 4px;
+		margin-left: 5px;
 		width: 70px;
 		height: 20px;
 	}
 
 	.switcher {
-		margin-left: 22px;
+		margin-left: 20px;
 	}
 
 	.nawLinkMenu {
@@ -87,5 +87,32 @@
 
 	.button {
 		margin-right: 2px;
+	}
+}
+
+@include media-mixin.laptop {
+	.rootDiv {
+		width: 1032px;
+		height: 40px;
+	}
+}
+
+@include media-mixin.tablet {
+	.rootDiv {
+		width: 944px;
+		height: 40px;
+	}
+
+	.switcher {
+		margin-left: 19px;
+	}
+
+	.nawLinkMenu {
+		margin-right: 42px;
+	}
+
+	.button {
+		margin-right: -1px;
+		margin-bottom: 3px;
 	}
 }

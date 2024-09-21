@@ -57,7 +57,17 @@
 }
 
 @include media-mixin.desktop-medium {
+	.switchWrapper {
+		margin-top: 7px;
+	}
+
 	.label {
 		font-size: 16px;
+	}
+}
+
+@include media-mixin.tablet {
+	.switchWrapper {
+		margin-top: 3px;
 	}
 }

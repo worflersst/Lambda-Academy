@@ -42,7 +42,7 @@ export const LanguageSwitcher = () => {
 			}}
 		>
 			<div className={styles.clickArea}>
-				<span>{selectVariant.label}</span>
+				<span className={styles.label}>{selectVariant.label}</span>
 				<div>
 					<img
 						src={isActive ? SwitcherArrowUp : SwitcherArrowDown}
