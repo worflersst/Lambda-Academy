@@ -5,6 +5,8 @@ $tablet: 1024px;
 $mobile-large: 768px;
 $mobile-small: 375px;
 
+$mobile-large-above: 769px;
+
 @mixin desktop-large {
 	@media (max-width: $desktop-large) {
 		@content;
@@ -31,6 +33,12 @@ $mobile-small: 375px;
 
 @mixin mobile-large {
 	@media (max-width: $mobile-large) {
+		@content;
+	}
+}
+
+@mixin mobile-large-above {
+	@media (min-width: $mobile-large-above) {
 		@content;
 	}
 }

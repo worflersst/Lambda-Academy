@@ -10,3 +10,9 @@
 		display: none !important;
 	}
 }
+
+.visible-mobile {
+	@include media-mixin.mobile-large-above {
+		display: none !important;
+	}
+}
