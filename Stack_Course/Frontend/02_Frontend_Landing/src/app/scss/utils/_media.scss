@@ -3,7 +3,7 @@ $desktop-medium: 1440px;
 $laptop: 1280px;
 $tablet: 1024px;
 $mobile-large: 768px;
-$mobile-small: 375px;
+$mobile: 375px;
 
 $mobile-large-above: 769px;
 
@@ -43,8 +43,8 @@ $mobile-large-above: 769px;
 	}
 }
 
-@mixin mobile-small {
-	@media (max-width: $mobile-small) {
+@mixin mobile {
+	@media (max-width: $mobile) {
 		@content;
 	}
 }

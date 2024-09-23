@@ -1,0 +1,53 @@
+.menuButtonClose,
+.menuButtonOpen {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 24px;
+	height: 18px;
+	cursor: pointer;
+	transition: all 1s ease-in-out;
+}
+
+.menuButtonBurger {
+	width: 24px;
+	height: 3px;
+	border-radius: 100px;
+	background-color: var(--color-text-second);
+	transition: all 0.4s ease-in-out;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 24px;
+		height: 3px;
+		background-color: var(--color-text-second);
+		border-radius: 100px;
+		transition: all 0.4s ease-in-out;
+		left: 0;
+	}
+
+	&::before {
+		transform: translateY(8px);
+	}
+
+	&::after {
+		transform: translateY(-8px);
+	}
+}
+
+.menuButtonOpen .menuButtonBurger {
+	transform: translate(-50px);
+	background: transparent;
+}
+
+.menuButtonOpen .menuButtonBurger {
+	&::before {
+		transform: rotate(45deg) translate(35px, -35px);
+	}
+	&::after {
+		transform: rotate(-45deg) translate(35px, 35px);
+	}
+}

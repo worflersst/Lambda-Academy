@@ -43,14 +43,10 @@
 	width: 210px;
 	height: 56px;
 }
-.medium_large {
-	width: 220px;
-	height: 56px;
-}
 
 .large {
-	width: 286px;
-	height: 47px;
+	width: 220px;
+	height: 56px;
 }
 
 @include media-mixin.desktop-medium {

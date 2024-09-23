@@ -116,3 +116,25 @@
 		margin-bottom: 3px;
 	}
 }
+
+@include media-mixin.mobile-large {
+	.header {
+		padding: 14px 0px;
+	}
+	.rootDiv {
+		width: 737px;
+		height: 40px;
+		margin-inline: 10px;
+	}
+}
+
+@include media-mixin.mobile {
+	.header {
+		padding: 24px 0px;
+	}
+	.rootDiv {
+		width: 343px;
+		height: 38px;
+		margin-inline: 15px;
+	}
+}

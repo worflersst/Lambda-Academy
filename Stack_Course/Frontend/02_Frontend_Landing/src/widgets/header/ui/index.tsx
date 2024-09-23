@@ -1,6 +1,7 @@
 import Logo from '@/shared/assets/Logo.svg';
 import Tinvio from '@/shared/assets/Tinvio.svg';
 
+import { BurgerButton } from '@/shared/ui/BurgerButton';
 import { Button } from '@/shared/ui/Button';
 import { LanguageSwitcher } from '@/shared/ui/LanguageSwitcher';
 import { NavLinkMenu } from '@/shared/ui/NavLink';
@@ -46,17 +47,17 @@ export const Header = () => {
 							/>
 						</Link>
 					</div>
-					<div className={styles.switcher}>
+					<div className={`${styles.switcher} ${styles.hiddenMobile} `}>
 						<div>
 							<LanguageSwitcher />
 						</div>
 					</div>
 				</div>
-				<div className={styles.nawLinkMenu}>
+				<div className={`${styles.nawLinkMenu} ${styles.hiddenMobile}`}>
 					<NavLinkMenu />
 				</div>
 
-				<div className={styles.button}>
+				<div className={`${styles.button} ${styles.hiddenMobile}`}>
 					<Button
 						size='small'
 						type='button'
@@ -64,6 +65,9 @@ export const Header = () => {
 					>
 						Get Started
 					</Button>
+				</div>
+				<div className={`${styles.burger} ${styles.visibleMobile}`}>
+					<BurgerButton />
 				</div>
 			</div>
 		</header>
