@@ -99,8 +99,9 @@
 
 @include media-mixin.tablet {
 	.rootDiv {
-		width: 944px;
+		width: auto;
 		height: 40px;
+		margin-inline: 10px;
 	}
 
 	.switcher {
@@ -119,12 +120,12 @@
 
 @include media-mixin.mobile-large {
 	.header {
-		padding: 14px 0px;
+		padding: 23px 0px;
 	}
 	.rootDiv {
-		width: 737px;
+		width: auto;
 		height: 40px;
-		margin-inline: 10px;
+		margin-inline: 16px;
 	}
 }
 
@@ -133,8 +134,6 @@
 		padding: 24px 0px;
 	}
 	.rootDiv {
-		width: 343px;
 		height: 38px;
-		margin-inline: 15px;
 	}
 }
