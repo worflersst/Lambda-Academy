@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styles from './index.module.scss';
 
-export const NavLinkMenu = () => {
+export const NavLinkModal = () => {
 	return (
 		<nav className={styles.linkMenu}>
 			<ul className={styles.linkMenuList}>

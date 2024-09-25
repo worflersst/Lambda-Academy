@@ -1,0 +1,30 @@
+.modal {
+	height: 92vh;
+	width: 100vw;
+	background-color: var(--color-bg-white);
+	position: fixed;
+	top: 70px;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+	z-index: 1;
+	transform: scale(0);
+}
+
+.modalActive {
+	transform: scale(1);
+}
+
+.modalContent {
+	width: 90vw;
+	height: 61vh;
+	max-width: 1200px;
+	max-height: 800px;
+	padding: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+}

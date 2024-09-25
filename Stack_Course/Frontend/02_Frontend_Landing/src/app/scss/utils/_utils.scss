@@ -11,6 +11,12 @@
 	}
 }
 
+.hiddenMobileSmall {
+	@include media-mixin.mobile-small-above {
+		display: none !important;
+	}
+}
+
 .visibleMobile {
 	@include media-mixin.mobile-large-above {
 		display: none !important;

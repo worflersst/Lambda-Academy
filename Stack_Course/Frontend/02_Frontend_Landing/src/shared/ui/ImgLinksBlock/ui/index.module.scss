@@ -1,0 +1,24 @@
+.imgLinkWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.leftBlock {
+	display: flex;
+	width: 80px;
+	height: 32px;
+	gap: 16px;
+}
+
+.rightBlock {
+	display: flex;
+	gap: 16px;
+}
+
+.spanLine {
+	width: 1px;
+	height: 32px;
+	background-color: var(--color-span-line);
+	margin-inline: 24px;
+}

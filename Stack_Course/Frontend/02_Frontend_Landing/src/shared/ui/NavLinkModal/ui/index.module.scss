@@ -1,0 +1,23 @@
+.linkMenu {
+	width: 90px;
+	height: 180px;
+}
+
+.linkMenuList {
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 48px;
+}
+
+.link {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 26px;
+}
+
+.activeLink {
+	color: var(--color-text-primary);
+}

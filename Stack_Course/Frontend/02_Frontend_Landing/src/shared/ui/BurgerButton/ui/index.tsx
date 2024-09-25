@@ -14,7 +14,9 @@ export const BurgerButton = () => {
 				setOpenState();
 			}}
 		>
-			<div className={styles.menuButtonBurger}></div>
+			<div className={styles.menuButtonBurger}>
+				<span className={styles.visuallyHidden}>burger button</span>
+			</div>
 		</div>
 	);
 };

@@ -127,6 +127,10 @@
 		height: 40px;
 		margin-inline: 16px;
 	}
+	.switcher {
+		margin-bottom: 0px;
+		margin-top: 2px;
+	}
 }
 
 @include media-mixin.mobile {
