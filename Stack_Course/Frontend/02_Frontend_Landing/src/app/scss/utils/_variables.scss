@@ -15,12 +15,22 @@
 
 	--color-gradient-radial-15: radial-gradient(circle, #dadada 15%, #fafafa 15%);
 	--color-gradient-radial-20: radial-gradient(circle, #ffffff 20%, #fafafa 20%);
+	--color-gradient-radial-30: radial-gradient(circle, #373737 30%, #fafafa 0%);
 	--color-gradient-radial-50: radial-gradient(circle, #f6f5f5 50%, #fafafa 50%);
 	--color-gradient-radial-60: radial-gradient(circle, #ffffff 60%, #fafafa 60%);
+	--color-gradient-radial-80: radial-gradient(circle, #dadada 80%, #fafafa 80%);
+	--color-gradient-radial-100: radial-gradient(
+		circle,
+		#dadada 100%,
+		#fafafa 100%
+	);
 	--color-gradient-diamond: radial-gradient(circle, #6d6d6d2e 18%, #fafafa 0%);
 
 	--color-bg-elements-diamond: #fb242b;
 	--color-bg-elements-diamond-60: #fb242b99;
+	--color-bg-elements-diamond-40: #fb242b66;
+
+	--color-bg-elements-diamond-30: #fb242b4d;
 
 	--color-button-primary: #ff474d;
 	--color-button-second: #ffffff;

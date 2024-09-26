@@ -1,0 +1,43 @@
+.rectangle {
+	height: var(--widthAndHeight);
+	width: var(--widthAndHeight);
+	transform: rotate(45deg);
+	position: absolute;
+}
+
+.Red30 {
+	background-color: var(--color-bg-elements-diamond-30);
+}
+.Red40 {
+	background-color: var(--color-bg-elements-diamond-40);
+}
+.Red60 {
+	background-color: var(--color-bg-elements-diamond-60);
+}
+.Red100 {
+	background-color: var(--color-bg-elements-diamond);
+}
+
+.Ghost15 {
+	background-color: var(--color-gradient-radial-15);
+}
+
+.Ghost20 {
+	background-color: var(--color-gradient-radial-20);
+}
+
+.Ghost30 {
+	background-color: var(--color-gradient-radial-30);
+}
+
+.Ghost50 {
+	background-color: var(--color-gradient-radial-50);
+}
+
+.Ghost80 {
+	background-color: var(--color-gradient-radial-80);
+}
+
+.Ghost100 {
+	background-color: var(--color-gradient-radial-100);
+}
