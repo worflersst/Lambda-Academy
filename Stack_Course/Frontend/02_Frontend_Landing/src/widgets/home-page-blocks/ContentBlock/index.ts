@@ -1,0 +1,1 @@
+export { HomeContentBlock } from './ui';

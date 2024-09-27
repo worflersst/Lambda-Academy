@@ -2,7 +2,10 @@
 	height: var(--widthAndHeight);
 	width: var(--widthAndHeight);
 	transform: rotate(45deg);
-	position: absolute;
+	border-radius: var(--borderRadius);
+	// заглушка
+	// border: 2px solid red;
+	// заглушка
 }
 
 .Red30 {

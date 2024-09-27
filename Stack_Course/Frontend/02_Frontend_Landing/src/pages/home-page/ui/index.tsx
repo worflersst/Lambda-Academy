@@ -1,3 +1,9 @@
+import { HomeContentBlock } from '@/widgets/home-page-blocks/ContentBlock';
+
 export const HomePage = () => {
-	return <div></div>;
+	return (
+		<div>
+			<HomeContentBlock />
+		</div>
+	);
 };

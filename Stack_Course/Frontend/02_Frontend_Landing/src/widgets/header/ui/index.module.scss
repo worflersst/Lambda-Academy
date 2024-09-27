@@ -5,6 +5,7 @@
 	padding: 24px 0px;
 	background-color: rgba(255, 255, 255, 0);
 	z-index: 999;
+	transition-duration: 0.5s;
 	&.scroll {
 		background-color: rgba(255, 255, 255, 0.9);
 		backdrop-filter: blur(10px);

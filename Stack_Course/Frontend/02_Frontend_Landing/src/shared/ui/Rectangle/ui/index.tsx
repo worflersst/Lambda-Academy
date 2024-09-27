@@ -15,14 +15,24 @@ type variantColorType =
 
 interface RectanglePropse {
 	widthAndHeight: string;
+	borderRadius: string;
 	colorType: variantColorType;
 }
 
-export const Rectangle = ({ widthAndHeight, colorType }: RectanglePropse) => {
+export const Rectangle = ({
+	widthAndHeight,
+	borderRadius,
+	colorType,
+}: RectanglePropse) => {
 	return (
 		<div
 			className={` ${styles.rectangle} ${styles[colorType]}`}
-			style={{ '--widthAndHeight': widthAndHeight } as React.CSSProperties}
+			style={
+				{
+					'--widthAndHeight': widthAndHeight,
+					'--borderRadius': borderRadius,
+				} as React.CSSProperties
+			}
 		></div>
 	);
 };

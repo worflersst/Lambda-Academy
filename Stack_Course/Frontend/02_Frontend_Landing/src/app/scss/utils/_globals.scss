@@ -28,7 +28,12 @@ h1 {
 	font-weight: 600;
 }
 
-//For test
+body,
+html {
+	overflow-x: hidden;
+}
+
+//Заглушка под контент
 main {
-	height: 100vh;
+	height: 200vh;
 }

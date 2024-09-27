@@ -1,0 +1,132 @@
+.block {
+	width: 1312px;
+	height: 590px;
+	margin-inline: auto;
+
+	&InfoWrapper {
+		padding-top: 260px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&Info {
+		max-width: 478px;
+	}
+
+	&Title {
+		font-size: 48px;
+		line-height: 48px;
+		font-weight: 600;
+
+		&Red {
+			color: var(--color-text-primary);
+			font-size: 44px;
+			font-weight: 700;
+			line-height: 49px;
+		}
+
+		&Wrapper {
+			margin-bottom: 16px;
+		}
+	}
+
+	&Text {
+		font-size: 20px;
+		color: var(--color-text-second);
+		&Wrapper {
+			max-width: 412px;
+			margin-bottom: 32px;
+		}
+	}
+
+	&Button {
+		margin-bottom: 12px;
+	}
+
+	&Footer {
+		display: block;
+		display: flex;
+		gap: 8px;
+		&Text {
+			margin-left: 48px;
+			color: var(--color-text-second);
+			font-size: 16px;
+		}
+	}
+}
+
+.rectangle {
+	position: relative;
+
+	> * {
+		position: absolute;
+	}
+
+	&Top {
+		bottom: 528px;
+		left: 353px;
+	}
+
+	&Left {
+		bottom: -159px;
+		left: -92px;
+	}
+
+	&Right1 {
+		bottom: -395px;
+		left: 760px;
+	}
+
+	&Right2 {
+		bottom: -361px;
+		left: 792px;
+	}
+}
+
+.image {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	> * {
+		position: absolute;
+	}
+
+	&Stars {
+		width: 90px;
+		height: 80px;
+		bottom: 351px;
+		left: -44px;
+	}
+
+	&RectangleGroupWhite1 {
+		left: 719px;
+		bottom: 198px;
+		width: 192px;
+		height: 150px;
+		opacity: 0.33;
+		z-index: 1;
+	}
+
+	&RectangleGroupWhite2 {
+		left: 1197px;
+		bottom: -216px;
+		width: 328px;
+		height: 248px;
+		opacity: 0.33;
+		z-index: 1;
+	}
+
+	&Desktop {
+		width: 851px;
+		height: 639px;
+		left: 774px;
+		bottom: -72px;
+	}
+
+	&Mobile {
+		width: 255px;
+		height: 415px;
+		left: 623px;
+		bottom: -139px;
+	}
+}
