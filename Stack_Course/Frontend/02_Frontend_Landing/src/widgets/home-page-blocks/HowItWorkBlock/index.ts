@@ -1,0 +1,1 @@
+export { HowItWorkBlock } from './ui';

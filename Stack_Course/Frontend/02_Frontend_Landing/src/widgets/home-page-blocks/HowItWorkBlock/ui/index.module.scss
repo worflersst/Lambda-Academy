@@ -1,0 +1,189 @@
+.section {
+	margin-top: 216px;
+	margin-left: 40px;
+	width: 100%;
+	height: 660px;
+	background-color: var(--color-bg-grey);
+	border-radius: 50px 0px 0px 50px;
+	transform: skewY(-8deg);
+	position: relative;
+	z-index: 5;
+	display: flex;
+	align-items: center;
+
+	&Blocks {
+		margin-inline: 230px;
+		display: flex;
+		gap: 180px;
+
+		&Left {
+			width: 600px;
+			height: 600px;
+			position: relative;
+
+			> * {
+				position: absolute;
+				width: 270px;
+				height: 110px;
+				transform: skew(-8deg, 16deg);
+				background-color: var(--color-bg-white);
+				border-radius: 20px;
+				box-shadow: 10px 5px 15px var(--color-shadow-10);
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			&1 {
+				top: 82px;
+				left: 65px;
+				&Title {
+					font-weight: 700;
+					font-size: 20px;
+					line-height: 26px;
+					padding-left: 4px;
+				}
+				&Text {
+					padding-top: 6px;
+					width: 190px;
+					height: 30px;
+					font-weight: 400;
+					font-size: 12px;
+					line-height: 14.5px;
+					color: var(--color-text-second);
+				}
+
+				&Image {
+					position: absolute;
+					width: 200px;
+					height: 200px;
+					z-index: -1;
+
+					> * {
+						position: absolute;
+						transform: skewY(-6deg);
+						pointer-events: none;
+					}
+
+					&Stars {
+						left: 104px;
+						top: -10px;
+					}
+
+					&Comment {
+						left: 179px;
+						top: 16px;
+					}
+
+					&Arrow {
+						left: 238px;
+						top: 83px;
+					}
+				}
+			}
+			&2 {
+				top: 287px;
+				left: 307px;
+
+				&Title {
+					font-weight: 700;
+					font-size: 20px;
+					line-height: 26px;
+				}
+				&Text {
+					margin-top: 5px;
+					width: 175px;
+					height: 30px;
+					font-weight: 400;
+					font-size: 12px;
+					line-height: 14.5px;
+					color: var(--color-text-second);
+				}
+
+				&Image {
+					position: absolute;
+					width: 200px;
+					height: 200px;
+					z-index: -1;
+
+					> * {
+						position: absolute;
+						transform: skewY(-6deg);
+						pointer-events: none;
+					}
+
+					&Stars {
+						left: 154px;
+						top: -21px;
+					}
+
+					&Todo {
+						left: -54px;
+						top: 114px;
+						transform: skewY(0deg);
+					}
+
+					&Arrow {
+						left: -172px;
+						top: 106px;
+						transform: skew(8deg, -11deg);
+					}
+				}
+			}
+			&3 {
+				top: 388px;
+				left: 40px;
+
+				&Title {
+					font-weight: 700;
+					font-size: 20px;
+					line-height: 26px;
+				}
+				&Text {
+					margin-top: 5px;
+					width: 175px;
+					height: 30px;
+					font-weight: 400;
+					font-size: 12px;
+					line-height: 14.5px;
+					color: var(--color-text-second);
+				}
+
+				&Image {
+					position: absolute;
+					width: 200px;
+					height: 200px;
+					z-index: -1;
+
+					> * {
+						position: absolute;
+						transform: skewY(-6deg);
+						pointer-events: none;
+					}
+					&Payments {
+						left: -40px;
+						top: 17px;
+					}
+					&TwoStars {
+						left: 30px;
+						top: -16px;
+						transform: skew(4deg, -7deg);
+					}
+
+					&ThreeStars {
+						left: 241px;
+						top: 18px;
+						transform: skew(6deg, -6deg);
+					}
+				}
+			}
+		}
+
+		&Right {
+			width: 600px;
+			height: 600px;
+			// border: solid red;
+		}
+	}
+}
