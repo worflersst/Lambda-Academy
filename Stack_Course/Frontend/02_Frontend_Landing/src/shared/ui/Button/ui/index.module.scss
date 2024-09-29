@@ -6,6 +6,10 @@
 	font-size: 17px;
 	transition-duration: var(--o-transition-duration);
 	cursor: pointer;
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: center;
 }
 
 .second {

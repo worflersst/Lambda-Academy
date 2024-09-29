@@ -1,13 +1,19 @@
-import ChatsStars from '@/shared/assets/home-page-picture/HowItWorkBlockChatsStars.svg';
-import ChatsToOrderArrow from '@/shared/assets/home-page-picture/HowItWorkBlockChatsToOrderArrow.svg';
-import Comment from '@/shared/assets/home-page-picture/HowItWorkBlockComment.svg';
-import OrderStars from '@/shared/assets/home-page-picture/HowItWorkBlockOrdersStars.svg';
-import ToDo from '@/shared/assets/home-page-picture/HowItWorkBlockOrderTo-DoRectangle.svg';
-import OrderArrow from '@/shared/assets/home-page-picture/HowItWorkBlockOrderToPaymentsArrow.svg';
-import Payments from '@/shared/assets/home-page-picture/HowItWorkBlockPaymentsPayRectangle.svg';
-import ThreeStars from '@/shared/assets/home-page-picture/HowItWorkBlockPaymentsThreeStars.svg';
-import TwoStars from '@/shared/assets/home-page-picture/HowItWorkBlockPaymentsTwoStars.svg';
+import {
+	ChatsStars,
+	ChatsToOrderArrow,
+	Comment,
+	OrderArrow,
+	OrderStars,
+	Payments,
+	PlayIcon,
+	ThreeStars,
+	ToDo,
+	TwoStars,
+} from '@/shared/assets/home-page-picture/HowItWorkBlock';
+import RectangleGroupWhite from '@/shared/assets/home-page-picture/RectangleGroupWhite.svg';
 
+import { Button } from '@/shared/ui/Button';
+import { Rectangle } from '@/shared/ui/Rectangle';
 import styles from './index.module.scss';
 
 export const HowItWorkBlock = () => {
@@ -79,14 +85,57 @@ export const HowItWorkBlock = () => {
 							/>
 							<img
 								src={ThreeStars}
-								alt=''
+								alt='Three Stars Image'
 								className={styles.sectionBlocksLeft3ImageThreeStars}
 							/>
 						</div>
 					</div>
 				</div>
 
-				<div className={styles.sectionBlocksRight}> </div>
+				<div className={styles.sectionBlocksRight}>
+					<div className={styles.sectionBlocksRightWrapper}>
+						<div className={styles.sectionBlocksRightText}>
+							<h2 className={styles.sectionBlocksRightTitle}>
+								Check out how it works
+							</h2>
+							<p className={styles.sectionBlocksRightParagraf}>
+								It’s easy! Exchange messages, create or confirm orders, send
+								invoices, and collect payments across your supply chain — all
+								within one dashboard.
+							</p>
+						</div>
+						<div>
+							<Button size='large' type='button' version='second'>
+								<img src={PlayIcon} alt='Play icon' />
+								Play Video
+							</Button>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/* background work */}
+			<div className={styles.background}>
+				<div className={styles.backgroundGroup1}>
+					<img
+						src={RectangleGroupWhite}
+						alt='RectangleGroupWhite'
+						loading='lazy'
+					/>
+				</div>
+				<div className={styles.backgroundGroup2}>
+					<img
+						src={RectangleGroupWhite}
+						alt='RectangleGroupWhite'
+						loading='lazy'
+					/>
+				</div>
+				<div className={styles.backgroundRectangle}>
+					<Rectangle
+						borderRadius='77px'
+						colorType='Ghost20'
+						widthAndHeight='496px'
+					/>
+				</div>
 			</div>
 		</div>
 	);

@@ -1,8 +1,11 @@
-import DesktopImage from '@/shared/assets/home-page-picture/ContentBlockDesktopImage.svg';
-import MobileImage from '@/shared/assets/home-page-picture/ContentBlockMobileImage.svg';
-import Stars from '@/shared/assets/home-page-picture/ContentBlockStars.svg';
-import Emoji from '@/shared/assets/home-page-picture/HomeEmoji.svg';
+import {
+	DesktopImage,
+	Emoji,
+	MobileImage,
+	Stars,
+} from '@/shared/assets/home-page-picture/ContentBlock';
 import RectangleGroupWhite from '@/shared/assets/home-page-picture/RectangleGroupWhite.svg';
+
 import { Button } from '@/shared/ui/Button';
 import { Rectangle } from '@/shared/ui/Rectangle';
 import styles from './index.module.scss';
