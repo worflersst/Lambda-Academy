@@ -1,0 +1,1 @@
+export { FeaturedTabsBlock } from './ui';

@@ -1,0 +1,75 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.title {
+	font-size: 44px;
+	font-weight: 600;
+	line-height: 54px;
+
+	&Text {
+		font-size: 44px;
+		font-weight: 700;
+		line-height: 55px;
+		color: var(--color-text-primary);
+	}
+}
+
+.buttons {
+	display: flex;
+	gap: 16px;
+
+	> * {
+		height: 40px;
+		border-radius: 8px;
+		border: none;
+		cursor: pointer;
+	}
+
+	&Num1 {
+		width: 110px;
+	}
+	&Num2 {
+		width: 114px;
+	}
+	&Num3 {
+		width: 134px;
+	}
+
+	&Active {
+		border: 1px solid var(--color-text-main);
+	}
+}
+
+.list {
+	list-style: none;
+	padding: 0px 0px 0px 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	&Item {
+		font-family: Inter;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 23px;
+		position: relative;
+
+		&::before {
+			position: absolute;
+			content: '';
+			left: -18px;
+			top: 7px;
+			width: 9px;
+			height: 9px;
+			background: radial-gradient(
+				95.51% 95.51% at 50% 50%,
+				#ff474d 0%,
+				rgba(255, 130, 134, 0.57) 100%
+			);
+			transform: rotate(45deg);
+		}
+	}
+}
