@@ -52,7 +52,7 @@ export const ThreeTabs = () => {
 					Chats
 				</button>
 				<button
-					className={`${styles.buttonsNum1} ${
+					className={`${styles.buttonsNum2} ${
 						isTab === tabs[1] ? styles.buttonsActive : ''
 					}`}
 					onClick={() => handleTabs(1)}
@@ -60,7 +60,7 @@ export const ThreeTabs = () => {
 					Orders
 				</button>
 				<button
-					className={`${styles.buttonsNum1} ${
+					className={`${styles.buttonsNum3} ${
 						isTab === tabs[2] ? styles.buttonsActive : ''
 					}`}
 					onClick={() => handleTabs(2)}

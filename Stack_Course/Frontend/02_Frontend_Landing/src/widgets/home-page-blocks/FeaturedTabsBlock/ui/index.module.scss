@@ -1,11 +1,38 @@
 .main {
-	margin-top: 200px;
+	margin-top: 170px;
 	width: 100%;
 	height: 790px;
 	border: red solid 1px;
+	display: flex;
+	gap: 40px;
+	justify-content: center;
+	align-items: center;
 }
 
 .leftBlock {
 	width: 575px;
 	height: 370px;
+	margin-left: 160px;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.rightBlock {
+	width: 850px;
+	height: 790px;
+	position: relative;
+
+	> * {
+		position: absolute;
+	}
+	&Num1 {
+		top: 84px;
+		left: 185px;
+	}
+
+	&Num2 {
+		top: 116px;
+		left: 219px;
+	}
 }
