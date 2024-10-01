@@ -1,23 +1,55 @@
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 25px;
 }
 
 .title {
 	font-size: 44px;
 	font-weight: 600;
 	line-height: 54px;
+	position: relative;
+}
 
-	&Text {
-		font-size: 44px;
-		font-weight: 700;
-		line-height: 55px;
-		color: var(--color-text-primary);
+.titleText {
+	margin-left: 10px;
+	display: inline-block;
+	position: absolute;
+	overflow: hidden;
+	border-right: 2px solid var(--color-text-main);
+	white-space: nowrap;
+	color: var(--color-text-primary);
+
+	&.Buddy {
+		width: 248px;
+		animation: typing 1s steps(10) forwards, blink 0.8s step-end infinite;
+	}
+
+	&.Speedy {
+		width: 273px;
+		animation: typing 1s steps(11) forwards, blink 0.8s step-end infinite;
+	}
+
+	&.Money {
+		width: 252px;
+		animation: typing 1s steps(10) forwards, blink 0.8s step-end infinite;
+	}
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+}
+
+@keyframes blink {
+	50% {
+		border-color: transparent;
 	}
 }
 
 .buttons {
+	margin-left: -5px;
 	display: flex;
 	gap: 16px;
 
@@ -30,6 +62,7 @@
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 17px;
+		transition: border-color 0.5s ease-in-out;
 	}
 
 	&Num1 {
@@ -49,16 +82,18 @@
 
 .list {
 	list-style: none;
-	padding: 0px 0px 0px 30px;
+	padding: 0px 0px 0px 18px;
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
 
 	&Item {
+		padding-left: 6px;
 		font-family: Inter;
-		font-size: 18px;
+		font-size: 19px;
 		font-weight: 400;
 		line-height: 23px;
+
 		position: relative;
 
 		&::before {
