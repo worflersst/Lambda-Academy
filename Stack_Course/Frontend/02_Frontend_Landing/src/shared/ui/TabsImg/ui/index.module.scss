@@ -1,0 +1,37 @@
+.section {
+	width: 850px;
+	height: 790px;
+	position: relative;
+
+	> * {
+		position: absolute;
+	}
+
+	&Img1 {
+		top: 48px;
+		left: 104px;
+		z-index: 2;
+		opacity: 0;
+		animation: activity 0.8s linear forwards;
+
+		@keyframes activity {
+			to {
+				opacity: 1;
+			}
+		}
+	}
+
+	&Img2 {
+		top: 193px;
+		left: 360px;
+		z-index: 2;
+		opacity: 0;
+		animation: activity 0.8s linear forwards;
+
+		@keyframes activity {
+			to {
+				opacity: 1;
+			}
+		}
+	}
+}

@@ -11,6 +11,7 @@ import RectangleGroupWhite from '@/shared/assets/home-page-picture/RectangleGrou
 
 import { Button } from '@/shared/ui/Button';
 import { Rectangle } from '@/shared/ui/Rectangle';
+import { TabsImage } from '@/shared/ui/TabsImg';
 import { ThreeTabs } from '@/shared/ui/ThreeTabs';
 import { useState } from 'react';
 import styles from './index.module.scss';
@@ -79,8 +80,7 @@ export const FeaturedTabsBlock = () => {
 						borderRadius='72px'
 					/>
 				</div>
-				<div className={styles.rightBlockImg1}>{isTab.img1}</div>
-				<div className={styles.rightBlockImg2}>{isTab.img2}</div>
+				<TabsImage isTab={isTab} />
 				<div className={styles.rightBlockImgStars}>
 					<img src={Stars} alt='Stars Image' />
 				</div>
