@@ -18,15 +18,15 @@ export const ThreeTabs = ({ tabs, isTab, setIsTab }) => {
 			<div className={styles.buttons}>
 				<button
 					className={`${styles.buttonsNum1} ${
-						isTab === tabs[0] ? styles.buttonsActive : ''
+						isTab.id === 1 ? styles.buttonsActive : ''
 					}`}
 					onClick={() => handleTabs(0)}
 				>
 					Chats
 				</button>
 				<button
-					className={`${styles.buttonsNum2} ${
-						isTab === tabs[1] ? styles.buttonsActive : ''
+					className={`${styles.buttonsNum1} ${
+						isTab.id === 2 ? styles.buttonsActive : ''
 					}`}
 					onClick={() => handleTabs(1)}
 				>
@@ -34,7 +34,7 @@ export const ThreeTabs = ({ tabs, isTab, setIsTab }) => {
 				</button>
 				<button
 					className={`${styles.buttonsNum3} ${
-						isTab === tabs[2] ? styles.buttonsActive : ''
+						isTab.id === 3 ? styles.buttonsActive : ''
 					}`}
 					onClick={() => handleTabs(2)}
 				>
