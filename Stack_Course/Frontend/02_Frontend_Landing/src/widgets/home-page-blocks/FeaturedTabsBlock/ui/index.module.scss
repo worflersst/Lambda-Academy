@@ -36,11 +36,13 @@
 	&Num1 {
 		top: 78px;
 		left: 159px;
+		z-index: 2;
 	}
 
 	&Num2 {
 		top: 114px;
 		left: 194px;
+		z-index: 2;
 	}
 
 	&ImgStars {
@@ -52,7 +54,7 @@
 		left: 376px;
 		width: 310px;
 		height: 235px;
-		z-index: 1;
+		z-index: 3;
 
 		img {
 			opacity: 0.5;

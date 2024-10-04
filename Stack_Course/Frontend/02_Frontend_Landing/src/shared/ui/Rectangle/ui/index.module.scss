@@ -3,9 +3,6 @@
 	width: var(--widthAndHeight);
 	transform: rotate(45deg);
 	border-radius: var(--borderRadius);
-	// заглушка
-	// border: 2px solid red;
-	// заглушка
 }
 
 .Red30 {
@@ -22,25 +19,25 @@
 }
 
 .Ghost15 {
-	background-color: var(--color-gradient-radial-15);
+	background: var(--color-gradient-radial-15);
 }
 
 .Ghost20 {
-	background-color: var(--color-gradient-radial-20);
+	background: var(--color-gradient-radial-20);
 }
 
 .Ghost30 {
-	background-color: var(--color-gradient-radial-30);
+	background: var(--color-gradient-radial-30);
 }
 
 .Ghost50 {
-	background-color: var(--color-gradient-radial-50);
+	background: var(--color-gradient-radial-50);
 }
 
 .Ghost80 {
-	background-color: var(--color-gradient-radial-80);
+	background: var(--color-gradient-radial-80);
 }
 
 .Ghost100 {
-	background-color: var(--color-gradient-radial-100);
+	background: var(--color-gradient-radial-100);
 }

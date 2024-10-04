@@ -1,0 +1,74 @@
+.section {
+	margin-top: 15px;
+	margin-right: 54px;
+	height: 245px;
+	display: flex;
+	justify-content: center;
+	border-radius: 40px;
+	background-color: var(--color-bg-grey);
+	position: relative;
+	z-index: 1;
+
+	&Display {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+		overflow: hidden;
+	}
+
+	&Title {
+		font-family: Gilroy;
+		font-size: 44px;
+		font-weight: 600;
+		line-height: 54px;
+	}
+
+	&Line {
+		width: 666px;
+		height: 1px;
+		background-color: #d2d2d2;
+		margin-bottom: 16px;
+	}
+
+	&Images {
+		display: flex;
+		gap: 95px;
+	}
+
+	&Bg {
+		position: absolute;
+		width: 500px;
+		height: 500px;
+		overflow: visible;
+		z-index: -1;
+
+		> * {
+			position: absolute;
+			z-index: 3;
+		}
+
+		&Rectangle1 {
+			top: -85px;
+			left: -445px;
+		}
+		&Rectangle2 {
+			top: -230px;
+			left: 620px;
+			opacity: 0.5;
+		}
+		&Image1 {
+			width: 420px;
+			height: 320px;
+			top: -220px;
+			left: 380px;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
