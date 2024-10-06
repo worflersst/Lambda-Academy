@@ -1,5 +1,6 @@
 import {
 	Pymnts,
+	Stars,
 	TechCrunch,
 	TechInasia,
 	VentureBeat,
@@ -7,15 +8,24 @@ import {
 import RectangleGroup from '@/shared/assets/home-page-picture/RectangleGroupWhite.svg';
 
 import { Rectangle } from '@/shared/ui/Rectangle';
+import { useInView } from 'react-intersection-observer';
 import styles from './index.module.scss';
 
 export const FeatureOnBlock = () => {
+	const { ref, inView } = useInView({
+		threshold: 0.2,
+	});
+
 	return (
-		<div className={styles.section}>
+		<div ref={ref} className={styles.section}>
 			<div className={styles.sectionDisplay}>
-				<h2 className={styles.sectionTitle}>Featured On</h2>
+				<h2 className={`${styles.sectionTitle} ${inView ? styles.Active : ''}`}>
+					Featured On
+				</h2>
 				<span className={styles.sectionLine}></span>
-				<div className={styles.sectionImages}>
+				<div
+					className={`${styles.sectionImages} ${inView ? styles.Active : ''}`}
+				>
 					<img src={TechCrunch} alt='Tech Crunch logo' />
 					<img src={TechInasia} alt='TechInasia logo' />
 					<img src={Pymnts} alt='Pymnts logo' />
@@ -41,9 +51,12 @@ export const FeatureOnBlock = () => {
 				<div className={styles.sectionBgImage1}>
 					<img src={RectangleGroup} alt='Rectangle group' />
 				</div>
+				<div className={styles.sectionBgImage2}>
+					<img src={Stars} alt='Stars right' />
+				</div>
 			</div>
 		</div>
 	);
 };
 
-// Разберись с интерсекшн обсервером и попробуй сделать анимацию для этого блока
+// отработай этот ектив класс на элементах
