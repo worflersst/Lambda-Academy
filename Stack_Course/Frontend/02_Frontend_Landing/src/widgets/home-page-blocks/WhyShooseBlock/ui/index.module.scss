@@ -1,0 +1,25 @@
+.section {
+	width: 100vw;
+	height: 960px;
+	margin-left: 55px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+	&Bg {
+		position: absolute;
+		top: 173px;
+		background-color: var(--color-bg-black);
+		width: 100vw;
+		height: 700px;
+		transform: skewY(-8deg);
+		border-radius: 45px;
+		z-index: 0;
+	}
+
+	&Slider {
+		color: white;
+		z-index: 1;
+	}
+}

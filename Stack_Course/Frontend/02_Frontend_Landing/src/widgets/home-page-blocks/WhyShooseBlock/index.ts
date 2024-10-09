@@ -1,0 +1,1 @@
+export { WhyShooseBlock } from './ui';
