@@ -1,8 +1,150 @@
 .switcher {
 	width: 1130px;
-	height: 377px;
-	border: red solid 1px;
+	height: 522px;
+	// border: red solid 1px;
+}
+
+.slidesWrapper {
+	width: 1130px;
+	height: 426px;
 }
 
 .slides {
+	width: 1130px;
+	height: 377px;
+	background-color: var(--color-bg-white);
+	border-radius: 32px;
+	position: relative;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	&Bg {
+		height: 123px;
+		background-color: rgba(241, 241, 241, 1);
+		border-radius: 32px;
+		position: relative;
+
+		&::before {
+			position: absolute;
+			right: 215px;
+			top: 70px;
+			content: url(../../../assets/home-page-picture/WhyShooseBlock/“.png);
+		}
+
+		&.textBgWidth1 {
+			width: 935px;
+		}
+		&.textBgWidth2 {
+			width: 975px;
+		}
+		&.textBgWidth3 {
+			width: 865px;
+		}
+		&.textBgWidth4 {
+			width: 935px;
+		}
+
+		&Text {
+			padding: 24px 0px 24px 24px;
+			width: 75%;
+			font-family: Inter;
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 25px;
+			color: var(--color-text-main);
+		}
+	}
+
+	&MainImages {
+		right: 1px;
+		position: absolute;
+		width: 300px;
+		height: 300px;
+
+		> * {
+			width: 100%;
+			height: 100%;
+		}
+
+		&I {
+			position: absolute;
+			filter: drop-shadow(10px 3px 0px rgb(255, 71, 77));
+		}
+
+		.mainImage1 {
+			top: -2px;
+			right: 85px;
+		}
+
+		.mainImage2 {
+			top: -10px;
+			right: 10px;
+		}
+
+		.mainImage3 {
+			top: -5px;
+			right: 39px;
+		}
+
+		.mainImage4 {
+			top: -7px;
+			right: 18px;
+		}
+
+		&S {
+			position: absolute;
+		}
+
+		.starsImage1 {
+			top: 1px;
+			right: -145px;
+		}
+
+		.starsImage2 {
+			top: 20px;
+			right: -183px;
+		}
+
+		.starsImage3 {
+			top: -20px;
+			right: -170px;
+		}
+
+		.starsImage4 {
+			top: 120px;
+			right: -115px;
+		}
+	}
+
+	&Logo {
+		display: flex;
+		gap: 12px;
+		margin-left: 20px;
+
+		&Wrap {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			gap: 4px;
+
+			&Title {
+				font-family: Gilroy;
+				font-size: 18px;
+				font-weight: 700;
+				line-height: 22px;
+				color: var(--color-text-main);
+			}
+
+			&Text {
+				font-family: Inter;
+				font-size: 12px;
+				font-weight: 400;
+				line-height: 14.5px;
+				text-transform: uppercase;
+				color: var(--color-text-second);
+			}
+		}
+	}
 }

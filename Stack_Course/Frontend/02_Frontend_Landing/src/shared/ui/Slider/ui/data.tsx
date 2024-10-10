@@ -27,8 +27,11 @@ export const SliderData = [
 		starsImage: <img src={Stars1} alt='Stars Image 1' />,
 		logoText: {
 			title: 'Fathira Dida',
-			text: 'Owner (Baker Old).',
+			text: 'Owner (Baker Old)',
 		},
+		mainImageClass: 'mainImage1',
+		starsImageClass: 'starsImage1',
+		textBgWidthClass: 'textBgWidth1',
 	},
 	{
 		id: 2,
@@ -41,6 +44,9 @@ export const SliderData = [
 			title: 'Punnasiri Chaipatikul',
 			text: 'Business Development Manager (Phaitong Station)',
 		},
+		mainImageClass: 'mainImage2',
+		starsImageClass: 'starsImage2',
+		textBgWidthClass: 'textBgWidth2',
 	},
 	{
 		id: 3,
@@ -53,6 +59,9 @@ export const SliderData = [
 			title: 'Pauline Limgenco',
 			text: 'Director (Moonleaf)',
 		},
+		mainImageClass: 'mainImage3',
+		starsImageClass: 'starsImage3',
+		textBgWidthClass: 'textBgWidth3',
 	},
 	{
 		id: 4,
@@ -65,5 +74,8 @@ export const SliderData = [
 			title: 'Hafidz & Indah',
 			text: 'Owners (Sejadah Grocery)',
 		},
+		mainImageClass: 'mainImage4',
+		starsImageClass: 'starsImage4',
+		textBgWidthClass: 'textBgWidth4',
 	},
 ];
