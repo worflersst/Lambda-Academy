@@ -47,7 +47,7 @@ export const Slider = () => {
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					gap: 10px; /* Расстояние между кружками */
+					gap: 10px;
 				}
 
 
@@ -56,8 +56,7 @@ export const Slider = () => {
 					height: 12px;
 					border-radius: 2px;
 					transform: rotate(45deg); 
-					background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(109, 109, 109, 0.18) 0%, rgba(250, 250, 250, 0) 100%) /
-					opacity: 0.7;
+					background: rgba(255, 255, 255, 0.4);
 					transition: background-color 0.3s, opacity 0.3s;
 				}
 				
@@ -82,7 +81,7 @@ export const Slider = () => {
 
 	return (
 		<div className={styles.switcher}>
-			<h2>Why choose Tinvio?</h2>
+			<h2 className={styles.switcherTitle}>Why choose Tinvio?</h2>
 
 			<swiper-container ref={swiperRef} init='false'>
 				{SliderData.map(slide => (

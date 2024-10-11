@@ -1,7 +1,15 @@
 .switcher {
 	width: 1130px;
 	height: 522px;
-	// border: red solid 1px;
+
+	&Title {
+		font-family: Gilroy;
+		font-size: 44px;
+		font-weight: 500;
+		line-height: 54px;
+		text-align: center;
+		margin-bottom: 42px;
+	}
 }
 
 .slidesWrapper {
@@ -89,8 +97,9 @@
 		}
 
 		.mainImage4 {
-			top: -7px;
+			top: -8px;
 			right: 18px;
+			filter: drop-shadow(10px 0px 0px rgb(255, 71, 77));
 		}
 
 		&S {
