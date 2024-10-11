@@ -64,6 +64,13 @@ export const FeaturedTabsBlock = () => {
 						More Features
 					</Button>
 				</div>
+				<div className={styles.leftBlockRectangle}>
+					<Rectangle
+						borderRadius='28px'
+						colorType='Ghost15'
+						widthAndHeight='477px'
+					/>
+				</div>
 			</div>
 			<div className={styles.rightBlock}>
 				<div className={styles.rightBlockNum1}>
