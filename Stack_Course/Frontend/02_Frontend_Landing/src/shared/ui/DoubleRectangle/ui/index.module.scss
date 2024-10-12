@@ -1,45 +1,49 @@
-.rectangle {
-	height: var(--widthAndHeight);
-	width: var(--widthAndHeight);
+.rectangleF {
+	height: var(--WandHFirstLayer);
+	width: var(--WandHFirstLayer);
 	transform: rotate(45deg);
 	border-radius: var(--borderRadius);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.rectangleS {
+	height: var(--WandHSeconfLayer);
+	width: var(--WandHSeconfLayer);
+	border-radius: var(--borderRadius);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-direction: column;
-	img {
+	gap: 15px;
+	> * {
 		transform: rotate(-45deg);
 	}
 }
 
-.maxPulseAnimate {
-	opacity: 1;
-	animation: pulse-max 2.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+.animation {
+	animation: pulse 2.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite normal;
 
-	@keyframes pulse-max {
+	@keyframes pulse {
 		from {
-			scale: 0.5;
-		}
-		to {
-			opacity: 0;
-		}
-	}
-}
-
-.normalPulseAnimate {
-	opacity: 1;
-	animation: pulse-normal 2.25s cubic-bezier(0.215, 0.61, 0.355, 1) 0s infinite
-		normal none running;
-
-	@keyframes pulse-normal {
-		from {
-			scale: 1;
+			height: var(--WandHFirstLayer);
+			width: var(--WandHFirstLayer);
 		}
 		50% {
-			scale: 1.05;
+			height: calc(
+				var(--WandHFirstLayer) -
+					(var(--WandHFirstLayer) - var(--WandHSeconfLayer))
+			);
+			width: calc(
+				var(--WandHFirstLayer) -
+					(var(--WandHFirstLayer) - var(--WandHSeconfLayer))
+			);
 		}
+
 		to {
-			scale: 1;
+			height: var(--WandHFirstLayer);
+			width: var(--WandHFirstLayer);
 		}
 	}
 }

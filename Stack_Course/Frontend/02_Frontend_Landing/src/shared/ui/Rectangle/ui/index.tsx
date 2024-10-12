@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styles from './index.module.scss';
 
 type variantColorType =
@@ -17,22 +17,30 @@ interface RectanglePropse {
 	widthAndHeight: string;
 	borderRadius: string;
 	colorType: variantColorType;
+	children?: ReactNode;
+	pulsation?: 'maxPulseAnimate' | 'normalPulseAnimate';
 }
 
 export const Rectangle = ({
 	widthAndHeight,
 	borderRadius,
 	colorType,
+	children,
+	pulsation,
 }: RectanglePropse) => {
 	return (
 		<div
-			className={` ${styles.rectangle} ${styles[colorType]}`}
+			className={` ${styles.rectangle} ${styles[colorType]} ${
+				pulsation ? styles[pulsation] : ''
+			}`}
 			style={
 				{
 					'--widthAndHeight': widthAndHeight,
 					'--borderRadius': borderRadius,
 				} as React.CSSProperties
 			}
-		></div>
+		>
+			{children}
+		</div>
 	);
 };
