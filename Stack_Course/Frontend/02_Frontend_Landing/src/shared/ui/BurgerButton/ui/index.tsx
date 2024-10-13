@@ -15,7 +15,7 @@ export const BurgerButton = () => {
 			}}
 		>
 			<div className={styles.menuButtonBurger}>
-				<span className={styles.visuallyHidden}>burger button</span>
+				<span className={styles.visuallyHidden}>Open navigation menu</span>
 			</div>
 		</div>
 	);
