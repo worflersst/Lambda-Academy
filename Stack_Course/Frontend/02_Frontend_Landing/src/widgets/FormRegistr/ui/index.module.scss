@@ -1,0 +1,55 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	align-items: center;
+	justify-content: center;
+	width: 440px;
+	height: 533px;
+	background-color: var(--color-bg-white);
+	border-radius: 32px;
+
+	&Title {
+		font-family: Gilroy;
+		margin-right: 15px;
+		font-size: 28px;
+		font-weight: 600;
+		line-height: 34px;
+		text-align: left;
+
+		span {
+			font-weight: 700;
+			line-height: 35px;
+			color: var(--color-text-primary);
+		}
+	}
+
+	&InputWrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	&ButtonWrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	&Footer {
+		display: flex;
+		gap: 8px;
+		justify-content: center;
+		font-family: Gilroy;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 20px;
+		text-align: center;
+		color: #bdbdbd;
+
+		img {
+			width: 16px;
+			height: 18px;
+		}
+	}
+}

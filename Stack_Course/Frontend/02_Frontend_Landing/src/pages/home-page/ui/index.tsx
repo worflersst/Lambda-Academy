@@ -3,6 +3,7 @@ import { FeatureOnBlock } from '@/widgets/home-page-blocks/FeaturedOnBlock';
 import { FeaturedTabsBlock } from '@/widgets/home-page-blocks/FeaturedTabsBlock';
 import { HappyBusinesBlock } from '@/widgets/home-page-blocks/HappyBusinesBlock/ui';
 import { HowItWorkBlock } from '@/widgets/home-page-blocks/HowItWorkBlock';
+import { RegistrFormBlock } from '@/widgets/home-page-blocks/RegistrFormBlock';
 import { WhyShooseBlock } from '@/widgets/home-page-blocks/WhyShooseBlock';
 
 export const HomePage = () => {
@@ -14,6 +15,7 @@ export const HomePage = () => {
 			<FeatureOnBlock />
 			<WhyShooseBlock />
 			<HappyBusinesBlock />
+			<RegistrFormBlock />
 		</div>
 	);
 };

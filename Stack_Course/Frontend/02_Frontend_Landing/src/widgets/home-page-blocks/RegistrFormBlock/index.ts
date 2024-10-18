@@ -1,0 +1,1 @@
+export { RegistrFormBlock } from './ui';
