@@ -7,6 +7,7 @@ import {
 import RectangleGroupWhite from '@/shared/assets/home-page-picture/RectangleGroupWhite.svg';
 
 import { Button } from '@/shared/ui/Button';
+import { DoubleRectangle } from '@/shared/ui/DoubleRectangle';
 import { Rectangle } from '@/shared/ui/Rectangle';
 import styles from './index.module.scss';
 
@@ -57,18 +58,13 @@ export const HomeContentBlock = () => {
 						borderRadius='32px'
 					/>
 				</div>
-				<div className={styles.rectangleRight1}>
-					<Rectangle
-						colorType='Red60'
-						widthAndHeight='1031px'
+				<div className={styles.rectangleRight}>
+					<DoubleRectangle
+						WandHFirstLayer='1031px'
+						WandHSeconfLayer='964px'
 						borderRadius='135px'
-					/>
-				</div>
-				<div className={styles.rectangleRight2}>
-					<Rectangle
-						colorType='Red100'
-						widthAndHeight='964px'
-						borderRadius='125px'
+						colorTypeFirstLayer='Red60'
+						colorTypeSeconfLayer='Red100'
 					/>
 				</div>
 			</div>

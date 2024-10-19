@@ -10,6 +10,7 @@ import {
 import RectangleGroupWhite from '@/shared/assets/home-page-picture/RectangleGroupWhite.svg';
 
 import { Button } from '@/shared/ui/Button';
+import { DoubleRectangle } from '@/shared/ui/DoubleRectangle';
 import { Rectangle } from '@/shared/ui/Rectangle';
 import { TabsImage } from '@/shared/ui/TabsImg';
 import { ThreeTabs } from '@/shared/ui/ThreeTabs';
@@ -73,20 +74,16 @@ export const FeaturedTabsBlock = () => {
 				</div>
 			</div>
 			<div className={styles.rightBlock}>
-				<div className={styles.rightBlockNum1}>
-					<Rectangle
-						widthAndHeight='560px'
-						colorType='Red60'
+				<div className={styles.rightBlockDoubleRectangle}>
+					<DoubleRectangle
+						WandHFirstLayer='560px'
+						WandHSeconfLayer='490px'
 						borderRadius='72px'
+						colorTypeFirstLayer='Red60'
+						colorTypeSeconfLayer='Red100'
 					/>
 				</div>
-				<div className={styles.rightBlockNum2}>
-					<Rectangle
-						widthAndHeight='490px'
-						colorType='Red100'
-						borderRadius='72px'
-					/>
-				</div>
+
 				<TabsImage isTab={isTab} />
 				<div className={styles.rightBlockImgStars}>
 					<img src={Stars} alt='Stars Image' />
