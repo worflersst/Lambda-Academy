@@ -10,6 +10,7 @@ export const ImgLinksBlock = () => {
 		<div className={styles.imgLinkWrapper}>
 			<div className={styles.leftBlock}>
 				<a
+					className={styles.sizeAnimateSmallBlock}
 					href='https://sg.linkedin.com/company/tinvio'
 					target='_blank'
 					rel='noopener noreferrer'
@@ -17,6 +18,7 @@ export const ImgLinksBlock = () => {
 					<img src={LinkedIn} alt='LinkedIn link image' />
 				</a>
 				<a
+					className={styles.sizeAnimateSmallBlock}
 					href='https://www.instagram.com/tinvioapp/?hl=en'
 					target='_blank'
 					rel='noopener noreferrer'
@@ -27,6 +29,7 @@ export const ImgLinksBlock = () => {
 			<span className={styles.spanLine}></span>
 			<div className={styles.rightBlock}>
 				<a
+					className={styles.sizeAnimateLargeBlock}
 					href='https://play.google.com/store/apps/details?id=com.tinvio.tinvio&hl=en&gl=US'
 					target='_blank'
 					rel='noopener noreferrer'
@@ -34,6 +37,7 @@ export const ImgLinksBlock = () => {
 					<img src={GooglePlay} alt='GooglePlay link image' />
 				</a>
 				<a
+					className={styles.sizeAnimateLargeBlock}
 					href='https://apps.apple.com/sg/app/tinvio/id1472428382'
 					target='_blank'
 					rel='noopener noreferrer'

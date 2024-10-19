@@ -1,0 +1,61 @@
+.footer {
+	width: 100vw;
+	height: 160px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&Wrapper {
+		// border: 1px red solid;
+		margin-top: 16px;
+		width: 1310px;
+		height: 95px;
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	&Top {
+		width: 100%;
+		height: 45px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&Left {
+			display: flex;
+			gap: 24px;
+			align-items: center;
+			height: 32px;
+		}
+
+		&Logo {
+			display: flex;
+			gap: 10px;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&Links {
+			display: flex;
+			gap: 32px;
+		}
+	}
+
+	&Bottom {
+		font-family: Inter;
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 12px;
+		color: #bdbdbd;
+		display: flex;
+		gap: 8px;
+	}
+
+	&Line {
+		display: inline-block;
+		width: 1px;
+		height: 100%;
+		background-color: var(--color-span-line);
+	}
+}

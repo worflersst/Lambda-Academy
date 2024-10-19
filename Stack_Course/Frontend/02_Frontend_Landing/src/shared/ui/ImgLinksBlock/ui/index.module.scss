@@ -22,3 +22,11 @@
 	background-color: var(--color-span-line);
 	margin-inline: 24px;
 }
+
+.sizeAnimateSmallBlock:hover {
+	transform: scale(1.1);
+}
+
+.sizeAnimateLargeBlock:hover {
+	transform: scale(1.03);
+}
