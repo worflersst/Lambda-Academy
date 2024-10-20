@@ -3,7 +3,6 @@
 	border-radius: 19px;
 	border: none;
 	font-weight: 700;
-	font-size: 17px;
 	transition-duration: var(--o-transition-duration);
 	cursor: pointer;
 	display: flex;
@@ -41,27 +40,46 @@
 .small {
 	width: 156px;
 	height: 48px;
+	font-size: 17px;
+	line-height: 20px;
 }
 
 .medium {
 	width: 210px;
 	height: 56px;
+	font-size: 20px;
+	line-height: 25px;
 }
 
 .large {
 	width: 220px;
 	height: 56px;
+	font-size: 20px;
+	line-height: 25px;
 }
 
 @include media-mixin.desktop-medium {
 	.button {
 		border-radius: 16px;
 		font-size: 14px;
-		line-height: 17px;
 	}
 
 	.small {
 		width: 129px;
 		height: 40px;
+	}
+
+	.medium {
+		width: 188px;
+		height: 48px;
+		font-size: 14px;
+		line-height: 17px;
+	}
+
+	.large {
+		width: 188px;
+		height: 48px;
+		font-size: 16px;
+		line-height: 20px;
 	}
 }

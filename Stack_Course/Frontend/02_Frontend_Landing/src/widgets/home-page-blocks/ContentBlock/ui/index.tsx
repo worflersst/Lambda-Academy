@@ -29,16 +29,23 @@ export const HomeContentBlock = () => {
 							paid faster, reconcile quicker, grow bigger.{' '}
 						</p>
 					</div>
-					<div className={styles.blockButton}>
-						<Button type='button' version='primary' size='large'>
-							Get Started Now
-						</Button>
-					</div>
-					<div className={styles.blockFooterWrapper}>
-						<span className={styles.blockFooter}>
-							<span className={styles.blockFooterText}>It's free to try!</span>
-							<img src={Emoji} alt='Emoji' width='16' height='16' />
-						</span>
+					<span style={{ display: 'inline-block' }}>
+						<div className={styles.blockButton}>
+							<Button type='button' version='primary' size='large'>
+								Get Started Now
+							</Button>
+						</div>
+						<div className={styles.blockFooterWrapper}>
+							<span className={styles.blockFooter}>
+								<span className={styles.blockFooterText}>
+									It's free to try!
+								</span>
+								<img src={Emoji} alt='Emoji' width='16' height='16' />
+							</span>
+						</div>
+					</span>
+					<div className={styles.blockInfoStars}>
+						<img src={Stars} alt='Stars Image' />
 					</div>
 				</div>
 			</div>
@@ -58,7 +65,7 @@ export const HomeContentBlock = () => {
 						borderRadius='32px'
 					/>
 				</div>
-				<div className={styles.rectangleRight}>
+				<div className={styles.rectangleDouble}>
 					<DoubleRectangle
 						WandHFirstLayer='1031px'
 						WandHSeconfLayer='964px'
@@ -70,9 +77,6 @@ export const HomeContentBlock = () => {
 			</div>
 			{/* Работа с изображениями */}
 			<div className={styles.image}>
-				<div className={styles.imageStars}>
-					<img src={Stars} alt='Stars Image' />
-				</div>
 				<div className={styles.imageRectangleGroupWhite1}>
 					<img src={RectangleGroupWhite} alt='Rectangle Group' />
 				</div>

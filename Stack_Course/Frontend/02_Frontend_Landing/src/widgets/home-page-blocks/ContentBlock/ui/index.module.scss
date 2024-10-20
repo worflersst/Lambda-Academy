@@ -10,7 +10,20 @@
 	}
 
 	&Info {
-		max-width: 478px;
+		width: 478px;
+		position: relative;
+
+		&Stars {
+			position: absolute;
+			width: 90px;
+			height: 80px;
+			top: -33px;
+			left: -40px;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
 	}
 
 	&Title {
@@ -32,6 +45,7 @@
 
 	&Text {
 		font-size: 20px;
+		line-height: 26px;
 		color: var(--color-text-second);
 		&Wrapper {
 			max-width: 412px;
@@ -47,10 +61,96 @@
 		display: block;
 		display: flex;
 		gap: 8px;
+		align-items: center;
+		justify-content: center;
+
 		&Text {
-			margin-left: 48px;
 			color: var(--color-text-second);
 			font-size: 16px;
+			line-height: 20px;
+		}
+	}
+}
+@include media-mixin.desktop-medium {
+	.block {
+		margin-inline: 124px;
+
+		&InfoWrapper {
+			padding-top: 252px;
+		}
+
+		&Info {
+			width: 427px;
+
+			&Stars {
+				top: -41px;
+				left: -49px;
+			}
+		}
+
+		&Title {
+			font-size: 44px;
+			line-height: 54px;
+
+			&Wrapper {
+				margin-bottom: 11px;
+			}
+		}
+
+		&Text {
+			font-size: 18px;
+			line-height: 24px;
+			color: var(--color-text-second);
+			&Wrapper {
+				width: 364px;
+				margin-bottom: 32px;
+			}
+		}
+
+		&Footer {
+			&Text {
+				font-size: 14px;
+				line-height: 17px;
+			}
+		}
+	}
+}
+@include media-mixin.tablet {
+	.block {
+		margin-inline: 40px;
+
+		&InfoWrapper {
+			padding-top: 257px;
+		}
+
+		&Info {
+			width: 373px;
+
+			&Stars {
+				top: -43px;
+				left: -23px;
+				transform: rotate(27deg);
+			}
+		}
+
+		&Title {
+			font-size: 36px;
+			line-height: 49px;
+
+			&Red {
+				font-size: 36px;
+			}
+
+			&Wrapper {
+				margin-bottom: 15px;
+			}
+		}
+
+		&Text {
+			font-size: 16px;
+			&Wrapper {
+				width: 328px;
+			}
 		}
 	}
 }
@@ -73,9 +173,51 @@
 		z-index: -1;
 	}
 
-	&Right {
+	&Double {
 		bottom: -384px;
 		left: 733px;
+	}
+
+	@include media-mixin.desktop-medium {
+		&Top {
+			bottom: 460px;
+			left: 257px;
+		}
+
+		&Left {
+			bottom: -205px;
+			left: -155px;
+		}
+
+		&Double {
+			bottom: -420px;
+			left: 675px;
+		}
+	}
+	@include media-mixin.laptop {
+		&Top {
+			left: 178px;
+		}
+
+		&Double {
+			bottom: -419px;
+			left: 592px;
+		}
+	}
+	@include media-mixin.tablet {
+		&Top {
+			left: 153px;
+		}
+
+		&Left {
+			bottom: -205px;
+			left: -105px;
+		}
+
+		&Double {
+			bottom: -418px;
+			left: 517px;
+		}
 	}
 }
 
@@ -85,13 +227,6 @@
 	height: 50px;
 	> * {
 		position: absolute;
-	}
-
-	&Stars {
-		width: 90px;
-		height: 80px;
-		bottom: 338px;
-		left: -48px;
 	}
 
 	&RectangleGroupWhite1 {
@@ -105,7 +240,7 @@
 
 	&RectangleGroupWhite2 {
 		left: 1048px;
-		bottom: -216px;
+		bottom: -211px;
 		width: 328px;
 		height: 248px;
 		opacity: 0.33;
@@ -129,5 +264,63 @@
 		height: 415px;
 		left: 591px;
 		bottom: -131px;
+	}
+
+	@include media-mixin.desktop-medium {
+		&RectangleGroupWhite1 {
+			left: 628px;
+			bottom: 171px;
+		}
+		&RectangleGroupWhite2 {
+			left: 984px;
+			bottom: -208px;
+		}
+
+		&Desktop {
+			left: 683px;
+			bottom: -100px;
+		}
+
+		&Mobile {
+			left: 531px;
+			bottom: -165px;
+		}
+	}
+	@include media-mixin.laptop {
+		&RectangleGroupWhite1 {
+			left: 547px;
+			bottom: 171px;
+		}
+		&RectangleGroupWhite2 {
+			left: 904px;
+		}
+
+		&Desktop {
+			left: 603px;
+			bottom: -98px;
+		}
+
+		&Mobile {
+			left: 451px;
+			bottom: -165px;
+		}
+	}
+	@include media-mixin.tablet {
+		&Desktop {
+			left: 525px;
+			bottom: -100px;
+		}
+
+		&Mobile {
+			left: 373px;
+			bottom: -167px;
+		}
+		&RectangleGroupWhite1 {
+			left: 460px;
+			bottom: 169px;
+		}
+		&RectangleGroupWhite2 {
+			left: 816px;
+		}
 	}
 }
