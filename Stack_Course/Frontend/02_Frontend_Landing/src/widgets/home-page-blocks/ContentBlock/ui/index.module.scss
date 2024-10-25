@@ -4,6 +4,7 @@
 	margin-inline: auto;
 
 	&InfoWrapper {
+		width: 100vw;
 		padding-top: 260px;
 		display: flex;
 		flex-direction: column;
@@ -48,7 +49,7 @@
 		line-height: 26px;
 		color: var(--color-text-second);
 		&Wrapper {
-			max-width: 412px;
+			width: 412px;
 			margin-bottom: 32px;
 		}
 	}
@@ -148,8 +149,66 @@
 
 		&Text {
 			font-size: 16px;
+			line-height: 24px;
 			&Wrapper {
 				width: 328px;
+			}
+		}
+	}
+}
+
+@include media-mixin.mobile-large {
+	.block {
+		height: 100vh;
+		margin: 0px;
+
+		&InfoWrapper {
+			padding-top: 126px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&Info {
+			width: 477px;
+			height: 252px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			&Stars {
+				top: -49px;
+				left: 37px;
+				transform: rotate(27deg);
+			}
+		}
+
+		&Title {
+			font-size: 32px;
+			line-height: 39px;
+
+			&Red {
+				font-size: 32px;
+				line-height: 39px;
+			}
+
+			&Wrapper {
+				width: 333px;
+				height: 90px;
+				margin-bottom: 16px;
+				text-align: center;
+			}
+		}
+
+		&Text {
+			font-size: 16px;
+			line-height: 24px;
+			&Wrapper {
+				text-align: center;
+				width: 477px;
+				height: 48px;
+				margin-bottom: 32px;
 			}
 		}
 	}
@@ -209,6 +268,23 @@
 			left: 153px;
 		}
 
+		&Left {
+			bottom: -205px;
+			left: -105px;
+		}
+
+		&Double {
+			bottom: -418px;
+			left: 517px;
+		}
+	}
+
+	@include media-mixin.mobile-large {
+		// Тут доделай как передвинешь
+		&Top {
+			left: 153px;
+		}
+		// Тут доделай
 		&Left {
 			bottom: -205px;
 			left: -105px;
