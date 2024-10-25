@@ -6,6 +6,7 @@ import {
 } from '@/shared/assets/home-page-picture/ContentBlock';
 import RectangleGroupWhite from '@/shared/assets/home-page-picture/RectangleGroupWhite.svg';
 
+import { adaptivePropsFunk } from '@/shared/funk/adaptivePropsFunk/adaptivePropsFunk';
 import { Button } from '@/shared/ui/Button';
 import { DoubleRectangle } from '@/shared/ui/DoubleRectangle';
 import { Rectangle } from '@/shared/ui/Rectangle';
@@ -54,22 +55,22 @@ export const HomeContentBlock = () => {
 				<div className={styles.rectangleTop}>
 					<Rectangle
 						colorType='Ghost15'
-						widthAndHeight='257px'
-						borderRadius='45px'
+						widthAndHeight={adaptivePropsFunk('248px', '327px', '257px')}
+						borderRadius={adaptivePropsFunk('43px', '57px', '45px')}
 					/>
 				</div>
 				<div className={styles.rectangleLeft}>
 					<Rectangle
 						colorType='Ghost15'
-						widthAndHeight='343px'
-						borderRadius='32px'
+						widthAndHeight={adaptivePropsFunk('300px', '385px', '343px')}
+						borderRadius={adaptivePropsFunk('27px', '35px', '32px')}
 					/>
 				</div>
 				<div className={styles.rectangleDouble}>
 					<DoubleRectangle
-						WandHFirstLayer='1031px'
-						WandHSeconfLayer='964px'
-						borderRadius='135px'
+						WandHFirstLayer={adaptivePropsFunk('664px', '999px', '1031px')}
+						WandHSeconfLayer={adaptivePropsFunk('615px', '921px', '964px')}
+						borderRadius={adaptivePropsFunk('88px', '105px', '135px')}
 						colorTypeFirstLayer='Red60'
 						colorTypeSeconfLayer='Red100'
 					/>

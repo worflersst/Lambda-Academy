@@ -214,6 +214,65 @@
 	}
 }
 
+@include media-mixin.mobile {
+	.block {
+		height: 100vh;
+		margin: 0px;
+
+		&InfoWrapper {
+			padding-top: 140px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&Info {
+			width: 333px;
+			height: 260px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			&Stars {
+				top: -51px;
+				left: -7px;
+				width: 73px;
+				height: 80px;
+				transform: rotate(27deg);
+			}
+		}
+
+		&Title {
+			font-size: 28px;
+			line-height: 35px;
+
+			&Red {
+				font-size: 28px;
+				line-height: 35px;
+			}
+
+			&Wrapper {
+				width: 285px;
+				height: 70px;
+				margin-bottom: 16px;
+				text-align: center;
+			}
+		}
+
+		&Text {
+			font-size: 14px;
+			line-height: 22px;
+			&Wrapper {
+				text-align: center;
+				width: 330px;
+				height: 66px;
+				margin-bottom: 32px;
+			}
+		}
+	}
+}
+
 .rectangle {
 	position: relative;
 
@@ -280,19 +339,33 @@
 	}
 
 	@include media-mixin.mobile-large {
-		// Тут доделай как передвинешь
 		&Top {
-			left: 153px;
+			left: 595px;
+			bottom: 205px;
 		}
-		// Тут доделай
 		&Left {
 			bottom: -205px;
 			left: -105px;
 		}
 
 		&Double {
-			bottom: -418px;
-			left: 517px;
+			top: 83px;
+			left: -499px;
+		}
+	}
+	@include media-mixin.mobile {
+		&Top {
+			left: 276px;
+			bottom: 273px;
+		}
+		&Left {
+			bottom: -102px;
+			left: -150px;
+		}
+
+		&Double {
+			top: 53px;
+			left: -354px;
 		}
 	}
 }
@@ -303,6 +376,10 @@
 	height: 50px;
 	> * {
 		position: absolute;
+		img {
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	&RectangleGroupWhite1 {
@@ -321,11 +398,6 @@
 		height: 248px;
 		opacity: 0.33;
 		z-index: 1;
-
-		img {
-			width: 100%;
-			height: 100%;
-		}
 	}
 
 	&Desktop {
@@ -370,12 +442,10 @@
 		&RectangleGroupWhite2 {
 			left: 904px;
 		}
-
 		&Desktop {
 			left: 603px;
 			bottom: -98px;
 		}
-
 		&Mobile {
 			left: 451px;
 			bottom: -165px;
@@ -386,7 +456,6 @@
 			left: 525px;
 			bottom: -100px;
 		}
-
 		&Mobile {
 			left: 373px;
 			bottom: -167px;
@@ -397,6 +466,58 @@
 		}
 		&RectangleGroupWhite2 {
 			left: 816px;
+		}
+	}
+	@include media-mixin.mobile-large {
+		&Desktop {
+			width: 892px;
+			height: 707px;
+			left: 186px;
+			bottom: -612px;
+		}
+		&Mobile {
+			width: 265px;
+			height: 461px;
+			left: 26px;
+			bottom: -677px;
+		}
+		&RectangleGroupWhite1 {
+			left: 22px;
+			bottom: -160px;
+			width: 245px;
+			height: 182px;
+		}
+		&RectangleGroupWhite2 {
+			bottom: -641px;
+			left: 188px;
+			width: 407px;
+			height: 321px;
+		}
+	}
+	@include media-mixin.mobile {
+		&Desktop {
+			width: 615px;
+			height: 388px;
+			left: 53px;
+			bottom: -372px;
+		}
+		&Mobile {
+			width: 196px;
+			height: 273px;
+			left: -12px;
+			bottom: -414px;
+		}
+		&RectangleGroupWhite1 {
+			left: 5px;
+			bottom: -93px;
+			width: 164px;
+			height: 147px;
+		}
+		&RectangleGroupWhite2 {
+			bottom: -496px;
+			left: 97px;
+			width: 276px;
+			height: 320px;
 		}
 	}
 }
