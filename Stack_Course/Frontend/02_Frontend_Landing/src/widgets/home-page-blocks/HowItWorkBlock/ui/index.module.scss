@@ -82,6 +82,7 @@
 					&Arrow {
 						left: 238px;
 						top: 83px;
+						transform: rotate(-7deg);
 					}
 				}
 			}
@@ -130,6 +131,7 @@
 					&Arrow {
 						left: -172px;
 						top: 106px;
+						transform: rotate(-12deg);
 					}
 				}
 			}
@@ -225,6 +227,113 @@
 	}
 }
 
+@include media-mixin.desktop-medium {
+	.section {
+		margin-top: 213px;
+		margin-left: 55px;
+		&Blocks {
+			margin-inline: 33px;
+			display: flex;
+			gap: 161px;
+
+			&Left {
+				&1 {
+					top: 96px;
+					left: 69px;
+					&Text {
+						width: 202px;
+						font-size: 13px;
+					}
+
+					&Image {
+						&Stars {
+							left: 107px;
+							top: -13px;
+							transform: rotate(-8deg);
+						}
+
+						&Comment {
+							left: 181px;
+							top: 13px;
+							transform: rotate(-5deg);
+						}
+
+						&Arrow {
+							left: 238px;
+							top: 77px;
+						}
+					}
+				}
+				&2 {
+					top: 266px;
+					left: 313px;
+
+					&Title {
+						padding-left: 5px;
+					}
+
+					&Image {
+						&Stars {
+							left: 152px;
+							top: -24px;
+							transform: rotate(-8deg);
+						}
+
+						&Todo {
+							top: 112px;
+						}
+
+						&Arrow {
+							left: -167px;
+							top: 99px;
+							transform: rotate(-12deg);
+						}
+					}
+				}
+				&3 {
+					top: 403px;
+					left: 44px;
+
+					&Image {
+						> * {
+							transform: rotate(-8deg);
+						}
+						&Payments {
+							left: -38px;
+							top: 15px;
+						}
+						&TwoStars {
+							left: 40px;
+							top: -19px;
+						}
+
+						&ThreeStars {
+							left: 241px;
+							top: 16px;
+						}
+					}
+				}
+			}
+
+			&Right {
+				&Wrapper {
+					margin-top: 65px;
+				}
+				&Title {
+					font-size: 36px;
+					line-height: 44px;
+				}
+
+				&Paragraf {
+					width: 478px;
+					font-size: 16px;
+					line-height: 23px;
+				}
+			}
+		}
+	}
+}
+
 .background {
 	position: absolute;
 
@@ -232,6 +341,11 @@
 		transform: skewY(8deg);
 		position: absolute;
 		z-index: -1;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	&Group1 {
@@ -251,5 +365,26 @@
 	&Rectangle {
 		left: 1400px;
 		bottom: -275px;
+	}
+
+	@include media-mixin.desktop-medium {
+		&Group1 {
+			width: 322px;
+			height: 193px;
+			left: 1099px;
+			bottom: -365px;
+		}
+
+		&Group2 {
+			width: 305px;
+			height: 268px;
+			left: 21px;
+			bottom: -431px;
+		}
+
+		&Rectangle {
+			left: 1088px;
+			bottom: -232px;
+		}
 	}
 }
