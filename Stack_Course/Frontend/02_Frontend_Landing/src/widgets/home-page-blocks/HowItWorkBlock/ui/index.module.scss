@@ -334,6 +334,47 @@
 	}
 }
 
+@include media-mixin.laptop {
+	.section {
+		&Blocks {
+			margin-inline: 33px;
+			display: flex;
+			gap: 79px;
+
+			&Left {
+				&1 {
+					top: 106px;
+					left: 69px;
+				}
+				&2 {
+					top: 277px;
+					left: 313px;
+				}
+				&3 {
+					top: 415px;
+					left: 44px;
+				}
+			}
+
+			&Right {
+				&Wrapper {
+					margin-top: 65px;
+				}
+				&Title {
+					font-size: 36px;
+					line-height: 44px;
+				}
+
+				&Paragraf {
+					width: 398px;
+					font-size: 16px;
+					line-height: 23px;
+				}
+			}
+		}
+	}
+}
+
 .background {
 	position: absolute;
 
@@ -384,6 +425,22 @@
 
 		&Rectangle {
 			left: 1088px;
+			bottom: -232px;
+		}
+	}
+	@include media-mixin.laptop {
+		&Group1 {
+			left: 1020px;
+			bottom: -365px;
+		}
+
+		&Group2 {
+			left: 15px;
+			bottom: -440px;
+		}
+
+		&Rectangle {
+			left: 1043px;
 			bottom: -232px;
 		}
 	}

@@ -12,11 +12,13 @@ import {
 } from '@/shared/assets/home-page-picture/HowItWorkBlock';
 import RectangleGroupWhite from '@/shared/assets/home-page-picture/RectangleGroupWhite.svg';
 
+import { useWindowSize } from '@/shared/hooks/useWindowSize/useWindowSize';
 import { Button } from '@/shared/ui/Button';
 import { Rectangle } from '@/shared/ui/Rectangle';
 import styles from './index.module.scss';
 
 export const HowItWorkBlock = () => {
+	const { width } = useWindowSize();
 	return (
 		<div className={styles.section}>
 			<div className={styles.sectionBlocks}>
@@ -96,12 +98,14 @@ export const HowItWorkBlock = () => {
 					<div className={styles.sectionBlocksRightWrapper}>
 						<div className={styles.sectionBlocksRightText}>
 							<h2 className={styles.sectionBlocksRightTitle}>
-								Check out how it works
+								{width >= 1441 || width <= 1279
+									? 'Check out how it works'
+									: 'Tinvio in a heartbeat'}
 							</h2>
 							<p className={styles.sectionBlocksRightParagraf}>
-								It’s easy! Exchange messages, create or confirm orders, send
-								invoices, and collect payments across your supply chain — all
-								within one dashboard.
+								{width >= 1441 || width <= 1279
+									? 'It’s easy! Exchange messages, create or confirm orders, send invoices, and collect payments across your supply chain — all within one dashboard.'
+									: 'Exchange messages, create or confirm orders, send invoices, and collect payments across your supply chain — all within one dashboard.'}
 							</p>
 						</div>
 						<div>
