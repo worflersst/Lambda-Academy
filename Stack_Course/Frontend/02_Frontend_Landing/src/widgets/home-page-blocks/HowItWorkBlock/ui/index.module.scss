@@ -1,6 +1,6 @@
 .section {
-	margin-top: 216px;
-	margin-left: 40px;
+	margin-top: 215px;
+	margin-left: 55px;
 	width: 100%;
 	height: 660px;
 	background-color: var(--color-bg-grey);
@@ -14,7 +14,7 @@
 	&Blocks {
 		margin-inline: 230px;
 		display: flex;
-		gap: 180px;
+		gap: 168px;
 
 		&Left {
 			width: 600px;
@@ -37,8 +37,8 @@
 			}
 
 			&1 {
-				top: 82px;
-				left: 65px;
+				top: 101px;
+				left: 53px;
 				&Title {
 					font-weight: 700;
 					font-size: 20px;
@@ -66,29 +66,28 @@
 						position: absolute;
 						pointer-events: none;
 						transform: none;
+						transform: rotate(-8deg);
 					}
 
 					&Stars {
-						left: 104px;
-						top: -10px;
+						left: 106px;
+						top: -12px;
 					}
 
 					&Comment {
-						left: 179px;
-						top: 16px;
-						transform: rotate(-10deg);
+						right: -73px;
+						top: 13px;
 					}
 
 					&Arrow {
-						left: 238px;
-						top: 83px;
-						transform: rotate(-7deg);
+						right: -182px;
+						top: 80px;
 					}
 				}
 			}
 			&2 {
-				top: 260px;
-				left: 307px;
+				top: 272px;
+				left: 299px;
 
 				&Title {
 					font-weight: 700;
@@ -115,29 +114,28 @@
 					> * {
 						position: absolute;
 						pointer-events: none;
+						transform: rotate(-8deg);
 					}
 
 					&Stars {
-						left: 154px;
-						top: -21px;
+						right: -30px;
+						top: -24px;
 					}
 
 					&Todo {
-						left: -54px;
-						top: 114px;
-						transform: rotate(-10deg);
+						left: -58px;
+						top: 113px;
 					}
 
 					&Arrow {
 						left: -172px;
-						top: 106px;
-						transform: rotate(-12deg);
+						top: 100px;
 					}
 				}
 			}
 			&3 {
-				top: 388px;
-				left: 40px;
+				top: 410px;
+				left: 27px;
 
 				&Title {
 					font-weight: 700;
@@ -164,20 +162,20 @@
 					> * {
 						position: absolute;
 						pointer-events: none;
+						transform: rotate(-8deg);
 					}
 					&Payments {
-						left: -40px;
-						top: 17px;
-						transform: rotate(-10deg);
+						left: -39px;
+						top: 13px;
 					}
 					&TwoStars {
-						left: 30px;
-						top: -16px;
+						left: 40px;
+						top: -20px;
 					}
 
 					&ThreeStars {
-						left: 241px;
-						top: 18px;
+						right: -92px;
+						top: 15px;
 					}
 				}
 			}
@@ -374,6 +372,109 @@
 		}
 	}
 }
+@include media-mixin.tablet {
+	.section {
+		margin-top: 224px;
+		margin-left: 0px;
+		&Blocks {
+			gap: 4px;
+
+			&Left {
+				> * {
+					width: 252px;
+					height: 101px;
+				}
+				&1 {
+					top: 125px;
+					left: 39px;
+					&Title {
+						padding-bottom: 5px;
+					}
+					&Text {
+						width: 199px;
+						font-size: 11px;
+						line-height: 13px;
+						padding-top: 3px;
+					}
+
+					&Image {
+						&Stars {
+							left: 105px;
+							top: -5px;
+						}
+
+						&Comment {
+							left: 171px;
+							top: 18px;
+						}
+
+						&Arrow {
+							left: 233px;
+							top: 82px;
+						}
+					}
+				}
+				&2 {
+					top: 282px;
+					left: 266px;
+
+					&Image {
+						&Stars {
+							left: 147px;
+							top: -15px;
+						}
+
+						&Todo {
+							left: -48px;
+							top: 106px;
+						}
+
+						&Arrow {
+							left: -148px;
+							top: 99px;
+						}
+					}
+				}
+				&3 {
+					top: 411px;
+					left: 16px;
+
+					&Image {
+						&Payments {
+							left: -36px;
+							top: 18px;
+						}
+						&TwoStars {
+							left: 42px;
+							top: -14px;
+						}
+
+						&ThreeStars {
+							left: 231px;
+							top: 20px;
+						}
+					}
+				}
+			}
+
+			&Right {
+				&Wrapper {
+					margin-top: 63px;
+				}
+				&Title {
+					font-size: 32px;
+					line-height: 37px;
+				}
+
+				&Paragraf {
+					width: 340px;
+					font-size: 16px;
+					line-height: 23px;
+				}
+			}
+		}
+	}
+}
 
 .background {
 	position: absolute;
@@ -442,6 +543,22 @@
 		&Rectangle {
 			left: 1043px;
 			bottom: -232px;
+		}
+	}
+	@include media-mixin.tablet {
+		&Group1 {
+			left: 834px;
+			bottom: -346px;
+		}
+
+		&Group2 {
+			left: -79px;
+			bottom: -436px;
+		}
+
+		&Rectangle {
+			left: 851px;
+			bottom: -220px;
 		}
 	}
 }

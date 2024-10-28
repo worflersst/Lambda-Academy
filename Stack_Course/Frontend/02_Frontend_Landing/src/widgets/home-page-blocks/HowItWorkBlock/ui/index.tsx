@@ -1,14 +1,23 @@
 import {
 	ChatsStars,
+	ChatsStars1024,
 	ChatsToOrderArrow,
+	ChatsToOrderArrow1024,
 	Comment,
+	Comment1024,
 	OrderArrow,
+	OrderArrow1024,
 	OrderStars,
+	OrderStars1024,
 	Payments,
+	Payments1024,
 	PlayIcon,
 	ThreeStars,
+	ThreeStars1024,
 	ToDo,
+	ToDo1024,
 	TwoStars,
+	TwoStars1024,
 } from '@/shared/assets/home-page-picture/HowItWorkBlock';
 import RectangleGroupWhite from '@/shared/assets/home-page-picture/RectangleGroupWhite.svg';
 
@@ -26,47 +35,47 @@ export const HowItWorkBlock = () => {
 					<div className={styles.sectionBlocksLeft1}>
 						<h5 className={styles.sectionBlocksLeft1Title}>Chats</h5>
 						<p className={styles.sectionBlocksLeft1Text}>
-							Connect to anyone in your supply chain and exchange messages{' '}
+							Connect to anyone in your supply chain and exchange messages
 						</p>
 						<div className={styles.sectionBlocksLeft1Image}>
-							<img
-								src={ChatsStars}
-								alt='Stars image'
-								className={styles.sectionBlocksLeft1ImageStars}
-							/>
-							<img
-								src={Comment}
-								alt='Comment image'
-								className={styles.sectionBlocksLeft1ImageComment}
-							/>
-							<img
-								src={ChatsToOrderArrow}
-								alt='Arrow to order Image'
-								className={styles.sectionBlocksLeft1ImageArrow}
-							/>
+							<picture className={styles.sectionBlocksLeft1ImageStars}>
+								<source media='(max-width: 1024px)' srcSet={ChatsStars1024} />
+								<img src={ChatsStars} alt='Stars image' />
+							</picture>
+							<picture className={styles.sectionBlocksLeft1ImageComment}>
+								<source media='(max-width: 1024px)' srcSet={Comment1024} />
+								<img src={Comment} alt='Comment image' />
+							</picture>
+							<picture className={styles.sectionBlocksLeft1ImageArrow}>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={ChatsToOrderArrow1024}
+								/>
+								<img src={ChatsToOrderArrow} alt='Arrow to order Image' />
+							</picture>
 						</div>
 					</div>
 					<div className={styles.sectionBlocksLeft2}>
 						<h5 className={styles.sectionBlocksLeft2Title}>Orders</h5>
 						<p className={styles.sectionBlocksLeft2Text}>
-							Create or confirm purchase orders with tap of a button
+							Create or confirm purchase orders
+							{width >= 1280 || width <= 1024
+								? ' in just a few taps'
+								: ' with tap of a button'}
 						</p>
 						<div className={styles.sectionBlocksLeft2Image}>
-							<img
-								src={OrderStars}
-								alt='Order Stars Image'
-								className={styles.sectionBlocksLeft2ImageStars}
-							/>
-							<img
-								src={ToDo}
-								alt='ToDo Image'
-								className={styles.sectionBlocksLeft2ImageTodo}
-							/>
-							<img
-								src={OrderArrow}
-								alt='Order Arrow image'
-								className={styles.sectionBlocksLeft2ImageArrow}
-							/>
+							<picture className={styles.sectionBlocksLeft2ImageStars}>
+								<source media='(max-width: 1024px)' srcSet={OrderStars1024} />
+								<img src={OrderStars} alt='Order Stars Image' />
+							</picture>
+							<picture className={styles.sectionBlocksLeft2ImageTodo}>
+								<source media='(max-width: 1024px)' srcSet={ToDo1024} />
+								<img src={ToDo} alt='ToDo Image' />
+							</picture>
+							<picture className={styles.sectionBlocksLeft2ImageArrow}>
+								<source media='(max-width: 1024px)' srcSet={OrderArrow1024} />
+								<img src={OrderArrow} alt='Order Arrow image' />
+							</picture>
 						</div>
 					</div>
 					<div className={styles.sectionBlocksLeft3}>
@@ -75,21 +84,18 @@ export const HowItWorkBlock = () => {
 							Send invoices and reconcile payments in one dashboard
 						</p>
 						<div className={styles.sectionBlocksLeft3Image}>
-							<img
-								src={Payments}
-								alt='Payments rectangle Image'
-								className={styles.sectionBlocksLeft3ImagePayments}
-							/>
-							<img
-								src={TwoStars}
-								alt='Two Stars Image'
-								className={styles.sectionBlocksLeft3ImageTwoStars}
-							/>
-							<img
-								src={ThreeStars}
-								alt='Three Stars Image'
-								className={styles.sectionBlocksLeft3ImageThreeStars}
-							/>
+							<picture className={styles.sectionBlocksLeft3ImagePayments}>
+								<source media='(max-width: 1024px)' srcSet={Payments1024} />
+								<img src={Payments} alt='Payments rectangle Image' />
+							</picture>
+							<picture className={styles.sectionBlocksLeft3ImageTwoStars}>
+								<source media='(max-width: 1024px)' srcSet={TwoStars1024} />
+								<img src={TwoStars} alt='Two Stars Image' />
+							</picture>
+							<picture className={styles.sectionBlocksLeft3ImageThreeStars}>
+								<source media='(max-width: 1024px)' srcSet={ThreeStars1024} />
+								<img src={ThreeStars} alt='Three Stars Image' />
+							</picture>
 						</div>
 					</div>
 				</div>
@@ -98,12 +104,12 @@ export const HowItWorkBlock = () => {
 					<div className={styles.sectionBlocksRightWrapper}>
 						<div className={styles.sectionBlocksRightText}>
 							<h2 className={styles.sectionBlocksRightTitle}>
-								{width >= 1441 || width <= 1279
+								{width >= 1280 || width <= 1024
 									? 'Check out how it works'
 									: 'Tinvio in a heartbeat'}
 							</h2>
 							<p className={styles.sectionBlocksRightParagraf}>
-								{width >= 1441 || width <= 1279
+								{width >= 1280 || width <= 1024
 									? 'It’s easy! Exchange messages, create or confirm orders, send invoices, and collect payments across your supply chain — all within one dashboard.'
 									: 'Exchange messages, create or confirm orders, send invoices, and collect payments across your supply chain — all within one dashboard.'}
 							</p>
