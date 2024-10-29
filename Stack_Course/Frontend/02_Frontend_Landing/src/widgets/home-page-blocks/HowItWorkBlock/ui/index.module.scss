@@ -15,12 +15,14 @@
 		margin-inline: 230px;
 		display: flex;
 		gap: 168px;
+		> * {
+			transform: skewY(8deg);
+		}
 
 		&Left {
 			width: 600px;
 			height: 600px;
 			position: relative;
-			transform: skewY(8deg);
 
 			> * {
 				transform: rotate(8deg);
@@ -196,7 +198,6 @@
 				display: flex;
 				flex-direction: column;
 				gap: 32px;
-				transform: skewY(8deg);
 			}
 
 			&Text {
@@ -458,6 +459,7 @@
 			}
 
 			&Right {
+				align-items: flex-end;
 				&Wrapper {
 					margin-top: 63px;
 				}
@@ -470,6 +472,109 @@
 					width: 340px;
 					font-size: 16px;
 					line-height: 23px;
+				}
+			}
+		}
+	}
+}
+@include media-mixin.mobile-large {
+	.section {
+		height: 955px;
+		margin-top: 206px;
+		margin-left: 0px;
+		&Blocks {
+			flex-direction: column-reverse;
+			gap: 0px;
+			margin-inline: 0px;
+
+			> * {
+				width: 100vw;
+				margin-left: 0px;
+			}
+
+			&Left {
+				> * {
+					width: 252px;
+					height: 101px;
+				}
+				&1 {
+					top: 94px;
+					left: 154px;
+					&Title {
+						padding-bottom: 5px;
+					}
+					&Text {
+						width: 216px;
+						font-size: 12px;
+						line-height: 15px;
+						padding-right: 14px;
+						padding-top: 0px;
+					}
+
+					&Image {
+						&Stars {
+							left: 105px;
+							top: -5px;
+						}
+
+						&Comment {
+							left: 171px;
+							top: 18px;
+						}
+
+						&Arrow {
+							left: 233px;
+							top: 82px;
+						}
+					}
+				}
+				&2 {
+					top: 252px;
+					left: 380px;
+
+					&Image {
+						&Stars {
+							left: 147px;
+							top: -17px;
+						}
+
+						&Todo {
+							left: -44px;
+							top: 111px;
+						}
+					}
+				}
+				&3 {
+					top: 379px;
+					left: 132px;
+				}
+			}
+
+			&Right {
+				align-items: center;
+				height: 250px;
+				&Wrapper {
+					width: 430px;
+					height: 205px;
+					margin-top: 24px;
+					align-items: center;
+				}
+
+				&Text {
+					align-items: center;
+				}
+
+				&Title {
+					width: 356px;
+					font-size: 32px;
+					line-height: 39px;
+				}
+
+				&Paragraf {
+					width: 430px;
+					font-size: 16px;
+					line-height: 23px;
+					text-align: center;
 				}
 			}
 		}
@@ -559,6 +664,25 @@
 		&Rectangle {
 			left: 851px;
 			bottom: -220px;
+		}
+	}
+	@include media-mixin.mobile-large {
+		&Group1 {
+			width: 355px;
+			height: 221px;
+			left: 568px;
+			top: 254px;
+			bottom: 0px;
+		}
+
+		&Group2 {
+			left: -92px;
+			bottom: 11px;
+		}
+
+		&Rectangle {
+			left: 596px;
+			bottom: 33px;
 		}
 	}
 }

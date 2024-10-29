@@ -21,6 +21,7 @@ import {
 } from '@/shared/assets/home-page-picture/HowItWorkBlock';
 import RectangleGroupWhite from '@/shared/assets/home-page-picture/RectangleGroupWhite.svg';
 
+import { adaptivePropsFunk } from '@/shared/funk/adaptivePropsFunk/adaptivePropsFunk';
 import { useWindowSize } from '@/shared/hooks/useWindowSize/useWindowSize';
 import { Button } from '@/shared/ui/Button';
 import { Rectangle } from '@/shared/ui/Rectangle';
@@ -59,9 +60,9 @@ export const HowItWorkBlock = () => {
 						<h5 className={styles.sectionBlocksLeft2Title}>Orders</h5>
 						<p className={styles.sectionBlocksLeft2Text}>
 							Create or confirm purchase orders
-							{width >= 1280 || width <= 1024
-								? ' in just a few taps'
-								: ' with tap of a button'}
+							{width >= 1280 || (width <= 1024 && width >= 769)
+								? 'in just a few taps'
+								: 'with tap of a button'}
 						</p>
 						<div className={styles.sectionBlocksLeft2Image}>
 							<picture className={styles.sectionBlocksLeft2ImageStars}>
@@ -143,7 +144,7 @@ export const HowItWorkBlock = () => {
 					<Rectangle
 						borderRadius='77px'
 						colorType='Ghost20'
-						widthAndHeight='496px'
+						widthAndHeight={adaptivePropsFunk('496px', '408px', '408px')}
 					/>
 				</div>
 			</div>
