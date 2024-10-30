@@ -580,6 +580,160 @@
 		}
 	}
 }
+@include media-mixin.mobile {
+	.section {
+		height: 763px;
+		margin-top: -27px;
+
+		&Blocks {
+			flex-direction: column-reverse;
+			gap: 0px;
+			margin-inline: 0px;
+
+			> * {
+				width: 100vw;
+				margin-left: 0px;
+			}
+
+			&Left {
+				height: 310px;
+				> * {
+					width: 166px;
+					height: 67px;
+					border-radius: 12px;
+				}
+				&1 {
+					top: 39px;
+					left: 27px;
+					&Title {
+						font-size: 12px;
+						padding-left: 0px;
+						padding-bottom: 0px;
+						padding-top: 6px;
+					}
+					&Text {
+						width: 125px;
+						font-size: 8px;
+						line-height: 10px;
+						padding-right: 0px;
+						padding-top: 0px;
+					}
+
+					&Image {
+						&Stars {
+							left: 105px;
+							top: 29px;
+						}
+
+						&Comment {
+							left: 141px;
+							top: 36px;
+						}
+
+						&Arrow {
+							left: 186px;
+							top: 78px;
+						}
+					}
+				}
+				&2 {
+					top: 143px;
+					left: 177px;
+
+					&Title {
+						padding-top: 9px;
+						font-size: 12px;
+					}
+					&Text {
+						width: 102px;
+						font-size: 8px;
+						line-height: 10px;
+						margin-top: 0px;
+						margin-bottom: 15px;
+					}
+
+					&Image {
+						&Stars {
+							left: 132px;
+							top: 20px;
+						}
+
+						&Todo {
+							left: -3px;
+							top: 99px;
+						}
+
+						&Arrow {
+							left: -64px;
+							top: 96px;
+						}
+					}
+				}
+				&3 {
+					top: 227px;
+					left: 13px;
+
+					&Title {
+						padding-top: 9px;
+						font-size: 12px;
+					}
+					&Text {
+						width: 104px;
+						margin-top: 0px;
+						margin-bottom: 15px;
+						font-size: 8px;
+						line-height: 10px;
+					}
+					&Image {
+						&Payments {
+							left: 4px;
+							top: 39px;
+						}
+						&TwoStars {
+							left: 63px;
+							top: 25px;
+						}
+
+						&ThreeStars {
+							left: 186px;
+							top: 42px;
+						}
+					}
+				}
+			}
+
+			&Right {
+				align-items: center;
+				height: 250px;
+				&Wrapper {
+					width: 430px;
+					height: 205px;
+					margin-top: 0px;
+					margin-bottom: 24px;
+					padding-right: 19px;
+					align-items: center;
+				}
+
+				&Text {
+					align-items: center;
+				}
+
+				&Title {
+					width: 299px;
+					font-size: 28px;
+					line-height: 33px;
+				}
+
+				&Paragraf {
+					width: 343px;
+					font-size: 14px;
+					line-height: 23px;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
 
 .background {
 	position: absolute;
@@ -683,6 +837,26 @@
 		&Rectangle {
 			left: 596px;
 			bottom: 33px;
+		}
+	}
+	@include media-mixin.mobile {
+		&Group1 {
+			width: 200px;
+			height: 150px;
+			left: -100px;
+			top: -50px;
+			bottom: 0px;
+		}
+
+		&Group2 {
+			top: 216px;
+			left: 237px;
+			bottom: 0px;
+		}
+
+		&Rectangle {
+			left: 250px;
+			bottom: -198px;
 		}
 	}
 }

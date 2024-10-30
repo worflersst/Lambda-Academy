@@ -1,24 +1,4 @@
-import {
-	ChatsStars,
-	ChatsStars1024,
-	ChatsToOrderArrow,
-	ChatsToOrderArrow1024,
-	Comment,
-	Comment1024,
-	OrderArrow,
-	OrderArrow1024,
-	OrderStars,
-	OrderStars1024,
-	Payments,
-	Payments1024,
-	PlayIcon,
-	ThreeStars,
-	ThreeStars1024,
-	ToDo,
-	ToDo1024,
-	TwoStars,
-	TwoStars1024,
-} from '@/shared/assets/home-page-picture/HowItWorkBlock';
+import { HowItWorkImages } from '@/shared/assets/home-page-picture/HowItWorkBlock';
 import RectangleGroupWhite from '@/shared/assets/home-page-picture/RectangleGroupWhite.svg';
 
 import { adaptivePropsFunk } from '@/shared/funk/adaptivePropsFunk/adaptivePropsFunk';
@@ -40,19 +20,40 @@ export const HowItWorkBlock = () => {
 						</p>
 						<div className={styles.sectionBlocksLeft1Image}>
 							<picture className={styles.sectionBlocksLeft1ImageStars}>
-								<source media='(max-width: 1024px)' srcSet={ChatsStars1024} />
-								<img src={ChatsStars} alt='Stars image' />
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.ChatsStars375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.ChatsStars1024}
+								/>
+								<img src={HowItWorkImages.ChatsStars} alt='Stars image' />
 							</picture>
 							<picture className={styles.sectionBlocksLeft1ImageComment}>
-								<source media='(max-width: 1024px)' srcSet={Comment1024} />
-								<img src={Comment} alt='Comment image' />
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.Comment375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.Comment1024}
+								/>
+								<img src={HowItWorkImages.Comment} alt='Comment image' />
 							</picture>
 							<picture className={styles.sectionBlocksLeft1ImageArrow}>
 								<source
-									media='(max-width: 1024px)'
-									srcSet={ChatsToOrderArrow1024}
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.ChatsToOrderArrow375}
 								/>
-								<img src={ChatsToOrderArrow} alt='Arrow to order Image' />
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.ChatsToOrderArrow1024}
+								/>
+								<img
+									src={HowItWorkImages.ChatsToOrderArrow}
+									alt='Arrow to order Image'
+								/>
 							</picture>
 						</div>
 					</div>
@@ -61,21 +62,42 @@ export const HowItWorkBlock = () => {
 						<p className={styles.sectionBlocksLeft2Text}>
 							Create or confirm purchase orders
 							{width >= 1280 || (width <= 1024 && width >= 769)
-								? 'in just a few taps'
-								: 'with tap of a button'}
+								? ' in just a few taps'
+								: ' with tap of a button'}
 						</p>
 						<div className={styles.sectionBlocksLeft2Image}>
 							<picture className={styles.sectionBlocksLeft2ImageStars}>
-								<source media='(max-width: 1024px)' srcSet={OrderStars1024} />
-								<img src={OrderStars} alt='Order Stars Image' />
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.OrderStars375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.OrderStars1024}
+								/>
+								<img src={HowItWorkImages.OrderStars} alt='Order Stars Image' />
 							</picture>
 							<picture className={styles.sectionBlocksLeft2ImageTodo}>
-								<source media='(max-width: 1024px)' srcSet={ToDo1024} />
-								<img src={ToDo} alt='ToDo Image' />
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.ToDo375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.ToDo1024}
+								/>
+								<img src={HowItWorkImages.ToDo} alt='ToDo Image' />
 							</picture>
 							<picture className={styles.sectionBlocksLeft2ImageArrow}>
-								<source media='(max-width: 1024px)' srcSet={OrderArrow1024} />
-								<img src={OrderArrow} alt='Order Arrow image' />
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.OrderArrow375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.OrderArrow1024}
+								/>
+								<img src={HowItWorkImages.OrderArrow} alt='Order Arrow image' />
 							</picture>
 						</div>
 					</div>
@@ -86,16 +108,40 @@ export const HowItWorkBlock = () => {
 						</p>
 						<div className={styles.sectionBlocksLeft3Image}>
 							<picture className={styles.sectionBlocksLeft3ImagePayments}>
-								<source media='(max-width: 1024px)' srcSet={Payments1024} />
-								<img src={Payments} alt='Payments rectangle Image' />
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.Payments375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.Payments1024}
+								/>
+								<img
+									src={HowItWorkImages.Payments}
+									alt='Payments rectangle Image'
+								/>
 							</picture>
 							<picture className={styles.sectionBlocksLeft3ImageTwoStars}>
-								<source media='(max-width: 1024px)' srcSet={TwoStars1024} />
-								<img src={TwoStars} alt='Two Stars Image' />
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.TwoStars375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.TwoStars1024}
+								/>
+								<img src={HowItWorkImages.TwoStars} alt='Two Stars Image' />
 							</picture>
 							<picture className={styles.sectionBlocksLeft3ImageThreeStars}>
-								<source media='(max-width: 1024px)' srcSet={ThreeStars1024} />
-								<img src={ThreeStars} alt='Three Stars Image' />
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.ThreeStars375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.ThreeStars1024}
+								/>
+								<img src={HowItWorkImages.ThreeStars} alt='Three Stars Image' />
 							</picture>
 						</div>
 					</div>
@@ -117,7 +163,7 @@ export const HowItWorkBlock = () => {
 						</div>
 						<div>
 							<Button size='large' type='button' version='second'>
-								<img src={PlayIcon} alt='Play icon' />
+								<img src={HowItWorkImages.PlayIcon} alt='Play icon' />
 								Play Video
 							</Button>
 						</div>
