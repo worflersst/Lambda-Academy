@@ -1,22 +1,14 @@
-import {
-	ChatsStars,
-	ChatsToOrderArrow,
-	Comment,
-	OrderArrow,
-	OrderStars,
-	Payments,
-	PlayIcon,
-	ThreeStars,
-	ToDo,
-	TwoStars,
-} from '@/shared/assets/home-page-picture/HowItWorkBlock';
+import { HowItWorkImages } from '@/shared/assets/home-page-picture/HowItWorkBlock';
 import RectangleGroupWhite from '@/shared/assets/home-page-picture/RectangleGroupWhite.svg';
 
+import { adaptivePropsFunk } from '@/shared/funk/adaptivePropsFunk/adaptivePropsFunk';
+import { useWindowSize } from '@/shared/hooks/useWindowSize/useWindowSize';
 import { Button } from '@/shared/ui/Button';
 import { Rectangle } from '@/shared/ui/Rectangle';
 import styles from './index.module.scss';
 
 export const HowItWorkBlock = () => {
+	const { width } = useWindowSize();
 	return (
 		<div className={styles.section}>
 			<div className={styles.sectionBlocks}>
@@ -24,47 +16,89 @@ export const HowItWorkBlock = () => {
 					<div className={styles.sectionBlocksLeft1}>
 						<h5 className={styles.sectionBlocksLeft1Title}>Chats</h5>
 						<p className={styles.sectionBlocksLeft1Text}>
-							Connect to anyone in your supply chain and exchange messages{' '}
+							Connect to anyone in your supply chain and exchange messages
 						</p>
 						<div className={styles.sectionBlocksLeft1Image}>
-							<img
-								src={ChatsStars}
-								alt='Stars image'
-								className={styles.sectionBlocksLeft1ImageStars}
-							/>
-							<img
-								src={Comment}
-								alt='Comment image'
-								className={styles.sectionBlocksLeft1ImageComment}
-							/>
-							<img
-								src={ChatsToOrderArrow}
-								alt='Arrow to order Image'
-								className={styles.sectionBlocksLeft1ImageArrow}
-							/>
+							<picture className={styles.sectionBlocksLeft1ImageStars}>
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.ChatsStars375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.ChatsStars1024}
+								/>
+								<img src={HowItWorkImages.ChatsStars} alt='Stars image' />
+							</picture>
+							<picture className={styles.sectionBlocksLeft1ImageComment}>
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.Comment375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.Comment1024}
+								/>
+								<img src={HowItWorkImages.Comment} alt='Comment image' />
+							</picture>
+							<picture className={styles.sectionBlocksLeft1ImageArrow}>
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.ChatsToOrderArrow375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.ChatsToOrderArrow1024}
+								/>
+								<img
+									src={HowItWorkImages.ChatsToOrderArrow}
+									alt='Arrow to order Image'
+								/>
+							</picture>
 						</div>
 					</div>
 					<div className={styles.sectionBlocksLeft2}>
 						<h5 className={styles.sectionBlocksLeft2Title}>Orders</h5>
 						<p className={styles.sectionBlocksLeft2Text}>
-							Create or confirm purchase orders with tap of a button
+							Create or confirm purchase orders
+							{width >= 1280 || (width <= 1024 && width >= 769)
+								? ' in just a few taps'
+								: ' with tap of a button'}
 						</p>
 						<div className={styles.sectionBlocksLeft2Image}>
-							<img
-								src={OrderStars}
-								alt='Order Stars Image'
-								className={styles.sectionBlocksLeft2ImageStars}
-							/>
-							<img
-								src={ToDo}
-								alt='ToDo Image'
-								className={styles.sectionBlocksLeft2ImageTodo}
-							/>
-							<img
-								src={OrderArrow}
-								alt='Order Arrow image'
-								className={styles.sectionBlocksLeft2ImageArrow}
-							/>
+							<picture className={styles.sectionBlocksLeft2ImageStars}>
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.OrderStars375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.OrderStars1024}
+								/>
+								<img src={HowItWorkImages.OrderStars} alt='Order Stars Image' />
+							</picture>
+							<picture className={styles.sectionBlocksLeft2ImageTodo}>
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.ToDo375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.ToDo1024}
+								/>
+								<img src={HowItWorkImages.ToDo} alt='ToDo Image' />
+							</picture>
+							<picture className={styles.sectionBlocksLeft2ImageArrow}>
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.OrderArrow375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.OrderArrow1024}
+								/>
+								<img src={HowItWorkImages.OrderArrow} alt='Order Arrow image' />
+							</picture>
 						</div>
 					</div>
 					<div className={styles.sectionBlocksLeft3}>
@@ -73,21 +107,42 @@ export const HowItWorkBlock = () => {
 							Send invoices and reconcile payments in one dashboard
 						</p>
 						<div className={styles.sectionBlocksLeft3Image}>
-							<img
-								src={Payments}
-								alt='Payments rectangle Image'
-								className={styles.sectionBlocksLeft3ImagePayments}
-							/>
-							<img
-								src={TwoStars}
-								alt='Two Stars Image'
-								className={styles.sectionBlocksLeft3ImageTwoStars}
-							/>
-							<img
-								src={ThreeStars}
-								alt='Three Stars Image'
-								className={styles.sectionBlocksLeft3ImageThreeStars}
-							/>
+							<picture className={styles.sectionBlocksLeft3ImagePayments}>
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.Payments375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.Payments1024}
+								/>
+								<img
+									src={HowItWorkImages.Payments}
+									alt='Payments rectangle Image'
+								/>
+							</picture>
+							<picture className={styles.sectionBlocksLeft3ImageTwoStars}>
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.TwoStars375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.TwoStars1024}
+								/>
+								<img src={HowItWorkImages.TwoStars} alt='Two Stars Image' />
+							</picture>
+							<picture className={styles.sectionBlocksLeft3ImageThreeStars}>
+								<source
+									media='(max-width: 375px)'
+									srcSet={HowItWorkImages.ThreeStars375}
+								/>
+								<source
+									media='(max-width: 1024px)'
+									srcSet={HowItWorkImages.ThreeStars1024}
+								/>
+								<img src={HowItWorkImages.ThreeStars} alt='Three Stars Image' />
+							</picture>
 						</div>
 					</div>
 				</div>
@@ -96,17 +151,19 @@ export const HowItWorkBlock = () => {
 					<div className={styles.sectionBlocksRightWrapper}>
 						<div className={styles.sectionBlocksRightText}>
 							<h2 className={styles.sectionBlocksRightTitle}>
-								Check out how it works
+								{width >= 1280 || width <= 1024
+									? 'Check out how it works'
+									: 'Tinvio in a heartbeat'}
 							</h2>
 							<p className={styles.sectionBlocksRightParagraf}>
-								It’s easy! Exchange messages, create or confirm orders, send
-								invoices, and collect payments across your supply chain — all
-								within one dashboard.
+								{width >= 1280 || width <= 1024
+									? 'It’s easy! Exchange messages, create or confirm orders, send invoices, and collect payments across your supply chain — all within one dashboard.'
+									: 'Exchange messages, create or confirm orders, send invoices, and collect payments across your supply chain — all within one dashboard.'}
 							</p>
 						</div>
 						<div>
 							<Button size='large' type='button' version='second'>
-								<img src={PlayIcon} alt='Play icon' />
+								<img src={HowItWorkImages.PlayIcon} alt='Play icon' />
 								Play Video
 							</Button>
 						</div>
@@ -133,7 +190,7 @@ export const HowItWorkBlock = () => {
 					<Rectangle
 						borderRadius='77px'
 						colorType='Ghost20'
-						widthAndHeight='496px'
+						widthAndHeight={adaptivePropsFunk('496px', '408px', '408px')}
 					/>
 				</div>
 			</div>

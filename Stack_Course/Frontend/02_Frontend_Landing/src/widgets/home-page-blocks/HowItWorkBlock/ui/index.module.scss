@@ -1,6 +1,6 @@
 .section {
-	margin-top: 216px;
-	margin-left: 40px;
+	margin-top: 215px;
+	margin-left: 55px;
 	width: 100%;
 	height: 660px;
 	background-color: var(--color-bg-grey);
@@ -14,13 +14,15 @@
 	&Blocks {
 		margin-inline: 230px;
 		display: flex;
-		gap: 180px;
+		gap: 168px;
+		> * {
+			transform: skewY(8deg);
+		}
 
 		&Left {
 			width: 600px;
 			height: 600px;
 			position: relative;
-			transform: skewY(8deg);
 
 			> * {
 				transform: rotate(8deg);
@@ -37,8 +39,8 @@
 			}
 
 			&1 {
-				top: 82px;
-				left: 65px;
+				top: 101px;
+				left: 53px;
 				&Title {
 					font-weight: 700;
 					font-size: 20px;
@@ -66,28 +68,28 @@
 						position: absolute;
 						pointer-events: none;
 						transform: none;
+						transform: rotate(-8deg);
 					}
 
 					&Stars {
-						left: 104px;
-						top: -10px;
+						left: 106px;
+						top: -12px;
 					}
 
 					&Comment {
-						left: 179px;
-						top: 16px;
-						transform: rotate(-10deg);
+						right: -73px;
+						top: 13px;
 					}
 
 					&Arrow {
-						left: 238px;
-						top: 83px;
+						right: -182px;
+						top: 80px;
 					}
 				}
 			}
 			&2 {
-				top: 260px;
-				left: 307px;
+				top: 272px;
+				left: 299px;
 
 				&Title {
 					font-weight: 700;
@@ -114,28 +116,28 @@
 					> * {
 						position: absolute;
 						pointer-events: none;
+						transform: rotate(-8deg);
 					}
 
 					&Stars {
-						left: 154px;
-						top: -21px;
+						right: -30px;
+						top: -24px;
 					}
 
 					&Todo {
-						left: -54px;
-						top: 114px;
-						transform: rotate(-10deg);
+						left: -58px;
+						top: 113px;
 					}
 
 					&Arrow {
 						left: -172px;
-						top: 106px;
+						top: 100px;
 					}
 				}
 			}
 			&3 {
-				top: 388px;
-				left: 40px;
+				top: 410px;
+				left: 27px;
 
 				&Title {
 					font-weight: 700;
@@ -162,20 +164,20 @@
 					> * {
 						position: absolute;
 						pointer-events: none;
+						transform: rotate(-8deg);
 					}
 					&Payments {
-						left: -40px;
-						top: 17px;
-						transform: rotate(-10deg);
+						left: -39px;
+						top: 13px;
 					}
 					&TwoStars {
-						left: 30px;
-						top: -16px;
+						left: 40px;
+						top: -20px;
 					}
 
 					&ThreeStars {
-						left: 241px;
-						top: 18px;
+						right: -92px;
+						top: 15px;
 					}
 				}
 			}
@@ -196,7 +198,6 @@
 				display: flex;
 				flex-direction: column;
 				gap: 32px;
-				transform: skewY(8deg);
 			}
 
 			&Text {
@@ -225,6 +226,515 @@
 	}
 }
 
+@include media-mixin.desktop-medium {
+	.section {
+		margin-top: 213px;
+		margin-left: 55px;
+		&Blocks {
+			margin-inline: 33px;
+			display: flex;
+			gap: 161px;
+
+			&Left {
+				&1 {
+					top: 96px;
+					left: 69px;
+					&Text {
+						width: 202px;
+						font-size: 13px;
+					}
+
+					&Image {
+						&Stars {
+							left: 107px;
+							top: -13px;
+							transform: rotate(-8deg);
+						}
+
+						&Comment {
+							left: 181px;
+							top: 13px;
+							transform: rotate(-5deg);
+						}
+
+						&Arrow {
+							left: 238px;
+							top: 77px;
+						}
+					}
+				}
+				&2 {
+					top: 266px;
+					left: 313px;
+
+					&Title {
+						padding-left: 5px;
+					}
+
+					&Image {
+						&Stars {
+							left: 152px;
+							top: -24px;
+							transform: rotate(-8deg);
+						}
+
+						&Todo {
+							top: 112px;
+						}
+
+						&Arrow {
+							left: -167px;
+							top: 99px;
+							transform: rotate(-12deg);
+						}
+					}
+				}
+				&3 {
+					top: 403px;
+					left: 44px;
+
+					&Image {
+						> * {
+							transform: rotate(-8deg);
+						}
+						&Payments {
+							left: -38px;
+							top: 15px;
+						}
+						&TwoStars {
+							left: 40px;
+							top: -19px;
+						}
+
+						&ThreeStars {
+							left: 241px;
+							top: 16px;
+						}
+					}
+				}
+			}
+
+			&Right {
+				&Wrapper {
+					margin-top: 65px;
+				}
+				&Title {
+					font-size: 36px;
+					line-height: 44px;
+				}
+
+				&Paragraf {
+					width: 478px;
+					font-size: 16px;
+					line-height: 23px;
+				}
+			}
+		}
+	}
+}
+
+@include media-mixin.laptop {
+	.section {
+		&Blocks {
+			margin-inline: 33px;
+			display: flex;
+			gap: 79px;
+
+			&Left {
+				&1 {
+					top: 106px;
+					left: 69px;
+				}
+				&2 {
+					top: 277px;
+					left: 313px;
+				}
+				&3 {
+					top: 415px;
+					left: 44px;
+				}
+			}
+
+			&Right {
+				&Wrapper {
+					margin-top: 65px;
+				}
+				&Title {
+					font-size: 36px;
+					line-height: 44px;
+				}
+
+				&Paragraf {
+					width: 398px;
+					font-size: 16px;
+					line-height: 23px;
+				}
+			}
+		}
+	}
+}
+@include media-mixin.tablet {
+	.section {
+		margin-top: 224px;
+		margin-left: 0px;
+		&Blocks {
+			gap: 4px;
+
+			&Left {
+				> * {
+					width: 252px;
+					height: 101px;
+				}
+				&1 {
+					top: 125px;
+					left: 39px;
+					&Title {
+						padding-bottom: 5px;
+					}
+					&Text {
+						width: 199px;
+						font-size: 11px;
+						line-height: 13px;
+						padding-top: 3px;
+					}
+
+					&Image {
+						&Stars {
+							left: 105px;
+							top: -5px;
+						}
+
+						&Comment {
+							left: 171px;
+							top: 18px;
+						}
+
+						&Arrow {
+							left: 233px;
+							top: 82px;
+						}
+					}
+				}
+				&2 {
+					top: 282px;
+					left: 266px;
+
+					&Image {
+						&Stars {
+							left: 147px;
+							top: -15px;
+						}
+
+						&Todo {
+							left: -48px;
+							top: 106px;
+						}
+
+						&Arrow {
+							left: -148px;
+							top: 99px;
+						}
+					}
+				}
+				&3 {
+					top: 411px;
+					left: 16px;
+
+					&Image {
+						&Payments {
+							left: -36px;
+							top: 18px;
+						}
+						&TwoStars {
+							left: 42px;
+							top: -14px;
+						}
+
+						&ThreeStars {
+							left: 231px;
+							top: 20px;
+						}
+					}
+				}
+			}
+
+			&Right {
+				align-items: flex-end;
+				&Wrapper {
+					margin-top: 63px;
+				}
+				&Title {
+					font-size: 32px;
+					line-height: 37px;
+				}
+
+				&Paragraf {
+					width: 340px;
+					font-size: 16px;
+					line-height: 23px;
+				}
+			}
+		}
+	}
+}
+@include media-mixin.mobile-large {
+	.section {
+		height: 955px;
+		margin-top: 206px;
+		margin-left: 0px;
+		&Blocks {
+			flex-direction: column-reverse;
+			gap: 0px;
+			margin-inline: 0px;
+
+			> * {
+				width: 100vw;
+				margin-left: 0px;
+			}
+
+			&Left {
+				> * {
+					width: 252px;
+					height: 101px;
+				}
+				&1 {
+					top: 94px;
+					left: 154px;
+					&Title {
+						padding-bottom: 5px;
+					}
+					&Text {
+						width: 216px;
+						font-size: 12px;
+						line-height: 15px;
+						padding-right: 14px;
+						padding-top: 0px;
+					}
+
+					&Image {
+						&Stars {
+							left: 105px;
+							top: -5px;
+						}
+
+						&Comment {
+							left: 171px;
+							top: 18px;
+						}
+
+						&Arrow {
+							left: 233px;
+							top: 82px;
+						}
+					}
+				}
+				&2 {
+					top: 252px;
+					left: 380px;
+
+					&Image {
+						&Stars {
+							left: 147px;
+							top: -17px;
+						}
+
+						&Todo {
+							left: -44px;
+							top: 111px;
+						}
+					}
+				}
+				&3 {
+					top: 379px;
+					left: 132px;
+				}
+			}
+
+			&Right {
+				align-items: center;
+				height: 250px;
+				&Wrapper {
+					width: 430px;
+					height: 205px;
+					margin-top: 24px;
+					align-items: center;
+				}
+
+				&Text {
+					align-items: center;
+				}
+
+				&Title {
+					width: 356px;
+					font-size: 32px;
+					line-height: 39px;
+				}
+
+				&Paragraf {
+					width: 430px;
+					font-size: 16px;
+					line-height: 23px;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+@include media-mixin.mobile {
+	.section {
+		height: 763px;
+		margin-top: -27px;
+
+		&Blocks {
+			flex-direction: column-reverse;
+			gap: 0px;
+			margin-inline: 0px;
+
+			> * {
+				width: 100vw;
+				margin-left: 0px;
+			}
+
+			&Left {
+				height: 310px;
+				> * {
+					width: 166px;
+					height: 67px;
+					border-radius: 12px;
+				}
+				&1 {
+					top: 39px;
+					left: 27px;
+					&Title {
+						font-size: 12px;
+						padding-left: 0px;
+						padding-bottom: 0px;
+						padding-top: 6px;
+					}
+					&Text {
+						width: 125px;
+						font-size: 8px;
+						line-height: 10px;
+						padding-right: 0px;
+						padding-top: 0px;
+					}
+
+					&Image {
+						&Stars {
+							left: 105px;
+							top: 29px;
+						}
+
+						&Comment {
+							left: 141px;
+							top: 36px;
+						}
+
+						&Arrow {
+							left: 186px;
+							top: 78px;
+						}
+					}
+				}
+				&2 {
+					top: 143px;
+					left: 177px;
+
+					&Title {
+						padding-top: 9px;
+						font-size: 12px;
+					}
+					&Text {
+						width: 102px;
+						font-size: 8px;
+						line-height: 10px;
+						margin-top: 0px;
+						margin-bottom: 15px;
+					}
+
+					&Image {
+						&Stars {
+							left: 132px;
+							top: 20px;
+						}
+
+						&Todo {
+							left: -3px;
+							top: 99px;
+						}
+
+						&Arrow {
+							left: -64px;
+							top: 96px;
+						}
+					}
+				}
+				&3 {
+					top: 227px;
+					left: 13px;
+
+					&Title {
+						padding-top: 9px;
+						font-size: 12px;
+					}
+					&Text {
+						width: 104px;
+						margin-top: 0px;
+						margin-bottom: 15px;
+						font-size: 8px;
+						line-height: 10px;
+					}
+					&Image {
+						&Payments {
+							left: 4px;
+							top: 39px;
+						}
+						&TwoStars {
+							left: 63px;
+							top: 25px;
+						}
+
+						&ThreeStars {
+							left: 186px;
+							top: 42px;
+						}
+					}
+				}
+			}
+
+			&Right {
+				align-items: center;
+				height: 250px;
+				&Wrapper {
+					width: 430px;
+					height: 205px;
+					margin-top: 0px;
+					margin-bottom: 24px;
+					padding-right: 19px;
+					align-items: center;
+				}
+
+				&Text {
+					align-items: center;
+				}
+
+				&Title {
+					width: 299px;
+					font-size: 28px;
+					line-height: 33px;
+				}
+
+				&Paragraf {
+					width: 343px;
+					font-size: 14px;
+					line-height: 23px;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
 .background {
 	position: absolute;
 
@@ -232,6 +742,11 @@
 		transform: skewY(8deg);
 		position: absolute;
 		z-index: -1;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	&Group1 {
@@ -251,5 +766,97 @@
 	&Rectangle {
 		left: 1400px;
 		bottom: -275px;
+	}
+
+	@include media-mixin.desktop-medium {
+		&Group1 {
+			width: 322px;
+			height: 193px;
+			left: 1099px;
+			bottom: -365px;
+		}
+
+		&Group2 {
+			width: 305px;
+			height: 268px;
+			left: 21px;
+			bottom: -431px;
+		}
+
+		&Rectangle {
+			left: 1088px;
+			bottom: -232px;
+		}
+	}
+	@include media-mixin.laptop {
+		&Group1 {
+			left: 1020px;
+			bottom: -365px;
+		}
+
+		&Group2 {
+			left: 15px;
+			bottom: -440px;
+		}
+
+		&Rectangle {
+			left: 1043px;
+			bottom: -232px;
+		}
+	}
+	@include media-mixin.tablet {
+		&Group1 {
+			left: 834px;
+			bottom: -346px;
+		}
+
+		&Group2 {
+			left: -79px;
+			bottom: -436px;
+		}
+
+		&Rectangle {
+			left: 851px;
+			bottom: -220px;
+		}
+	}
+	@include media-mixin.mobile-large {
+		&Group1 {
+			width: 355px;
+			height: 221px;
+			left: 568px;
+			top: 254px;
+			bottom: 0px;
+		}
+
+		&Group2 {
+			left: -92px;
+			bottom: 11px;
+		}
+
+		&Rectangle {
+			left: 596px;
+			bottom: 33px;
+		}
+	}
+	@include media-mixin.mobile {
+		&Group1 {
+			width: 200px;
+			height: 150px;
+			left: -100px;
+			top: -50px;
+			bottom: 0px;
+		}
+
+		&Group2 {
+			top: 216px;
+			left: 237px;
+			bottom: 0px;
+		}
+
+		&Rectangle {
+			left: 250px;
+			bottom: -198px;
+		}
 	}
 }
