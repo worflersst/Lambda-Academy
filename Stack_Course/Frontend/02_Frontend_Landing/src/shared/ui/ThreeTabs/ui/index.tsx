@@ -1,8 +1,9 @@
 import styles from './index.module.scss';
 
 export const ThreeTabs = ({ tabs, isTab, setIsTab }) => {
-	const handleTabs = (index: number) => {
-		return setIsTab(tabs[index]);
+	const handleTabs = (id: number) => {
+		const selectedTab = tabs.find(tab => tab.id === id);
+		if (selectedTab) setIsTab(selectedTab);
 	};
 	return (
 		<div className={styles.wrapper}>
@@ -16,30 +17,17 @@ export const ThreeTabs = ({ tabs, isTab, setIsTab }) => {
 				</span>
 			</h2>
 			<div className={styles.buttons}>
-				<button
-					className={`${styles.buttonsNum1} ${
-						isTab.id === 1 ? styles.buttonsActive : ''
-					}`}
-					onClick={() => handleTabs(0)}
-				>
-					Chats
-				</button>
-				<button
-					className={`${styles.buttonsNum1} ${
-						isTab.id === 2 ? styles.buttonsActive : ''
-					}`}
-					onClick={() => handleTabs(1)}
-				>
-					Orders
-				</button>
-				<button
-					className={`${styles.buttonsNum3} ${
-						isTab.id === 3 ? styles.buttonsActive : ''
-					}`}
-					onClick={() => handleTabs(2)}
-				>
-					Payments
-				</button>
+				{tabs.map((tab, index) => (
+					<button
+						key={tab.id}
+						className={`${styles[`buttonsNum${index + 1}`]} ${
+							isTab.id === tab.id ? styles.buttonsActive : ''
+						}`}
+						onClick={() => handleTabs(tab.id)}
+					>
+						{tab.buttonText}
+					</button>
+				))}
 			</div>
 			<ul className={styles.list}>
 				{isTab.features.map((str, index) => (
@@ -51,5 +39,3 @@ export const ThreeTabs = ({ tabs, isTab, setIsTab }) => {
 		</div>
 	);
 };
-
-// нужно добавить анимации, на спан в тайтле , картинки в правом блоке. Так же перелопатить элемент кнопки чтобы можно чтобы пропсами передавать настройку текста. И типизировать этот компонент и табы в родительском.

@@ -22,6 +22,7 @@ export const FeaturedTabsBlock = () => {
 		{
 			id: 1,
 			title: 'Buddy',
+			buttonText: 'Chats',
 			features: [
 				'Create chats with any business (even if they’re not on Tinvio)',
 				'Fully integrated with your favorite chat apps',
@@ -33,6 +34,7 @@ export const FeaturedTabsBlock = () => {
 		{
 			id: 2,
 			title: 'Speedy',
+			buttonText: 'Orders',
 			features: [
 				'Create or confirm purchase orders at lightning speed',
 				'Manage inventory details and availability in real-time',
@@ -44,6 +46,7 @@ export const FeaturedTabsBlock = () => {
 		{
 			id: 3,
 			title: 'Money',
+			buttonText: 'Payments',
 			features: [
 				'Send invoices and easily track them until they’re paid',
 				'Real-time payments settlement and reconciliation',
