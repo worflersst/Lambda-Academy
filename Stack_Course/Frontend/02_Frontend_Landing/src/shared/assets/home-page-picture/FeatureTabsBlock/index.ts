@@ -6,7 +6,7 @@ import PaymentsPhone1 from './PaymentsPhone1.svg';
 import PaymentsPhone2 from './PaymentsPhone2.svg';
 import Stars from './Stars.svg';
 
-export {
+export const FeaturedTabsBlockImage = {
 	ChatsPhone1,
 	ChatsPhone2,
 	OrderPhone1,

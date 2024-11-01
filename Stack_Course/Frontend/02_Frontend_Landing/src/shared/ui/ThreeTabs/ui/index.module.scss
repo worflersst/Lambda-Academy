@@ -20,17 +20,17 @@
 	white-space: nowrap;
 	color: var(--color-text-primary);
 
-	&.Buddy {
+	&.buddy {
 		width: 248px;
 		animation: typing 1s steps(10) forwards, blink 0.8s step-end infinite;
 	}
 
-	&.Speedy {
+	&.speedy {
 		width: 273px;
 		animation: typing 1s steps(11) forwards, blink 0.8s step-end infinite;
 	}
 
-	&.Money {
+	&.money {
 		width: 252px;
 		animation: typing 1s steps(10) forwards, blink 0.8s step-end infinite;
 	}
@@ -100,14 +100,75 @@
 			content: '';
 			left: -18px;
 			top: 7px;
-			width: 9px;
-			height: 9px;
+			width: 12px;
+			height: 12px;
 			background: radial-gradient(
 				95.51% 95.51% at 50% 50%,
 				#ff474d 0%,
 				rgba(255, 130, 134, 0.57) 100%
 			);
 			transform: rotate(45deg);
+		}
+	}
+}
+
+@include media-mixin.desktop-medium {
+	.title {
+		font-size: 36px;
+		line-height: 44px;
+	}
+
+	.titleText {
+		margin-left: 10px;
+		display: inline-block;
+		position: absolute;
+		overflow: hidden;
+		border-right: 2px solid var(--color-text-main);
+		white-space: nowrap;
+		color: var(--color-text-primary);
+		&.buddy {
+			width: 202px;
+		}
+
+		&.speedy {
+			width: 217px;
+		}
+
+		&.money {
+			width: 206px;
+		}
+	}
+
+	.list {
+		list-style: none;
+		padding: 0px 0px 0px 19px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+
+		&Item {
+			padding-left: 9px;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 23px;
+			letter-spacing: 0.3px;
+
+			position: relative;
+
+			&::before {
+				position: absolute;
+				content: '';
+				left: -18px;
+				top: 7px;
+				width: 10px;
+				height: 10px;
+				background: radial-gradient(
+					95.51% 95.51% at 50% 50%,
+					#ff474d 0%,
+					rgba(255, 130, 134, 0.57) 100%
+				);
+				transform: rotate(45deg);
+			}
 		}
 	}
 }
