@@ -62,3 +62,16 @@
 		}
 	}
 }
+
+@include media-mixin.laptop {
+	.section {
+		&Img1 {
+			top: 47px;
+			left: 101px;
+		}
+		&Img2 {
+			top: 194px;
+			left: 348px;
+		}
+	}
+}

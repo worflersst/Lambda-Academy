@@ -121,3 +121,36 @@
 		}
 	}
 }
+
+@include media-mixin.laptop {
+	.main {
+		gap: 0px;
+	}
+
+	.leftBlock {
+		width: 50vw;
+
+		&Rectangle {
+			left: -239px;
+			top: -103px;
+		}
+	}
+
+	.rightBlock {
+		width: 50vw;
+
+		&DoubleRectangle {
+			top: 78px;
+			left: 156px;
+		}
+
+		&ImgStars {
+			top: 97px;
+			left: -10px;
+		}
+		&ImgRectangleGroup {
+			top: 75px;
+			left: 370px;
+		}
+	}
+}
