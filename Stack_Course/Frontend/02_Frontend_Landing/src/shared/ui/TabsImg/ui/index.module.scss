@@ -75,3 +75,16 @@
 		}
 	}
 }
+
+@include media-mixin.tablet {
+	.section {
+		&Img1 {
+			top: 38px;
+			left: 113px;
+		}
+		&Img2 {
+			top: 185px;
+			left: 367px;
+		}
+	}
+}

@@ -154,3 +154,37 @@
 		}
 	}
 }
+
+@include media-mixin.tablet {
+	.leftBlock {
+		width: 33vw;
+
+		&Content {
+			width: 407px;
+			margin-bottom: 102px;
+		}
+
+		&Rectangle {
+			left: -239px;
+			top: -103px;
+		}
+	}
+
+	.rightBlock {
+		width: 50vw;
+
+		&DoubleRectangle {
+			top: 69px;
+			left: 167px;
+		}
+
+		&ImgStars {
+			top: 88px;
+			left: 1px;
+		}
+		&ImgRectangleGroup {
+			top: 66px;
+			left: 382px;
+		}
+	}
+}

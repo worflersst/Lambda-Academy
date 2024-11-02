@@ -11,7 +11,15 @@ export const tabs = [
 			'Real-time messages and alerts',
 		],
 		img1: <img src={FeaturedTabsBlockImage.ChatsPhone1} alt='Buddy Phone 1' />,
-		img2: <img src={FeaturedTabsBlockImage.ChatsPhone2} alt='Buddy Phone 2' />,
+		img2: (
+			<picture>
+				<source
+					srcSet={FeaturedTabsBlockImage.ChatsPhone2_1024}
+					media='(max-width: 1024px)'
+				/>
+				<img src={FeaturedTabsBlockImage.ChatsPhone2} alt='Buddy Phone 2' />
+			</picture>
+		),
 	},
 	{
 		id: 2,
