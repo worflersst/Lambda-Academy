@@ -1,86 +1,52 @@
-import {
-	ChatsPhone1,
-	ChatsPhone2,
-	OrderPhone1,
-	OrderPhone2,
-	PaymentsPhone1,
-	PaymentsPhone2,
-	Stars,
-} from '@/shared/assets/home-page-picture/FeatureTabsBlock';
+import { FeaturedTabsBlockImage } from '@/shared/assets/home-page-picture/FeatureTabsBlock';
 import RectangleGroupWhite from '@/shared/assets/home-page-picture/RectangleGroupWhite.svg';
+import RectangleGroupWhiteGray from '@/shared/assets/home-page-picture/RectangleGroupWhiteGray.png';
 
+import { adaptivePropsFunk } from '@/shared/funk/adaptivePropsFunk/adaptivePropsFunk';
+import { useWindowSize } from '@/shared/hooks/useWindowSize/useWindowSize';
 import { Button } from '@/shared/ui/Button';
 import { DoubleRectangle } from '@/shared/ui/DoubleRectangle';
 import { Rectangle } from '@/shared/ui/Rectangle';
 import { TabsImage } from '@/shared/ui/TabsImg';
 import { ThreeTabs } from '@/shared/ui/ThreeTabs';
 import { useState } from 'react';
+import { tabs } from './data';
 import styles from './index.module.scss';
 
 export const FeaturedTabsBlock = () => {
-	const tabs = [
-		{
-			id: 1,
-			title: 'Buddy',
-			buttonText: 'Chats',
-			features: [
-				'Create chats with any business (even if they’re not on Tinvio)',
-				'Fully integrated with your favorite chat apps',
-				'Real-time messages and alerts',
-			],
-			img1: <img src={ChatsPhone1} alt='Buddy Phone 1' />,
-			img2: <img src={ChatsPhone2} alt='Buddy Phone 2' />,
-		},
-		{
-			id: 2,
-			title: 'Speedy',
-			buttonText: 'Orders',
-			features: [
-				'Create or confirm purchase orders at lightning speed',
-				'Manage inventory details and availability in real-time',
-				'24/7 order insights and data reports',
-			],
-			img1: <img src={OrderPhone1} alt='Speedy Phone 1' />,
-			img2: <img src={OrderPhone2} alt='Speedy Phone 2' />,
-		},
-		{
-			id: 3,
-			title: 'Money',
-			buttonText: 'Payments',
-			features: [
-				'Send invoices and easily track them until they’re paid',
-				'Real-time payments settlement and reconciliation',
-				'Safe, secure, and compliant',
-			],
-			img1: <img src={PaymentsPhone1} alt='Money Phone 1' />,
-			img2: <img src={PaymentsPhone2} alt='Money Phone 2' />,
-		},
-	];
-
+	const { width } = useWindowSize();
 	const [isTab, setIsTab] = useState(tabs[0]);
 
 	return (
 		<div className={styles.main}>
 			<div className={styles.leftBlock}>
-				<ThreeTabs tabs={tabs} isTab={isTab} setIsTab={setIsTab} />
-				<div className={styles.leftBlockButton}>
-					<Button size='medium' type='button' version='primary'>
-						More Features
-					</Button>
-				</div>
-				<div className={styles.leftBlockRectangle}>
-					<Rectangle
-						borderRadius='28px'
-						colorType='Ghost15'
-						widthAndHeight='477px'
-					/>
+				<div className={styles.leftBlockContent}>
+					<ThreeTabs tabs={tabs} isTab={isTab} setIsTab={setIsTab} />
+					<div className={styles.leftBlockButton}>
+						<Button size='medium' type='button' version='primary'>
+							More Features
+						</Button>
+					</div>
+					<div className={styles.leftBlockRectangle}>
+						<Rectangle
+							borderRadius='28px'
+							colorType='Ghost15'
+							widthAndHeight={adaptivePropsFunk('375px', '477px', '477px')}
+						/>
+					</div>
+
+					{width < 769 && (
+						<div className={styles.leftBlockGroup}>
+							<img src={RectangleGroupWhiteGray} alt='Rectangle Group image' />
+						</div>
+					)}
 				</div>
 			</div>
 			<div className={styles.rightBlock}>
 				<div className={styles.rightBlockDoubleRectangle}>
 					<DoubleRectangle
-						WandHFirstLayer='560px'
-						WandHSeconfLayer='490px'
+						WandHFirstLayer={adaptivePropsFunk('451px', '580px', '560px')}
+						WandHSeconfLayer={adaptivePropsFunk('395px', '508px', '490px')}
 						borderRadius='72px'
 						colorTypeFirstLayer='Red60'
 						colorTypeSeconfLayer='Red100'
@@ -89,7 +55,13 @@ export const FeaturedTabsBlock = () => {
 
 				<TabsImage isTab={isTab} />
 				<div className={styles.rightBlockImgStars}>
-					<img src={Stars} alt='Stars Image' />
+					<picture>
+						<source
+							srcSet={FeaturedTabsBlockImage.Stars375}
+							media='(max-width: 375px)'
+						/>
+						<img src={FeaturedTabsBlockImage.Stars} alt='Stars Image' />
+					</picture>
 				</div>
 				<div className={styles.rightBlockImgRectangleGroup}>
 					<img src={RectangleGroupWhite} alt='Rectangle Group White image' />
