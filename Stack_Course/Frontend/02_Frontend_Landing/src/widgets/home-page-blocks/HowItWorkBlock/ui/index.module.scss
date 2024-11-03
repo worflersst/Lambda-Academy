@@ -459,7 +459,6 @@
 			}
 
 			&Right {
-				align-items: flex-end;
 				&Wrapper {
 					margin-top: 63px;
 				}
@@ -480,7 +479,7 @@
 @include media-mixin.mobile-large {
 	.section {
 		height: 955px;
-		margin-top: 206px;
+		margin-top: -10px;
 		margin-left: 0px;
 		&Blocks {
 			flex-direction: column-reverse;
@@ -583,7 +582,7 @@
 @include media-mixin.mobile {
 	.section {
 		height: 763px;
-		margin-top: -27px;
+		margin-top: -316px;
 
 		&Blocks {
 			flex-direction: column-reverse;

@@ -61,9 +61,9 @@ export const HowItWorkBlock = () => {
 						<h5 className={styles.sectionBlocksLeft2Title}>Orders</h5>
 						<p className={styles.sectionBlocksLeft2Text}>
 							Create or confirm purchase orders
-							{width >= 1280 || (width <= 1024 && width >= 769)
-								? ' in just a few taps'
-								: ' with tap of a button'}
+							{width > 1024 || width <= 768
+								? ' with tap of a button'
+								: ' in just a few taps'}
 						</p>
 						<div className={styles.sectionBlocksLeft2Image}>
 							<picture className={styles.sectionBlocksLeft2ImageStars}>
@@ -151,7 +151,7 @@ export const HowItWorkBlock = () => {
 					<div className={styles.sectionBlocksRightWrapper}>
 						<div className={styles.sectionBlocksRightText}>
 							<h2 className={styles.sectionBlocksRightTitle}>
-								{width >= 1280 || width <= 1024
+								{width > 1280 || width < 1025
 									? 'Check out how it works'
 									: 'Tinvio in a heartbeat'}
 							</h2>
