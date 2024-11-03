@@ -31,7 +31,7 @@ export const FeaturedTabsBlock = () => {
 						<Rectangle
 							borderRadius='28px'
 							colorType='Ghost15'
-							widthAndHeight={adaptivePropsFunk('477px', '477px', '375px')}
+							widthAndHeight={adaptivePropsFunk('375px', '477px', '477px')}
 						/>
 					</div>
 
@@ -45,8 +45,8 @@ export const FeaturedTabsBlock = () => {
 			<div className={styles.rightBlock}>
 				<div className={styles.rightBlockDoubleRectangle}>
 					<DoubleRectangle
-						WandHFirstLayer={adaptivePropsFunk('560px', '580px', '451px')}
-						WandHSeconfLayer={adaptivePropsFunk('490px', '508px', '395px')}
+						WandHFirstLayer={adaptivePropsFunk('451px', '580px', '560px')}
+						WandHSeconfLayer={adaptivePropsFunk('395px', '508px', '490px')}
 						borderRadius='72px'
 						colorTypeFirstLayer='Red60'
 						colorTypeSeconfLayer='Red100'
@@ -55,7 +55,13 @@ export const FeaturedTabsBlock = () => {
 
 				<TabsImage isTab={isTab} />
 				<div className={styles.rightBlockImgStars}>
-					<img src={FeaturedTabsBlockImage.Stars} alt='Stars Image' />
+					<picture>
+						<source
+							srcSet={FeaturedTabsBlockImage.Stars375}
+							media='(max-width: 375px)'
+						/>
+						<img src={FeaturedTabsBlockImage.Stars} alt='Stars Image' />
+					</picture>
 				</div>
 				<div className={styles.rightBlockImgRectangleGroup}>
 					<img src={RectangleGroupWhite} alt='Rectangle Group White image' />

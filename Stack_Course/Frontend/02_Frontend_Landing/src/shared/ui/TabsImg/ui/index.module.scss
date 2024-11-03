@@ -105,3 +105,20 @@
 		}
 	}
 }
+
+@include media-mixin.mobile {
+	.section {
+		&Img1 {
+			top: 28px;
+			left: -31px;
+			width: 246px;
+			height: 406px;
+		}
+		&Img2 {
+			top: 119px;
+			left: 125px;
+			width: 346px;
+			height: 400px;
+		}
+	}
+}

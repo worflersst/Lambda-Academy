@@ -243,3 +243,64 @@
 		}
 	}
 }
+
+@include media-mixin.mobile {
+	.wrapper {
+		margin-left: 16px;
+	}
+	.title {
+		font-size: 28px;
+		line-height: 33px;
+		text-indent: 32px;
+		margin-left: 4px;
+	}
+	.titleText {
+		text-indent: 0px;
+		margin-left: 8px;
+		&.buddy {
+			width: 181px;
+		}
+
+		&.speedy {
+			width: 194px;
+		}
+
+		&.money {
+			width: 185px;
+		}
+	}
+
+	.buttons {
+		margin-left: -16px;
+		margin-top: 4px;
+		gap: 8px;
+		justify-content: center;
+		align-items: center;
+
+		&Num1 {
+			width: 87px;
+		}
+		&Num2 {
+			width: 94px;
+		}
+		&Num3 {
+			width: 114px;
+		}
+	}
+
+	.list {
+		gap: 8px;
+		padding: 0px;
+
+		&Item {
+			width: 336px;
+			font-size: 14px;
+			line-height: 20px;
+			padding-left: 28px;
+			&::before {
+				left: 2px;
+				top: 5px;
+			}
+		}
+	}
+}
