@@ -1,6 +1,9 @@
 import { FeaturedTabsBlockImage } from '@/shared/assets/home-page-picture/FeatureTabsBlock';
 import RectangleGroupWhite from '@/shared/assets/home-page-picture/RectangleGroupWhite.svg';
+import RectangleGroupWhiteGray from '@/shared/assets/home-page-picture/RectangleGroupWhiteGray.png';
 
+import { adaptivePropsFunk } from '@/shared/funk/adaptivePropsFunk/adaptivePropsFunk';
+import { useWindowSize } from '@/shared/hooks/useWindowSize/useWindowSize';
 import { Button } from '@/shared/ui/Button';
 import { DoubleRectangle } from '@/shared/ui/DoubleRectangle';
 import { Rectangle } from '@/shared/ui/Rectangle';
@@ -11,6 +14,7 @@ import { tabs } from './data';
 import styles from './index.module.scss';
 
 export const FeaturedTabsBlock = () => {
+	const { width } = useWindowSize();
 	const [isTab, setIsTab] = useState(tabs[0]);
 
 	return (
@@ -27,16 +31,22 @@ export const FeaturedTabsBlock = () => {
 						<Rectangle
 							borderRadius='28px'
 							colorType='Ghost15'
-							widthAndHeight='477px'
+							widthAndHeight={adaptivePropsFunk('477px', '477px', '375px')}
 						/>
 					</div>
+
+					{width < 769 && (
+						<div className={styles.leftBlockGroup}>
+							<img src={RectangleGroupWhiteGray} alt='Rectangle Group image' />
+						</div>
+					)}
 				</div>
 			</div>
 			<div className={styles.rightBlock}>
 				<div className={styles.rightBlockDoubleRectangle}>
 					<DoubleRectangle
-						WandHFirstLayer='560px'
-						WandHSeconfLayer='490px'
+						WandHFirstLayer={adaptivePropsFunk('560px', '580px', '451px')}
+						WandHSeconfLayer={adaptivePropsFunk('490px', '508px', '395px')}
 						borderRadius='72px'
 						colorTypeFirstLayer='Red60'
 						colorTypeSeconfLayer='Red100'

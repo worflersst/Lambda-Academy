@@ -88,3 +88,20 @@
 		}
 	}
 }
+
+@include media-mixin.mobile-large {
+	.section {
+		&Img1 {
+			top: 3px;
+			left: 76px;
+			width: 338px;
+			height: 575px;
+		}
+		&Img2 {
+			top: 142px;
+			left: 371px;
+			width: 341px;
+			height: 547px;
+		}
+	}
+}
