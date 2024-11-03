@@ -1,6 +1,6 @@
 .main {
 	margin-top: 170px;
-	width: 100%;
+	width: 100vw;
 	height: 790px;
 	display: flex;
 	gap: 40px;
@@ -9,20 +9,22 @@
 }
 
 .leftBlock {
-	width: 575px;
-	height: 370px;
-	margin-left: 160px;
+	width: 38vw;
 	display: flex;
-	flex-direction: column;
-	gap: 32px;
+	justify-content: flex-end;
 	position: relative;
 
+	&Content {
+		width: 574px;
+		height: 370px;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+	}
+
 	&Button {
-		font-family: Gilroy;
-		font-size: 20px;
-		font-weight: 700;
-		line-height: 25px;
-		text-align: center;
+		display: flex;
+		justify-content: flex-start;
 	}
 
 	&Rectangle {
@@ -34,7 +36,7 @@
 }
 
 .rightBlock {
-	width: 850px;
+	width: 44vw;
 	height: 790px;
 	position: relative;
 
@@ -49,7 +51,7 @@
 
 	&ImgStars {
 		top: 97px;
-		left: -6px;
+		left: -4px;
 	}
 	&ImgRectangleGroup {
 		top: 75px;
@@ -62,6 +64,239 @@
 			opacity: 0.5;
 			width: 100%;
 			height: 100%;
+		}
+	}
+}
+@include media-mixin.desktop-medium {
+	.main {
+		margin-top: 170px;
+		width: 100vw;
+		height: 790px;
+		display: flex;
+		gap: 71px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.leftBlock {
+		width: 52vw;
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+
+		&Content {
+			width: 516px;
+			height: 343px;
+			margin-bottom: 75px;
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
+		}
+		&Rectangle {
+			left: -159px;
+			top: -93px;
+		}
+	}
+
+	.rightBlock {
+		width: 59vw;
+		height: 790px;
+		position: relative;
+
+		> * {
+			position: absolute;
+		}
+		&DoubleRectangle {
+			top: 79px;
+			left: 160px;
+		}
+
+		&ImgStars {
+			top: 99px;
+			left: -6px;
+		}
+		&ImgRectangleGroup {
+			top: 77px;
+			left: 375px;
+		}
+	}
+}
+
+@include media-mixin.laptop {
+	.main {
+		gap: 0px;
+	}
+
+	.leftBlock {
+		width: 50vw;
+
+		&Rectangle {
+			left: -239px;
+			top: -103px;
+		}
+	}
+
+	.rightBlock {
+		width: 50vw;
+
+		&DoubleRectangle {
+			top: 78px;
+			left: 156px;
+		}
+
+		&ImgStars {
+			top: 97px;
+			left: -10px;
+		}
+		&ImgRectangleGroup {
+			top: 75px;
+			left: 370px;
+		}
+	}
+}
+
+@include media-mixin.tablet {
+	.leftBlock {
+		width: 33vw;
+
+		&Content {
+			width: 407px;
+			margin-bottom: 102px;
+		}
+
+		&Rectangle {
+			left: -239px;
+			top: -103px;
+		}
+	}
+
+	.rightBlock {
+		width: 50vw;
+
+		&DoubleRectangle {
+			top: 69px;
+			left: 167px;
+		}
+
+		&ImgStars {
+			top: 88px;
+			left: 1px;
+		}
+		&ImgRectangleGroup {
+			top: 66px;
+			left: 382px;
+		}
+	}
+}
+
+@include media-mixin.mobile-large {
+	.main {
+		height: 150vh;
+		margin-top: 68px;
+		flex-direction: column;
+	}
+	.leftBlock {
+		width: 100vw;
+		justify-content: center;
+
+		&Content {
+			width: 489px;
+			margin-bottom: 102px;
+			align-items: center;
+		}
+
+		&Rectangle {
+			left: -387px;
+			top: 61px;
+		}
+
+		&Group {
+			top: 328px;
+			right: -91px;
+			position: absolute;
+			width: 243px;
+			height: 183px;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	.rightBlock {
+		width: 100vw;
+
+		&DoubleRectangle {
+			top: 56px;
+			left: 96px;
+		}
+
+		&ImgStars {
+			transform: rotate(8deg);
+			top: 12px;
+			left: -32px;
+		}
+		&ImgRectangleGroup {
+			width: 355px;
+			height: 293px;
+			top: 41px;
+			left: 301px;
+		}
+	}
+}
+
+@include media-mixin.mobile {
+	.main {
+		height: 128vh;
+		margin-top: 122px;
+	}
+	.leftBlock {
+		width: 100vw;
+		justify-content: center;
+
+		&Content {
+			width: 100vw;
+			margin-bottom: 102px;
+			align-items: center;
+		}
+
+		&Rectangle {
+			left: -271px;
+			top: 61px;
+		}
+
+		&Group {
+			top: 258px;
+			right: -100px;
+			position: absolute;
+			width: 221px;
+			height: 162px;
+			z-index: -1;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	.rightBlock {
+		width: 100vw;
+
+		&DoubleRectangle {
+			top: 43px;
+			left: -36px;
+		}
+
+		&ImgStars {
+			transform: rotate(0deg);
+			top: -65px;
+			left: 0px;
+		}
+		&ImgRectangleGroup {
+			width: 278px;
+			height: 277px;
+			top: 8px;
+			left: 135px;
 		}
 	}
 }
