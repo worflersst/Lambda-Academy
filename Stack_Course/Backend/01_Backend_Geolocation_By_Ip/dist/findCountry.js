@@ -10,7 +10,7 @@ const binarySearch = (array, ipInt) => {
         const startIp = (0, ipToInt_1.ipToInt)(array[mid].start_ip);
         const endIp = (0, ipToInt_1.ipToInt)(array[mid].end_ip);
         if (startIp <= ipInt && endIp >= ipInt) {
-            return array[mid]; // Найдена страна
+            return array[mid];
         }
         else if (startIp > ipInt) {
             right = mid - 1;
