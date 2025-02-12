@@ -1,0 +1,9 @@
+{
+  "name": "hello-servelles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "serverless": "^4.4.19"
+  }
+}
