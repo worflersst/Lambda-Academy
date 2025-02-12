@@ -1,0 +1,169 @@
+org: evergreen
+app: image-upload
+service: image-upload-to-s3
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+  environment:
+    USER_POOL_ID: !Ref CognitoUserPool
+    USER_POOL_CLIENT_ID: !Ref CognitoUserPoolClient
+    S3_BUCKET: !Ref ImageUploadBucket
+    DYNAMODB_TABLE: !Ref ImageMetadataTable
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - "s3:PutObject"
+        - "s3:GetObject"
+        - "s3:DeleteObject"
+      Resource:
+        - !Sub arn:aws:s3:::${ImageUploadBucket}/*
+    - Effect: Allow
+      Action:
+        - "dynamodb:PutItem"
+        - "dynamodb:GetItem"
+        - "dynamodb:DeleteItem"
+        - "dynamodb:Query"
+      Resource:
+        - !GetAtt ImageMetadataTable.Arn
+    - Effect: Allow
+      Action:
+        - "cognito-idp:SignUp"
+        - "cognito-idp:AdminInitiateAuth"
+      Resource:
+        - !Sub arn:aws:cognito-idp:${AWS::Region}:${AWS::AccountId}:userpool/${CognitoUserPool}
+    - Effect: Allow
+      Action:
+        - "cognito-idp:AdminConfirmSignUp"
+      Resource:
+        - !Sub arn:aws:cognito-idp:${AWS::Region}:${AWS::AccountId}:userpool/${CognitoUserPool}
+
+resources:
+  Resources:
+    CognitoUserPool:
+      Type: AWS::Cognito::UserPool
+      Properties:
+        UserPoolName: ImageUploadUserPoolTusk18
+        AutoVerifiedAttributes:
+          - email
+        Policies:
+          PasswordPolicy:
+            MinimumLength: 8
+            RequireUppercase: true
+            RequireLowercase: true
+            RequireNumbers: true
+            RequireSymbols: false
+        Schema:
+          - Name: email
+            AttributeDataType: String
+            Required: true
+            Mutable: false
+
+    CognitoUserPoolClient:
+      Type: AWS::Cognito::UserPoolClient
+      Properties:
+        ClientName: ImageUploadAppClientTusk18
+        UserPoolId: !Ref CognitoUserPool
+        GenerateSecret: false
+        ExplicitAuthFlows:
+          - ALLOW_USER_PASSWORD_AUTH
+          - ALLOW_REFRESH_TOKEN_AUTH
+
+    ImageUploadBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: image-upload-storage-tusk18-us-east-1
+        CorsConfiguration:
+          CorsRules:
+            - AllowedOrigins:
+                - '*'
+              AllowedMethods:
+                - GET
+                - PUT
+                - POST
+                - DELETE
+              AllowedHeaders:
+                - '*'
+        VersioningConfiguration:
+          Status: Enabled
+
+
+    ImageMetadataTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ImageMetadata
+        AttributeDefinitions:
+          - AttributeName: userId
+            AttributeType: S
+          - AttributeName: imageId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userId
+            KeyType: HASH
+          - AttributeName: imageId
+            KeyType: RANGE
+        BillingMode: PAY_PER_REQUEST
+
+    ApiGatewayRestApi:
+      Type: AWS::ApiGateway::RestApi
+      Properties:
+        Name: image-upload-toS3-Tusk18
+
+    CognitoAuthorizer:
+      Type: AWS::ApiGateway::Authorizer
+      Properties:
+        Name: ImageUploadCognitoAuthorizer
+        Type: COGNITO_USER_POOLS
+        IdentitySource: method.request.header.Authorization
+        ProviderARNs:
+          - !Sub arn:aws:cognito-idp:${AWS::Region}:${AWS::AccountId}:userpool/${CognitoUserPool}
+        RestApiId: !Ref ApiGatewayRestApi
+
+functions:
+  registerUser:
+    handler: handler.registerUser
+    events:
+      - http:
+          path: register
+          method: post
+
+  signInUser:
+    handler: handler.signInUser
+    events:
+      - http:
+          path: signin
+          method: post
+
+  uploadImage:
+    handler: handler.uploadImage
+    events:
+      - http:
+          path: upload
+          method: post
+          authorizer:
+            name: CognitoAuthorizer
+            arn: !GetAtt CognitoUserPool.Arn
+            type: COGNITO_USER_POOLS
+
+  deleteImage:
+    handler: handler.deleteImage
+    events:
+      - http:
+          path: delete-image
+          method: delete
+          authorizer:
+            name: CognitoAuthorizer
+            arn: !GetAtt CognitoUserPool.Arn
+            type: COGNITO_USER_POOLS
+
+  getImageLinks:
+    handler: handler.getImageLinks
+    events:
+      - http:
+          path: get-images-links
+          method: get
+          authorizer:
+            name: CognitoAuthorizer
+            arn: !GetAtt CognitoUserPool.Arn
+            type: COGNITO_USER_POOLS
