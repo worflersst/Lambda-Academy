@@ -16,17 +16,19 @@ const express_1 = __importDefault(require("express"));
 const ipToInt_1 = require("./ipToInt");
 const parser_1 = require("./parser");
 const findCountry_1 = require("./findCountry");
+const axios_1 = __importDefault(require("axios"));
 const app = (0, express_1.default)();
-const port = 3000;
+const port = 3010;
 app.use(express_1.default.json());
-app.get('/getLocation/:ip', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const ip = req.params.ip;
+app.get('/getLocation/:ip?', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { data } = yield axios_1.default.get('https://api.ipify.org?format=json');
+    const ip = req.query.ip || data.ip;
     const int = (0, ipToInt_1.ipToInt)(ip);
     try {
         const arrayLocation = yield (0, parser_1.parseInt)();
         const resultLocation = (0, findCountry_1.findCountry)(int, arrayLocation);
         console.log(resultLocation);
-        res.send(resultLocation ? resultLocation.country_name : 'Country not found');
+        res.send(resultLocation ? resultLocation : 'Country not found');
     }
     catch (error) {
         console.error(error);
