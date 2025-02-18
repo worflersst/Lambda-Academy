@@ -21,26 +21,28 @@ const checkHaveInDB = async (shortCode: string): Promise<boolean> => {
     }
 }
 
-app.post('/short', async (req: Request, res: Response) => {
+app.post('/short', async (req: Request, res: Response): Promise<void> => {
     const { originalURL } = req.body;
 
     if (!originalURL || !/^https?:\/\/.+/.test(originalURL)) {
-        return res.status(400).json({ message: 'Некорректный URL.' });
+        res.status(400).json({ message: 'Некорректный URL.' });
+        return; 
     }
 
     try {
-        let shortCode;
+        let shortCode: string;
         do {
             shortCode = generateShortCode();
         } while (await checkHaveInDB(shortCode));
 
         await mongoCollection.insertOne({ originalURL, shortCode });
-        res.status(200).json({ shortUrl: `http://localhost:${PORT}/${shortCode}` });
+        res.status(200).json({ message: 'Data saved', shortCode, originalURL });
     } catch (error) {
         console.error('Ошибка при создании короткой ссылки:', error);
         res.status(500).json({ message: 'Произошла ошибка при создании короткой ссылки.' });
     }
 });
+
 
 
 app.get('/:shortCode', async (req: Request, res: Response) => {

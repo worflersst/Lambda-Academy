@@ -34,7 +34,8 @@ const checkHaveInDB = (shortCode) => __awaiter(void 0, void 0, void 0, function*
 app.post('/short', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { originalURL } = req.body;
     if (!originalURL || !/^https?:\/\/.+/.test(originalURL)) {
-        return res.status(400).json({ message: 'Некорректный URL.' });
+        res.status(400).json({ message: 'Некорректный URL.' });
+        return;
     }
     try {
         let shortCode;
@@ -42,7 +43,7 @@ app.post('/short', (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             shortCode = generateShortCode();
         } while (yield checkHaveInDB(shortCode));
         yield db_1.mongoCollection.insertOne({ originalURL, shortCode });
-        res.status(200).json({ shortUrl: `http://localhost:${PORT}/${shortCode}` });
+        res.status(200).json({ message: 'Data saved', shortCode, originalURL });
     }
     catch (error) {
         console.error('Ошибка при создании короткой ссылки:', error);
