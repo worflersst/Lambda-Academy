@@ -13,6 +13,14 @@ class AuthRepository {
         return false
     }
 
+    async updateRefreshToken(email: string, refreshToken: string) {
+        await mongoCollection.updateOne(
+            { email },
+            { $set: { refreshToken } }
+        );
+    }
+
+
 }
 
 export default new AuthRepository()

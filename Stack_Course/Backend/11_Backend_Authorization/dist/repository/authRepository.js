@@ -25,5 +25,10 @@ class AuthRepository {
             return false;
         });
     }
+    updateRefreshToken(email, refreshToken) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield mongoDB_1.mongoCollection.updateOne({ email }, { $set: { refreshToken } });
+        });
+    }
 }
 exports.default = new AuthRepository();

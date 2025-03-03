@@ -68,12 +68,16 @@ class AuthControllers  {
 
         const token =  generateAccesToken(email)
         const refreshToken = generateRefreshToken(email)
+
+        await authRepository.updateRefreshToken(email, refreshToken);
+
         res.json({token, refreshToken})
     }catch(e) {
         console.log(e)
         res.status(400).json({message: 'login error!'})
     }
     }
+
     async refresh(req: Request, res: Response) {
     try {
         const refreshString = req.headers.authorization
@@ -90,14 +94,17 @@ class AuthControllers  {
             return
         }
         const user = await authRepository.findUser(decodedData.email);
-        if (!user) {
-             res.status(404).json({ message: "User not found" });
-            return
+        if (!user || user.refreshToken !== refreshToken) {
+            res.status(403).json({ message: "Invalid refresh token" });
+            return;
         }
 
-        const newAccesToken = generateAccesToken(decodedData.email)
+        const newAccessToken = generateAccesToken(decodedData.email)
+        const newRefreshToken = generateRefreshToken(decodedData.email);
 
-        res.status(200).json({newAccesToken})
+        await authRepository.updateRefreshToken(decodedData.email, newRefreshToken);
+
+        res.status(200).json({ accessToken: newAccessToken, refreshToken: newRefreshToken })
         return
 
     }catch(e) {

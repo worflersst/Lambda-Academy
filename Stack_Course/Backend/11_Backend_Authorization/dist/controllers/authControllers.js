@@ -75,6 +75,7 @@ class AuthControllers {
                 }
                 const token = generateAccesToken(email);
                 const refreshToken = generateRefreshToken(email);
+                yield authRepository_1.default.updateRefreshToken(email, refreshToken);
                 res.json({ token, refreshToken });
             }
             catch (e) {
@@ -99,12 +100,14 @@ class AuthControllers {
                     return;
                 }
                 const user = yield authRepository_1.default.findUser(decodedData.email);
-                if (!user) {
-                    res.status(404).json({ message: "User not found" });
+                if (!user || user.refreshToken !== refreshToken) {
+                    res.status(403).json({ message: "Invalid refresh token" });
                     return;
                 }
-                const newAccesToken = generateAccesToken(decodedData.email);
-                res.status(200).json({ newAccesToken });
+                const newAccessToken = generateAccesToken(decodedData.email);
+                const newRefreshToken = generateRefreshToken(decodedData.email);
+                yield authRepository_1.default.updateRefreshToken(decodedData.email, newRefreshToken);
+                res.status(200).json({ accessToken: newAccessToken, refreshToken: newRefreshToken });
                 return;
             }
             catch (e) {
