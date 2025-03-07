@@ -17,40 +17,19 @@ const dbConnection_1 = __importDefault(require("../db/dbConnection"));
 class CryptoRepository {
     constructor() {
         this.giveCryptoDataFromDB = (cryptoName, marketName, dateInterval) => __awaiter(this, void 0, void 0, function* () {
-            let timeState = '';
-            if (dateInterval) {
-                switch (dateInterval) {
-                    case '15m':
-                        timeState = 'AND fetch_datetime >= NOW() - INTERVAL 15 MINUTE ';
-                        break;
-                    case '1h':
-                        timeState = 'AND fetch_datetime >= NOW() - INTERVAL 1 HOUR ';
-                        break;
-                    case '4h':
-                        timeState = 'AND fetch_datetime >= NOW() - INTERVAL 4 HOUR ';
-                        break;
-                    case '24h':
-                        timeState = 'AND fetch_datetime >= NOW() - INTERVAL 24 HOUR ';
-                        break;
-                    default:
-                        throw new Error('Invalid input interval. Please use 15m, 1h, 4h, 24h.');
-                }
-            }
             let query = `
-    SELECT 
-        p.market_id AS market_id, 
-        p.coins_id AS coins_id, 
-        p.price AS price, 
-        p.fetch_datetime AS fetch_datetime
-    FROM 
-        price p
-    JOIN 
-        markets m ON p.market_id = m.market_id
-    JOIN 
-        coins c ON p.coins_id = c.coins_id
-    WHERE 
-        1=1
-`;
+            SELECT 
+                c.coins_name AS crypto, 
+                m.market_name AS market,
+                AVG(CASE WHEN p.fetch_datetime >= NOW() - INTERVAL 15 MINUTE THEN p.price END) AS avg_15m,
+                AVG(CASE WHEN p.fetch_datetime >= NOW() - INTERVAL 1 HOUR THEN p.price END) AS avg_1h,
+                AVG(CASE WHEN p.fetch_datetime >= NOW() - INTERVAL 4 HOUR THEN p.price END) AS avg_4h,
+                AVG(CASE WHEN p.fetch_datetime >= NOW() - INTERVAL 24 HOUR THEN p.price END) AS avg_24h
+            FROM price p
+            JOIN markets m ON p.market_id = m.market_id
+            JOIN coins c ON p.coins_id = c.coins_id
+            WHERE 1=1
+        `;
             const params = [];
             if (cryptoName) {
                 query += ' AND c.coins_name = ? ';
@@ -60,41 +39,29 @@ class CryptoRepository {
                 query += ' AND m.market_name = ? ';
                 params.push(marketName);
             }
-            query += timeState;
-            if (!marketName) {
-                query = `
-            SELECT 
-                c.coins_name AS crypto,
-                AVG(p.price) AS average_price,
-                COUNT(DISTINCT m.market_name) AS market_count
-            FROM 
-                price p
-            JOIN 
-                markets m ON p.market_id = m.market_id
-            JOIN 
-                coins c ON p.coins_id = c.coins_id
-            WHERE 
-                1=1
-                ${cryptoName ? 'AND c.coins_name = ? ' : ''}
-                ${timeState}
-            GROUP BY 
-                c.coins_name
-            `;
-            }
-            const [price] = yield dbConnection_1.default.execute(query, params);
-            if (!marketName) {
-                return price.map((row) => ({
-                    crypto: row.coins_name,
-                    averagePrice: parseFloat(row.average_price),
-                    marketCount: row.market_count,
-                }));
-            }
-            return price.map((row) => ({
-                crypto: row.coins_name,
-                market: row.market_name,
-                price: parseFloat(row.price),
-                timestamp: row.fetch_datetime,
-            }));
+            query += ' GROUP BY c.coins_name, m.market_name ORDER BY c.coins_name, m.market_name';
+            const [result] = yield dbConnection_1.default.execute(query, params);
+            const formattedData = {};
+            result.forEach(({ crypto, market, avg_15m, avg_1h, avg_4h, avg_24h }) => {
+                if (!formattedData[crypto])
+                    formattedData[crypto] = {};
+                formattedData[crypto][market] = {
+                    period: {},
+                };
+                if (!dateInterval || dateInterval === '15m') {
+                    formattedData[crypto][market].period['15m'] = { average_price: avg_15m ? parseFloat(avg_15m) : null };
+                }
+                if (!dateInterval || dateInterval === '1h') {
+                    formattedData[crypto][market].period['1h'] = { average_price: avg_1h ? parseFloat(avg_1h) : null };
+                }
+                if (!dateInterval || dateInterval === '4h') {
+                    formattedData[crypto][market].period['4h'] = { average_price: avg_4h ? parseFloat(avg_4h) : null };
+                }
+                if (!dateInterval || dateInterval === '24h') {
+                    formattedData[crypto][market].period['24h'] = { average_price: avg_24h ? parseFloat(avg_24h) : null };
+                }
+            });
+            return formattedData;
         });
         this.saveDataToDB = () => __awaiter(this, void 0, void 0, function* () {
             const data = yield fetchCryptoDataService_1.default.giveCryptoDataWithAPI();
@@ -104,8 +71,7 @@ class CryptoRepository {
                 const coinId = coin[0].coins_id;
                 const [marketRecord] = yield dbConnection_1.default.execute(`SELECT market_id FROM markets WHERE market_name = ?`, [market]);
                 const marketId = marketRecord[0].market_id;
-                yield dbConnection_1.default.execute(`INSERT INTO price(market_id, coins_id, price, fetch_datetime) 
-                 VALUES(?,?,?,?)`, [marketId, coinId, price, new Date(timestamp)]);
+                yield dbConnection_1.default.execute(`INSERT INTO price(market_id, coins_id, price, fetch_datetime) VALUES(?,?,?,?)`, [marketId, coinId, price, new Date(timestamp)]);
             }
         });
     }
