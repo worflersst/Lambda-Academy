@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const db_1 = require("./db/db");
 const express_1 = __importDefault(require("express"));
 const crypto_1 = __importDefault(require("crypto"));
+const axios_1 = __importDefault(require("axios"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 const PORT = 5000;
@@ -31,6 +32,16 @@ const checkHaveInDB = (shortCode) => __awaiter(void 0, void 0, void 0, function*
         throw error;
     }
 });
+const checkURLExists = (url) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const response = yield axios_1.default.head(url);
+        return response.status >= 200 && response.status < 400;
+    }
+    catch (error) {
+        console.error('Ошибка при проверке доступности URL:', error);
+        return false;
+    }
+});
 app.post('/short', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { originalURL } = req.body;
     if (!originalURL || !/^https?:\/\/.+/.test(originalURL)) {
@@ -38,6 +49,11 @@ app.post('/short', (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         return;
     }
     try {
+        const urlExists = yield checkURLExists(originalURL);
+        if (!urlExists) {
+            res.status(400).json({ message: 'Указанная страница не существует.' });
+            return;
+        }
         let shortCode;
         do {
             shortCode = generateShortCode();

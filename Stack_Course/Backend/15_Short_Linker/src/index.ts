@@ -1,35 +1,52 @@
 import {mongoCollection, runDB} from "./db/db";
-import express, {Request, Response} from 'express'
+import express, {Request, Response} from 'express';
 import crypto from "crypto";
+import axios from "axios";
 
-
-const app = express()
-app.use(express.json())
-const PORT = 5000
+const app = express();
+app.use(express.json());
+const PORT = 5000;
 
 const generateShortCode = () => {
-   return crypto.randomBytes(4).toString('hex')
-}
+    return crypto.randomBytes(4).toString('hex');
+};
 
 const checkHaveInDB = async (shortCode: string): Promise<boolean> => {
     try {
         const result = await mongoCollection.findOne({ shortCode });
-        return !!result
+        return !!result;
     } catch (error) {
         console.error('Ошибка при проверке наличия в базе:', error);
         throw error;
     }
-}
+};
+
+const checkURLExists = async (url: string): Promise<boolean> => {
+    try {
+        const response = await axios.head(url);
+        return response.status >= 200 && response.status < 400;
+    } catch (error) {
+        console.error('Ошибка при проверке доступности URL:', error);
+        return false;
+    }
+};
 
 app.post('/short', async (req: Request, res: Response): Promise<void> => {
     const { originalURL } = req.body;
 
     if (!originalURL || !/^https?:\/\/.+/.test(originalURL)) {
         res.status(400).json({ message: 'Некорректный URL.' });
-        return; 
+        return;
     }
 
     try {
+        const urlExists = await checkURLExists(originalURL);
+
+        if (!urlExists) {
+            res.status(400).json({ message: 'Указанная страница не существует.' });
+            return;
+        }
+
         let shortCode: string;
         do {
             shortCode = generateShortCode();
@@ -42,8 +59,6 @@ app.post('/short', async (req: Request, res: Response): Promise<void> => {
         res.status(500).json({ message: 'Произошла ошибка при создании короткой ссылки.' });
     }
 });
-
-
 
 app.get('/:shortCode', async (req: Request, res: Response) => {
     const { shortCode } = req.params;
@@ -64,8 +79,9 @@ app.get('/:shortCode', async (req: Request, res: Response) => {
 
 const start = async () => {
     app.listen(PORT, () => {
-        console.log(`Сервер стартнулся на порту ${PORT}`)})
-    await runDB()
- }
+        console.log(`Сервер стартнулся на порту ${PORT}`);
+    });
+    await runDB();
+};
 
- start()
+start();
