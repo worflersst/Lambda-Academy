@@ -60,7 +60,6 @@ config()
         const response = await fetch(bitcoinUrl);
         const data = await response.json();
 
-
         const endsWithUSDTs = data.filter((item: { symbol: string, lastPrice: string }) => {
             return (
                 typeof item.symbol === 'string' &&
@@ -79,7 +78,10 @@ config()
         });
 
         cryptoMappedData.forEach(item => {
-            top50List += `/${item.symbol}, Price: ${item.price} \n`;
+            const roundedPrice = parseFloat(parseFloat(item.price).toFixed(2));
+            if (roundedPrice > 0) {
+                top50List += `/${item.symbol} $${roundedPrice} \n`;
+            }
         });
 
         bot.sendMessage(chatId, top50List);
@@ -220,6 +222,11 @@ config()
 
 });
 
+    bot.onText(/\/addToFavourite(\s+)?$/, async (msg) => {
+        const chatId = msg.chat.id;
+        bot.sendMessage(chatId, 'Пожалуйста, укажите криптовалюту после команды. Например: /addToFavourite BTCUSDT');
+    });
+
     bot.onText(/\/listFavourite/, async (msg) => {
     const chatId = msg.chat.id;
 
@@ -251,6 +258,10 @@ config()
     }
 });
 
+    bot.onText(/\/deleteFavourite(\s+)?$/, async (msg) => {
+        const chatId = msg.chat.id;
+        bot.sendMessage(chatId, 'Пожалуйста, укажите криптовалюту для удаления. Например: /deleteFavourite BTCUSDT');
+    });
 
 
 
