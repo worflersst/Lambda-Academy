@@ -117,19 +117,22 @@ export const uploadImage: APIGatewayProxyHandler = async (event) => {
 
         if (!event.queryStringParameters || !event.queryStringParameters.imageName) {
             return returnObjectMessage(400, "Image name parameter is missing");
-        }        const fileName = `${event.queryStringParameters.imageName}.jpg`;
+        }        const fileName = `${event.queryStringParameters.imageName}.png`;
 
         const paramsForPresignedPost = {
             Bucket: BUCKET_NAME,
             Fields: {
-                key: fileName
+                key: fileName,
+                "Content-Type": "image/png",
+                "Content-Disposition": "inline"
             },
             Conditions: [
-                ['content-length-range', 0, 10485760],
+                ["content-length-range", 0, 10485760],
+                ["eq", "$Content-Type", "image/png"],
+                ["eq", "$Content-Disposition", "inline"]
             ],
             Expires: 60 * 5,
         };
-
         const presignedPost = await S3.createPresignedPost(paramsForPresignedPost);
 
         const imageId = generateAlphanumericId();

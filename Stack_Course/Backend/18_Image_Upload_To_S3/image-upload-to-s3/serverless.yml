@@ -87,7 +87,11 @@ resources:
                 - '*'
         VersioningConfiguration:
           Status: Enabled
-
+        PublicAccessBlockConfiguration:
+          BlockPublicAcls: false
+          IgnorePublicAcls: false
+          BlockPublicPolicy: false
+          RestrictPublicBuckets: false
 
     ImageMetadataTable:
       Type: AWS::DynamoDB::Table
@@ -119,6 +123,19 @@ resources:
         ProviderARNs:
           - !Sub arn:aws:cognito-idp:${AWS::Region}:${AWS::AccountId}:userpool/${CognitoUserPool}
         RestApiId: !Ref ApiGatewayRestApi
+
+    S3BucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket: !Ref ImageUploadBucket
+        PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Sid: "PublicReadGetObject"
+              Effect: Allow
+              Principal: "*"
+              Action: "s3:GetObject"
+              Resource: !Sub arn:aws:s3:::${ImageUploadBucket}/*
 
 functions:
   registerUser:
